@@ -22,13 +22,21 @@ def _resolve(name):
     return _REGISTRY[name]
 
 
+def _xy(roll):
+    """Return (x, y) for plotting: use the Series index when available."""
+    if hasattr(roll, "to_numpy"):  # pandas Series
+        return roll.index, roll.to_numpy()
+    arr = np.asarray(roll)
+    return range(len(arr)), arr
+
+
 def compare(series, measures=("shannon", "permutation", "spectral"), window=20):
     """Overlay the rolling entropy of several measures on one axis."""
     fig, ax = plt.subplots(figsize=(10, 5))
     for name in measures:
         roll = _resolve(name).rolling(series, window=window)
-        y = roll.to_numpy() if hasattr(roll, "to_numpy") else np.asarray(roll)
-        ax.plot(range(len(y)), y, label=name)
+        x, y = _xy(roll)
+        ax.plot(x, y, label=name)
     ax.set_title(f"Entropy comparison (window={window})")
     ax.set_xlabel("position")
     ax.set_ylabel("entropy")
@@ -47,8 +55,8 @@ def dashboard(series, window=20, measures=("shannon", "permutation", "spectral",
     axes = np.atleast_1d(axes).ravel()
     for ax, name in zip(axes, measures):
         roll = _resolve(name).rolling(series, window=window)
-        y = roll.to_numpy() if hasattr(roll, "to_numpy") else np.asarray(roll)
-        ax.plot(range(len(y)), y)
+        x, y = _xy(roll)
+        ax.plot(x, y)
         ax.set_title(name)
     for ax in axes[n:]:
         ax.axis("off")
@@ -61,12 +69,14 @@ def drop_events(series, measure="shannon", window=20, threshold=0.4):
     """Plot rolling entropy and mark positions where it drops > `threshold`."""
     mod = _resolve(measure)
     roll = mod.rolling(series, window=window)
-    y = roll.to_numpy() if hasattr(roll, "to_numpy") else np.asarray(roll)
+    is_series = hasattr(roll, "to_numpy")
+    x, y = _xy(roll)
     drops = np.diff(y, prepend=np.nan)
     fig, ax = plt.subplots(figsize=(10, 4))
-    ax.plot(range(len(y)), y, label=f"{measure} entropy")
-    event_idx = np.where(drops < -abs(threshold))[0]
-    ax.scatter(event_idx, y[event_idx], color="red", zorder=5, label="drop event")
+    ax.plot(x, y, label=f"{measure} entropy")
+    event_pos = np.where(drops < -abs(threshold))[0]
+    x_event = roll.index[event_pos] if is_series else event_pos
+    ax.scatter(x_event, y[event_pos], color="red", zorder=5, label="drop event")
     ax.set_title(f"{measure} entropy drop events (threshold={threshold})")
     ax.set_xlabel("position")
     ax.set_ylabel("entropy")

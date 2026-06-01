@@ -24,3 +24,13 @@ def test_plot_returns_figure():
     rng = np.random.RandomState(2)
     fig = multiscale.plot(rng.rand(600), scales=range(1, 5))
     assert isinstance(fig, matplotlib.figure.Figure)
+
+
+def test_short_series_skips_unusable_scales():
+    rng = np.random.RandomState(3)
+    data = rng.rand(40)
+    result = multiscale.compute(data, scales=range(1, 12))
+    # scale 11 -> 40//11 = 3 points < 4, must be skipped
+    assert 11 not in result
+    # small scales remain
+    assert 1 in result and 2 in result

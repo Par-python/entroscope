@@ -30,16 +30,27 @@ def _kernel(values, order=3, delay=1):
     return float(-np.sum(p * np.log2(p)))
 
 
+def _check_window(window, order, delay):
+    """Raise ValueError if window is too small for the given order/delay."""
+    span = delay * (order - 1)
+    if window <= span:
+        raise ValueError(
+            f"window ({window}) must exceed delay*(order-1) = {span}"
+        )
+
+
 def compute(series, order=3, delay=1):
     arr, _ = _core.as_array(series)
     return _kernel(arr, order=order, delay=delay)
 
 
 def rolling(series, window=20, order=3, delay=1):
+    _check_window(window, order, delay)
     return _core.rolling(series, window, _kernel, order=order, delay=delay)
 
 
 def delta(series, window=20, order=3, delay=1):
+    _check_window(window, order, delay)
     return _core.delta(series, window, _kernel, order=order, delay=delay)
 
 
@@ -50,5 +61,6 @@ def normalized(series, order=3, delay=1):
 
 
 def plot(series, window=20, order=3, delay=1, title=None):
+    _check_window(window, order, delay)
     return _core.make_plot(series, window, _kernel, order=order, delay=delay,
                            title=title, ylabel="permutation entropy")

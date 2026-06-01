@@ -13,7 +13,11 @@ def _coarse_grain(values, scale):
 
 
 def compute(series, scales=range(1, 10), method="sample"):
-    """Return {scale: entropy} by coarse-graining then applying `method`."""
+    """Return {scale: entropy} by coarse-graining then applying `method`.
+
+    Scales that coarse-grain the series below sample entropy's minimum
+    length are skipped (omitted from the result).
+    """
     if method != "sample":
         raise ValueError("only method='sample' is supported")
     arr, _ = _core.as_array(series)
@@ -23,6 +27,8 @@ def compute(series, scales=range(1, 10), method="sample"):
             grained = arr
         else:
             grained = _coarse_grain(arr, scale)
+        if len(grained) < 4:  # sample entropy needs n > m+1 (m=2 default)
+            continue
         result[int(scale)] = sample.compute(grained)
     return result
 

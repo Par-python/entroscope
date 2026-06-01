@@ -41,3 +41,9 @@ def test_invalid_order_raises():
 def test_plot_returns_figure():
     fig = permutation.plot(list(range(60)), window=20, order=3)
     assert isinstance(fig, matplotlib.figure.Figure)
+
+
+def test_rolling_window_too_small_for_order_raises():
+    s = pd.Series(np.random.RandomState(0).rand(50))
+    with pytest.raises(ValueError):
+        permutation.rolling(s, window=4, order=3, delay=2)
