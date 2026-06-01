@@ -81,3 +81,19 @@ def test_delta_series_preserves_index():
     out = _core.delta(s, 3, lambda w: float(np.mean(w)))
     assert isinstance(out, pd.Series)
     assert list(out.index) == list("abcdef")
+
+
+from entropix.utils import normalize
+
+
+def test_normalize_by_max_basic():
+    assert normalize.by_max(1.0, 2.0) == pytest.approx(0.5)
+
+
+def test_normalize_by_max_zero_denominator_returns_zero():
+    assert normalize.by_max(0.0, 0.0) == 0.0
+
+
+def test_normalize_clips_to_unit_interval():
+    assert normalize.by_max(3.0, 2.0) == pytest.approx(1.0)
+    assert normalize.by_max(-1.0, 2.0) == pytest.approx(0.0)
