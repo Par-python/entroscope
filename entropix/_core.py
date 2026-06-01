@@ -4,6 +4,7 @@ Every measure module delegates its standard methods here so the
 "Series in -> Series out, array in -> array out" contract and the windowing
 logic live in exactly one place.
 """
+
 import matplotlib
 
 matplotlib.use("Agg")  # headless-safe; never opens a window

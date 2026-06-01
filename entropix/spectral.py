@@ -1,4 +1,5 @@
 """Spectral entropy — Shannon entropy of the normalized power spectrum."""
+
 import numpy as np
 from scipy import signal as _signal
 
@@ -48,5 +49,4 @@ def normalized(series, sf=1.0):
 
 
 def plot(series, window=50, sf=1.0, title=None):
-    return _core.make_plot(series, window, _kernel, sf=sf,
-                           title=title, ylabel="spectral entropy")
+    return _core.make_plot(series, window, _kernel, sf=sf, title=title, ylabel="spectral entropy")

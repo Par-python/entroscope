@@ -1,9 +1,9 @@
 """Unified visualization helpers across entropy measures."""
+
 import matplotlib.pyplot as plt
 import numpy as np
 
-from .. import (shannon, permutation, spectral, sample, approximate,
-                differential)
+from .. import shannon, permutation, spectral, sample, approximate, differential
 
 # Registry of measures usable by the rolling-based helpers.
 _REGISTRY = {
@@ -45,8 +45,11 @@ def compare(series, measures=("shannon", "permutation", "spectral"), window=20):
     return fig
 
 
-def dashboard(series, window=20, measures=("shannon", "permutation", "spectral",
-                                           "sample", "approximate", "differential")):
+def dashboard(
+    series,
+    window=20,
+    measures=("shannon", "permutation", "spectral", "sample", "approximate", "differential"),
+):
     """Grid of rolling entropy plots, one per measure."""
     n = len(measures)
     ncols = 2

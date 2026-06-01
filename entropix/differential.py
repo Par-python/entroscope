@@ -1,4 +1,5 @@
 """Differential entropy — continuous entropy via a fitted distribution."""
+
 import numpy as np
 from scipy import stats
 
@@ -37,5 +38,6 @@ def delta(series, window=50, dist="kde"):
 
 
 def plot(series, window=50, dist="kde", title=None):
-    return _core.make_plot(series, window, _kernel, dist=dist,
-                           title=title, ylabel="differential entropy")
+    return _core.make_plot(
+        series, window, _kernel, dist=dist, title=title, ylabel="differential entropy"
+    )

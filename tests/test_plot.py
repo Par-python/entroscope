@@ -24,12 +24,14 @@ def test_drop_events_returns_figure():
 
 def test_compare_unknown_measure_raises():
     import pytest
+
     with pytest.raises(ValueError):
         plot.compare(_data(), measures=["bogus"], window=20)
 
 
 def test_compare_uses_series_index():
     import pandas as pd
+
     idx = pd.date_range("2020-01-01", periods=100, freq="D")
     s = pd.Series(np.random.RandomState(0).rand(100), index=idx)
     fig = plot.compare(s, measures=["shannon"], window=20)

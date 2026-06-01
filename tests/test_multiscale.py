@@ -14,6 +14,7 @@ def test_compute_returns_dict_keyed_by_scale():
 
 def test_scale_one_matches_sample_entropy():
     from entropix import sample
+
     rng = np.random.RandomState(1)
     data = rng.rand(400)
     ms = multiscale.compute(data, scales=range(1, 2))

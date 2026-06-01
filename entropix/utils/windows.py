@@ -1,4 +1,5 @@
 """Sliding-window utilities shared by all entropy measures."""
+
 import numpy as np
 
 
@@ -15,4 +16,4 @@ def sliding_windows(values, window):
     if window > n:
         raise ValueError(f"window ({window}) is larger than series length ({n})")
     for end in range(window, n + 1):
-        yield values[end - window:end]
+        yield values[end - window : end]

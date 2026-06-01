@@ -1,4 +1,5 @@
 """Shannon entropy — classic information entropy over a binned distribution."""
+
 import numpy as np
 
 from . import _core
@@ -47,5 +48,6 @@ def geographic(region_df, col="interest"):
 
 
 def plot(series, window=20, bins=10, title=None):
-    return _core.make_plot(series, window, _kernel, bins=bins,
-                           title=title, ylabel="Shannon entropy")
+    return _core.make_plot(
+        series, window, _kernel, bins=bins, title=title, ylabel="Shannon entropy"
+    )

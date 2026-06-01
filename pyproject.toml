@@ -14,7 +14,7 @@ keywords = ["entropy", "time-series", "shannon", "permutation", "spectral"]
 dependencies = ["numpy", "pandas", "scipy", "matplotlib"]
 
 [project.optional-dependencies]
-dev = ["pytest", "pytest-cov"]
+dev = ["pytest", "pytest-cov", "ruff"]
 
 [project.urls]
 Homepage = "https://github.com/entropix/entropix"
@@ -24,3 +24,11 @@ include = ["entropix*"]
 
 [tool.pytest.ini_options]
 testpaths = ["tests"]
+
+[tool.ruff]
+target-version = "py39"
+line-length = 100
+
+[tool.ruff.lint.per-file-ignores]
+# Tests deliberately import some helpers next to the tests that use them.
+"tests/*" = ["E402"]

@@ -1,4 +1,5 @@
 """Sample entropy (SampEn) — regularity/predictability of a time series."""
+
 import numpy as np
 
 from . import _core
@@ -7,10 +8,10 @@ from . import _core
 def _count_matches(values, m, tol):
     """Count template-vector pairs (length m) within Chebyshev distance `tol`."""
     n = len(values)
-    templates = np.array([values[i:i + m] for i in range(n - m + 1)])
+    templates = np.array([values[i : i + m] for i in range(n - m + 1)])
     count = 0
     for i in range(len(templates) - 1):
-        dist = np.max(np.abs(templates[i + 1:] - templates[i]), axis=1)
+        dist = np.max(np.abs(templates[i + 1 :] - templates[i]), axis=1)
         count += np.count_nonzero(dist <= tol)
     return count
 
@@ -50,5 +51,4 @@ def delta(series, window=50, m=2, r=0.2):
 
 
 def plot(series, window=50, m=2, r=0.2, title=None):
-    return _core.make_plot(series, window, _kernel, m=m, r=r,
-                           title=title, ylabel="sample entropy")
+    return _core.make_plot(series, window, _kernel, m=m, r=r, title=title, ylabel="sample entropy")

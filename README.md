@@ -1,5 +1,7 @@
 # entropix
 
+[![CI](https://github.com/entropix/entropix/actions/workflows/ci.yml/badge.svg)](https://github.com/entropix/entropix/actions/workflows/ci.yml)
+
 **The definitive entropy toolkit for time series data.**
 
 `pip install entropix` and get every entropy measure you'd ever need, with one

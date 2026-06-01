@@ -1,0 +1,49 @@
+name: Publish to PyPI
+
+# Publishes when you push a version tag like v0.1.0.
+# Uses PyPI Trusted Publishing (OIDC) — no API token needed in repo secrets.
+# INERT until you configure a trusted publisher for `entropix` on PyPI:
+#   https://docs.pypi.org/trusted-publishers/adding-a-publisher/
+#   workflow: publish.yml, environment: pypi
+
+on:
+  push:
+    tags:
+      - "v*"
+
+jobs:
+  build:
+    name: Build distribution
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Install build tooling
+        run: pip install build twine
+      - name: Build
+        run: python -m build
+      - name: Check metadata
+        run: twine check dist/*
+      - name: Upload dist artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: dist
+          path: dist/*
+
+  publish:
+    name: Publish to PyPI
+    needs: build
+    runs-on: ubuntu-latest
+    environment: pypi
+    permissions:
+      id-token: write  # required for trusted publishing
+    steps:
+      - name: Download dist artifact
+        uses: actions/download-artifact@v4
+        with:
+          name: dist
+          path: dist
+      - name: Publish
+        uses: pypa/gh-action-pypi-publish@release/v1

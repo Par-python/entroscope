@@ -1,4 +1,5 @@
 """Approximate entropy (ApEn) — regularity measure, less noise-sensitive."""
+
 import numpy as np
 
 from . import _core
@@ -7,7 +8,7 @@ from . import _core
 def _phi(values, m, tol):
     """Mean of log(fraction of templates within `tol`) over length-m templates."""
     n = len(values)
-    templates = np.array([values[i:i + m] for i in range(n - m + 1)])
+    templates = np.array([values[i : i + m] for i in range(n - m + 1)])
     counts = np.empty(len(templates))
     for i in range(len(templates)):
         dist = np.max(np.abs(templates - templates[i]), axis=1)
@@ -45,5 +46,6 @@ def delta(series, window=50, m=2, r=0.2):
 
 
 def plot(series, window=50, m=2, r=0.2, title=None):
-    return _core.make_plot(series, window, _kernel, m=m, r=r,
-                           title=title, ylabel="approximate entropy")
+    return _core.make_plot(
+        series, window, _kernel, m=m, r=r, title=title, ylabel="approximate entropy"
+    )

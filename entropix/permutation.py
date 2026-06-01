@@ -1,4 +1,5 @@
 """Permutation entropy — complexity from ordinal patterns (Bandt & Pompe)."""
+
 import math
 from itertools import permutations
 
@@ -22,7 +23,7 @@ def _kernel(values, order=3, delay=1):
     perm_index = {p: i for i, p in enumerate(permutations(range(order)))}
     counts = np.zeros(len(perm_index))
     for i in range(n - span):
-        window = values[i:i + span + 1:delay]
+        window = values[i : i + span + 1 : delay]
         pattern = tuple(np.argsort(window, kind="stable"))
         counts[perm_index[pattern]] += 1
     total = counts.sum()
@@ -34,9 +35,7 @@ def _check_window(window, order, delay):
     """Raise ValueError if window is too small for the given order/delay."""
     span = delay * (order - 1)
     if window <= span:
-        raise ValueError(
-            f"window ({window}) must exceed delay*(order-1) = {span}"
-        )
+        raise ValueError(f"window ({window}) must exceed delay*(order-1) = {span}")
 
 
 def compute(series, order=3, delay=1):
@@ -56,11 +55,13 @@ def delta(series, window=20, order=3, delay=1):
 
 def normalized(series, order=3, delay=1):
     """Entropy scaled to [0, 1] by log2(order!)."""
-    return normalize.by_max(compute(series, order=order, delay=delay),
-                            math.log2(math.factorial(order)))
+    return normalize.by_max(
+        compute(series, order=order, delay=delay), math.log2(math.factorial(order))
+    )
 
 
 def plot(series, window=20, order=3, delay=1, title=None):
     _check_window(window, order, delay)
-    return _core.make_plot(series, window, _kernel, order=order, delay=delay,
-                           title=title, ylabel="permutation entropy")
+    return _core.make_plot(
+        series, window, _kernel, order=order, delay=delay, title=title, ylabel="permutation entropy"
+    )

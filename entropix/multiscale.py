@@ -1,6 +1,6 @@
 """Multiscale entropy — sample entropy across coarse-grained time scales."""
+
 import matplotlib.pyplot as plt
-import numpy as np
 
 from . import _core, sample
 
@@ -8,7 +8,7 @@ from . import _core, sample
 def _coarse_grain(values, scale):
     """Average non-overlapping blocks of length `scale`."""
     n = len(values) // scale
-    trimmed = values[:n * scale]
+    trimmed = values[: n * scale]
     return trimmed.reshape(n, scale).mean(axis=1)
 
 

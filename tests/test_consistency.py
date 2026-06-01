@@ -45,8 +45,8 @@ def test_api_consistency():
     for measure in MEASURES:
         assert hasattr(measure, "compute"), f"{measure.__name__} missing compute"
         assert hasattr(measure, "rolling"), f"{measure.__name__} missing rolling"
-        assert hasattr(measure, "delta"),   f"{measure.__name__} missing delta"
-        assert hasattr(measure, "plot"),    f"{measure.__name__} missing plot"
+        assert hasattr(measure, "delta"), f"{measure.__name__} missing delta"
+        assert hasattr(measure, "plot"), f"{measure.__name__} missing plot"
 
         result = measure.compute(s)
         assert isinstance(result, float), (
@@ -57,9 +57,7 @@ def test_api_consistency():
         assert isinstance(rolling_out, pd.Series), (
             f"{measure.__name__}.rolling did not return pd.Series"
         )
-        assert len(rolling_out) == len(s), (
-            f"{measure.__name__}.rolling length mismatch"
-        )
+        assert len(rolling_out) == len(s), f"{measure.__name__}.rolling length mismatch"
 
 
 # ---------------------------------------------------------------------------
@@ -89,9 +87,7 @@ def test_series_index_preserved():
     s = pd.Series(np.random.RandomState(1).rand(60), index=idx)
     for measure in MEASURES:
         out = measure.rolling(s, window=20)
-        assert list(out.index) == list(idx), (
-            f"{measure.__name__}.rolling did not preserve index"
-        )
+        assert list(out.index) == list(idx), f"{measure.__name__}.rolling did not preserve index"
 
 
 # ---------------------------------------------------------------------------
@@ -103,17 +99,11 @@ def test_normalized_only_where_defined():
     """shannon, permutation, spectral have normalized in [0,1]; others do not."""
     s = pd.Series(np.random.RandomState(2).rand(100))
     for measure in [shannon, permutation, spectral]:
-        assert hasattr(measure, "normalized"), (
-            f"{measure.__name__} should have normalized"
-        )
+        assert hasattr(measure, "normalized"), f"{measure.__name__} should have normalized"
         val = measure.normalized(s)
-        assert 0.0 <= val <= 1.0, (
-            f"{measure.__name__}.normalized out of [0,1]: {val}"
-        )
+        assert 0.0 <= val <= 1.0, f"{measure.__name__}.normalized out of [0,1]: {val}"
     for measure in [sample, approximate, differential]:
-        assert not hasattr(measure, "normalized"), (
-            f"{measure.__name__} should NOT have normalized"
-        )
+        assert not hasattr(measure, "normalized"), f"{measure.__name__} should NOT have normalized"
 
 
 # ---------------------------------------------------------------------------
@@ -230,12 +220,14 @@ def test_shannon_normalized_uniform():
 def test_shannon_normalized_max_zero():
     """normalize.by_max returns 0.0 when max_value==0 (bins=1)."""
     from entropix.utils.normalize import by_max
+
     assert by_max(1.0, 0.0) == 0.0
 
 
 def test_shannon_normalize_clip():
     """normalize.by_max clips values outside [0, 1]."""
     from entropix.utils.normalize import by_max
+
     assert by_max(-1.0, 1.0) == 0.0
     assert by_max(2.0, 1.0) == 1.0
 
@@ -449,6 +441,7 @@ def test_shannon_kernel_zero_total():
     so we call the private function directly.
     """
     from entropix.shannon import _kernel as shannon_kernel
+
     # Manually trigger: bins > 0 but no data (only reachable directly)
     # counts.sum() == 0 can't happen for non-empty input with np.histogram,
     # but we test it via all-same-value case (all fall in one bin, total != 0).
@@ -468,6 +461,7 @@ def test_shannon_kernel_zero_total():
 def test_sliding_windows_invalid_window_zero():
     """sliding_windows raises for window=0."""
     from entropix.utils.windows import sliding_windows
+
     with pytest.raises(ValueError, match="positive"):
         list(sliding_windows(np.arange(10, dtype=float), window=0))
 
@@ -475,6 +469,7 @@ def test_sliding_windows_invalid_window_zero():
 def test_sliding_windows_window_too_large():
     """sliding_windows raises when window > len(values)."""
     from entropix.utils.windows import sliding_windows
+
     with pytest.raises(ValueError, match="larger"):
         list(sliding_windows(np.arange(5, dtype=float), window=10))
 
@@ -488,6 +483,7 @@ def test_dashboard_with_odd_number_of_measures():
     """dashboard with an odd number of measures triggers ax.axis('off') on last cell."""
     from entropix.utils.plot import dashboard
     import matplotlib.pyplot as plt
+
     s = pd.Series(np.random.RandomState(13).rand(120))
     # 3 measures → 2 rows × 2 cols = 4 subplots, 1 unused → hits axis("off")
     fig = dashboard(s, window=20, measures=("shannon", "permutation", "spectral"))
