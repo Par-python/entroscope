@@ -110,6 +110,11 @@ than noisy, an early indicator of a forming pattern.
 
 Python 3.9+, with numpy, pandas, scipy, and matplotlib (installed automatically).
 
+## Contributing
+
+Contributions are welcome. See [CONTRIBUTING.md](CONTRIBUTING.md) for setup, the
+test/lint commands, and how to add a new entropy measure.
+
 ## License
 
-MIT
+[MIT](LICENSE)

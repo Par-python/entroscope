@@ -2,6 +2,7 @@
 
 ## 0.1.1 — 2026-06-01
 
+- Added a `LICENSE` file (MIT) and a `CONTRIBUTING.md` guide.
 - Rewrote the README: clearer intro, working PyPI/CI/Python/license badges, and
   links to the example write-ups.
 - Added PyPI trove classifiers (supported Python versions, license, topics) so
