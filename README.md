@@ -1,16 +1,32 @@
 # entroscope
 
-[![CI](https://github.com/entroscope/entroscope/actions/workflows/ci.yml/badge.svg)](https://github.com/entroscope/entroscope/actions/workflows/ci.yml)
+[![PyPI version](https://img.shields.io/pypi/v/entroscope.svg)](https://pypi.org/project/entroscope/)
+[![Python versions](https://img.shields.io/pypi/pyversions/entroscope.svg)](https://pypi.org/project/entroscope/)
+[![CI](https://github.com/Par-python/entroscope/actions/workflows/ci.yml/badge.svg)](https://github.com/Par-python/entroscope/actions/workflows/ci.yml)
+[![License: MIT](https://img.shields.io/badge/license-MIT-green.svg)](https://opensource.org/licenses/MIT)
 
 **The definitive entropy toolkit for time series data.**
 
-`pip install entroscope` and get every entropy measure you'd ever need, with one
-consistent interface that works directly on pandas Series and numpy arrays.
+## The story
 
-Born from [NextOnMenu](https://nextonmenu.com), where Shannon entropy of food-trend
-search interest had to be computed by hand. entroscope makes that a one-liner.
+This library started as a copy-pasted function.
 
-## Install
+While building [NextOnMenu](https://github.com/Par-python/nextonmenu), I needed to
+know _when_ a food ingredient was about to trend. The insight: before something
+goes mainstream, its search interest stops looking random. Scattered, noisy
+curiosity across regions slowly concentrates into a clear signal. Information
+entropy measures exactly that concentration, so a falling Shannon entropy became
+an early warning that a trend was forming.
+
+The problem was that computing it meant re-writing the same histogram-and-log
+boilerplate in every notebook, getting the normalization subtly wrong, and having
+no clean way to watch it move over time. Entropy is a genuinely useful lens for
+any time series (markets, heart rates, server traffic, sensor streams), yet every
+project kept rebuilding it from scratch.
+
+entroscope is that boilerplate, done once and done right. Seven entropy measures,
+one consistent interface, working directly on the pandas Series and numpy arrays
+you already have:
 
 ```bash
 pip install entroscope
@@ -23,41 +39,91 @@ import pandas as pd
 from entroscope import shannon
 
 s = pd.Series([10, 20, 15, 80, 90, 85, 88, 92])
-shannon.compute(s)              # single entropy value
-shannon.rolling(s, window=20)   # rolling entropy over time
-shannon.delta(s, window=20)     # rate of change
-shannon.plot(s, window=20)      # matplotlib Figure
+
+shannon.compute(s)              # 0.73 (a single entropy value)
+shannon.rolling(s, window=20)   # rolling entropy over time (a Series)
+shannon.delta(s, window=20)     # rate of change of entropy
+shannon.normalized(s)           # entropy scaled to [0, 1]
+shannon.plot(s, window=20)      # a matplotlib Figure
 ```
 
-## Measures
+Every method accepts a `pd.Series` **or** a `np.ndarray`. Pass a Series and you
+get a Series back with its index preserved; pass an array and you get an array.
 
-shannon · permutation · sample · approximate · spectral · differential · multiscale
+## The seven measures
 
-Every measure shares the same API: `compute`, `rolling`, `delta`, `plot`
-(`normalized` where a theoretical maximum exists). Series in → Series out
-(index preserved); ndarray in → ndarray out.
+| Measure          | Import                    | Captures                                         |
+| ---------------- | ------------------------- | ------------------------------------------------ |
+| **Shannon**      | `entroscope.shannon`      | Uncertainty in a binned distribution             |
+| **Permutation**  | `entroscope.permutation`  | Ordinal-pattern complexity (robust to noise)     |
+| **Sample**       | `entroscope.sample`       | Regularity / predictability                      |
+| **Approximate**  | `entroscope.approximate`  | Regularity (less noise-sensitive, faster)        |
+| **Spectral**     | `entroscope.spectral`     | Spread of the power spectrum (frequency domain)  |
+| **Differential** | `entroscope.differential` | Continuous entropy via a fitted distribution     |
+| **Multiscale**   | `entroscope.multiscale`   | Sample entropy across coarse-grained time scales |
 
-| Method        | Returns                              |
-| ------------- | ------------------------------------ |
-| `compute`     | `float`                              |
-| `rolling`     | Series/ndarray, same length          |
-| `delta`       | Series/ndarray (first difference)    |
-| `normalized`  | `float` in [0, 1] (where defined)    |
-| `plot`        | `matplotlib.figure.Figure`           |
+## One consistent API
 
-## Real-world example — food-trend analysis (NextOnMenu)
+Every measure exposes the same methods, so switching measures is a one-word change:
+
+| Method                         | Input             | Returns                                               |
+| ------------------------------ | ----------------- | ----------------------------------------------------- |
+| `compute(x, **params)`         | Series or ndarray | `float`                                               |
+| `rolling(x, window, **params)` | Series or ndarray | Series/ndarray, same length (NaN warm-up)             |
+| `delta(x, window, **params)`   | Series or ndarray | Series/ndarray (first difference)                     |
+| `normalized(x, **params)`      | Series or ndarray | `float` in [0, 1] (shannon/permutation/spectral only) |
+| `plot(x, window, **params)`    | Series or ndarray | `matplotlib.figure.Figure`                            |
+
+Shannon additionally provides `geographic(df, col=...)` for spatial distributions
+(e.g. search interest by region). Multiscale provides `compute` and `plot`.
+
+## Visualization
 
 ```python
+from entroscope import plot
+
+# overlay several measures on one axis
+plot.compare(s, measures=["shannon", "permutation", "spectral"], window=20)
+
+# a grid of every measure at once
+plot.dashboard(s, window=20)
+
+# highlight where entropy drops sharply (trend / regime-change detection)
+plot.drop_events(s, measure="shannon", window=20, threshold=0.4)
+```
+
+All plot functions return a `matplotlib.figure.Figure` and never call
+`plt.show()`, so they're safe in scripts, notebooks, and CI alike.
+
+## Real-world examples
+
+Runnable scripts live in [`examples/`](examples/); worked write-ups are in
+[`docs/examples/`](docs/examples/):
+
+- **[Food trends](docs/examples/food_trends.md)**: detect when search interest
+  stops being random (the original NextOnMenu use case).
+- **[Finance](docs/examples/finance.md)**: market uncertainty via permutation
+  and spectral entropy.
+- **[Medical](docs/examples/medical.md)**: HRV, EEG seizure onset, respiration,
+  and continuous glucose.
+- **[Business](docs/examples/business.md)**: sales demand, web-traffic anomalies,
+  price volatility, and manufacturing QC.
+
+```python
+# food-trend analysis: entropy drops before a trend goes mainstream
 import pandas as pd
 from entroscope import shannon
 
-matcha_trends = pd.read_csv("matcha_trends.csv")["interest"]
-shannon.plot(matcha_trends, window=20, title="Matcha — entropy over time")
-# entropy drops before a trend goes mainstream
+matcha = pd.read_csv("matcha_trends.csv")["interest"]
+shannon.plot(matcha, window=20, title="Matcha entropy over time")
 ```
 
-A sustained drop in rolling Shannon entropy means search interest is becoming
-concentrated/structured rather than noisy — an early signal of a trend.
+A sustained drop in rolling entropy means a signal is becoming structured rather
+than noisy, an early indicator of a forming pattern.
+
+## Requirements
+
+Python 3.9+, with numpy, pandas, scipy, and matplotlib (installed automatically).
 
 ## License
 
