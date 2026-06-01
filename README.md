@@ -13,7 +13,14 @@ search interest had to be computed by hand. entropix makes that a one-liner.
 ## Install
 
 ```bash
-pip install entropix
+pip install tsentropy
+```
+
+The distribution is published as `tsentropy` (the name `entropix` was already
+taken on PyPI), but you import it as `entropix`:
+
+```python
+from entropix import shannon
 ```
 
 ## Quick start
