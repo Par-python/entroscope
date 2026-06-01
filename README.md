@@ -5,28 +5,13 @@
 [![CI](https://github.com/Par-python/entroscope/actions/workflows/ci.yml/badge.svg)](https://github.com/Par-python/entroscope/actions/workflows/ci.yml)
 [![License: MIT](https://img.shields.io/badge/license-MIT-green.svg)](https://opensource.org/licenses/MIT)
 
-**The definitive entropy toolkit for time series data.**
+**The definitive entropy toolkit for time series data.** Seven entropy measures,
+one consistent interface, working directly on pandas Series and numpy arrays.
 
-## The story
-
-This library started as a copy-pasted function.
-
-While building [NextOnMenu](https://github.com/Par-python/nextonmenu), I needed to
-know _when_ a food ingredient was about to trend. The insight: before something
-goes mainstream, its search interest stops looking random. Scattered, noisy
-curiosity across regions slowly concentrates into a clear signal. Information
-entropy measures exactly that concentration, so a falling Shannon entropy became
-an early warning that a trend was forming.
-
-The problem was that computing it meant re-writing the same histogram-and-log
-boilerplate in every notebook, getting the normalization subtly wrong, and having
-no clean way to watch it move over time. Entropy is a genuinely useful lens for
-any time series (markets, heart rates, server traffic, sensor streams), yet every
-project kept rebuilding it from scratch.
-
-entroscope is that boilerplate, done once and done right. Seven entropy measures,
-one consistent interface, working directly on the pandas Series and numpy arrays
-you already have:
+It started in [NextOnMenu](https://github.com/Par-python/nextonmenu): a falling
+Shannon entropy of a food's regional search interest turned out to be an early
+signal that it was about to trend. Computing it meant re-writing the same
+histogram-and-log boilerplate every time. entroscope is that code, written once.
 
 ```bash
 pip install entroscope
