@@ -4,6 +4,7 @@ These guard against the public API drifting out from under the documented
 examples. We import each example module and run its `main()`, asserting it
 completes without error.
 """
+
 import importlib.util
 import sys
 from pathlib import Path
@@ -35,9 +36,16 @@ def test_synthetic_generators_return_series():
     import pandas as pd
 
     data = _load("_synthetic")
-    for gen in [data.heart_rate, data.eeg, data.respiration, data.glucose,
-                data.daily_sales, data.web_traffic, data.stock_prices,
-                data.qc_sensor]:
+    for gen in [
+        data.heart_rate,
+        data.eeg,
+        data.respiration,
+        data.glucose,
+        data.daily_sales,
+        data.web_traffic,
+        data.stock_prices,
+        data.qc_sensor,
+    ]:
         series = gen()
         assert isinstance(series, pd.Series)
         assert len(series) > 0
