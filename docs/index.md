@@ -5,7 +5,13 @@ consistent interface, native pandas/numpy support.
 
 - **[Quickstart](quickstart.md)** — install and first entropy in 60 seconds.
 - **Examples** — [food trends](examples/food_trends.md),
-  [finance](examples/finance.md), [biomedical](examples/biomedical.md).
+  [finance](examples/finance.md), [biomedical](examples/biomedical.md),
+  [medical & biomedical](examples/medical.md) (HRV, EEG, respiration, glucose),
+  [business & operational](examples/business.md) (sales, web traffic, prices, QC).
+
+Runnable versions of the medical and business examples live in the
+[`examples/`](https://github.com/entropix/entropix/tree/master/examples)
+directory — `python examples/medical.py` and `python examples/business.py`.
 
 ## Measures at a glance
 

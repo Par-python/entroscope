@@ -2,6 +2,13 @@
 
 ## Unreleased
 
+- Runnable example scripts in `examples/`: four medical/biomedical scenarios
+  (HRV/sample, EEG/permutation+spectral, respiration/approximate,
+  glucose/differential) and four business scenarios (sales/shannon,
+  web-traffic/spectral, prices/permutation, QC/multiscale), plus matching
+  `docs/examples/medical.md` and `docs/examples/business.md` pages.
+- Smoke tests (`tests/test_examples.py`) run the example scripts in CI so they
+  can't silently break; CI lint now covers `examples/` too.
 - CI/CD via GitHub Actions: lint (ruff check + format), test matrix across
   Python 3.9–3.14 with a 90% coverage gate, and a build + `twine check` job.
 - Tag-triggered PyPI publish workflow using trusted publishing (inert until a
