@@ -13,10 +13,10 @@ search interest had to be computed by hand. entropix makes that a one-liner.
 ## Install
 
 ```bash
-pip install tsentropy
+pip install entroscope
 ```
 
-The distribution is published as `tsentropy` (the name `entropix` was already
+The distribution is published as `entroscope` (the name `entropix` was already
 taken on PyPI), but you import it as `entropix`:
 
 ```python

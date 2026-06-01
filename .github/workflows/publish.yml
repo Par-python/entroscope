@@ -2,7 +2,7 @@ name: Publish to PyPI
 
 # Publishes when you push a version tag like v0.1.0.
 # Uses PyPI Trusted Publishing (OIDC) — no API token needed in repo secrets.
-# INERT until you configure a trusted publisher for `entropix` on PyPI:
+# INERT until you configure a trusted publisher for `entroscope` on PyPI:
 #   https://docs.pypi.org/trusted-publishers/adding-a-publisher/
 #   workflow: publish.yml, environment: pypi
 
