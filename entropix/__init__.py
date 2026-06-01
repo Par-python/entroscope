@@ -1,5 +1,5 @@
 """entropix — the definitive entropy toolkit for time series data."""
-from . import shannon, permutation, spectral, sample, approximate
+from . import shannon, permutation, spectral, sample, approximate, differential
 
 __version__ = "0.1.0"
-__all__ = ["shannon", "permutation", "spectral", "sample", "approximate"]
+__all__ = ["shannon", "permutation", "spectral", "sample", "approximate", "differential"]
