@@ -69,3 +69,15 @@ def test_delta_is_diff_of_rolling():
     dlt = _core.delta(vals, 3, lambda w: float(np.mean(w)))
     assert np.isnan(dlt[2])  # first valid rolling has no previous
     assert dlt[3] == pytest.approx(roll[3] - roll[2])
+
+
+def test_rolling_window_zero_raises():
+    with pytest.raises(ValueError):
+        _core.rolling(np.arange(5.0), 0, lambda w: 0.0)
+
+
+def test_delta_series_preserves_index():
+    s = pd.Series(np.arange(6.0), index=list("abcdef"))
+    out = _core.delta(s, 3, lambda w: float(np.mean(w)))
+    assert isinstance(out, pd.Series)
+    assert list(out.index) == list("abcdef")

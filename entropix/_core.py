@@ -45,6 +45,8 @@ def rolling(x, window, kernel, **params):
     """
     arr, index = as_array(x)
     n = len(arr)
+    if window <= 0:
+        raise ValueError("window must be a positive integer")
     if window > n:
         raise ValueError(f"window ({window}) is larger than series length ({n})")
     out = np.full(n, np.nan)
