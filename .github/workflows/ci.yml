@@ -18,9 +18,9 @@ jobs:
       - name: Install ruff
         run: pip install ruff
       - name: Ruff check
-        run: ruff check entropix tests examples
+        run: ruff check entroscope tests examples
       - name: Ruff format check
-        run: ruff format --check entropix tests examples
+        run: ruff format --check entroscope tests examples
 
   test:
     name: Test (Python ${{ matrix.python-version }})
@@ -40,7 +40,7 @@ jobs:
           python -m pip install --upgrade pip
           pip install -e ".[dev]"
       - name: Run tests with coverage gate
-        run: pytest --cov=entropix --cov-report=term-missing --cov-fail-under=90 -q
+        run: pytest --cov=entroscope --cov-report=term-missing --cov-fail-under=90 -q
 
   build:
     name: Build & metadata check

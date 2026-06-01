@@ -9,7 +9,7 @@ description = "The definitive entropy toolkit for time series data"
 readme = "README.md"
 requires-python = ">=3.9"
 license = { text = "MIT" }
-authors = [{ name = "entropix contributors" }]
+authors = [{ name = "entroscope contributors" }]
 keywords = ["entropy", "time-series", "shannon", "permutation", "spectral"]
 dependencies = ["numpy", "pandas", "scipy", "matplotlib"]
 
@@ -17,10 +17,10 @@ dependencies = ["numpy", "pandas", "scipy", "matplotlib"]
 dev = ["pytest", "pytest-cov", "ruff"]
 
 [project.urls]
-Homepage = "https://github.com/entropix/entropix"
+Homepage = "https://github.com/entroscope/entroscope"
 
 [tool.setuptools.packages.find]
-include = ["entropix*"]
+include = ["entroscope*"]
 
 [tool.pytest.ini_options]
 testpaths = ["tests"]

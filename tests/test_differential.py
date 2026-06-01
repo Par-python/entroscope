@@ -2,7 +2,7 @@ import numpy as np
 import pandas as pd
 import pytest
 import matplotlib
-from entropix import differential
+from entroscope import differential
 
 
 def test_normal_matches_analytic_formula():

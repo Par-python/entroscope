@@ -1,7 +1,7 @@
 import numpy as np
 import pandas as pd
 import matplotlib
-from entropix import spectral
+from entroscope import spectral
 
 
 def test_pure_sine_lower_than_noise():

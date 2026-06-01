@@ -1,8 +1,8 @@
 import numpy as np
 import pandas as pd
 import pytest
-from entropix import _core
-from entropix.utils import windows
+from entroscope import _core
+from entroscope.utils import windows
 
 
 def test_as_array_from_list():
@@ -83,7 +83,7 @@ def test_delta_series_preserves_index():
     assert list(out.index) == list("abcdef")
 
 
-from entropix.utils import normalize
+from entroscope.utils import normalize
 
 
 def test_normalize_by_max_basic():

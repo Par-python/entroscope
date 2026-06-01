@@ -2,7 +2,7 @@ import numpy as np
 import pandas as pd
 import pytest
 import matplotlib
-from entropix import approximate
+from entroscope import approximate
 
 
 def test_regular_signal_lower_than_noise():

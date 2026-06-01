@@ -4,7 +4,7 @@ Detect regularity in physiological signals such as heart rate.
 
 ```python
 import pandas as pd
-from entropix import sample
+from entroscope import sample
 
 heart_rate = pd.read_csv("ecg.csv")["bpm"]
 regularity = sample.rolling(heart_rate, window=100, m=2, r=0.2)

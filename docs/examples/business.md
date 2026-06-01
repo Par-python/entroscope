@@ -1,7 +1,7 @@
 # Business & operational data
 
 Four worked examples on raw business data. Runnable end-to-end in
-[`examples/business.py`](https://github.com/entropix/entropix/blob/master/examples/business.py)
+[`examples/business.py`](https://github.com/entroscope/entroscope/blob/master/examples/business.py)
 (uses synthetic data so it runs with no files — swap in `pd.read_csv(...)` for
 your sales exports, server logs, price feeds, or sensor dumps).
 
@@ -12,7 +12,7 @@ into a stable, repeating pattern.
 
 ```python
 import pandas as pd
-from entropix import shannon
+from entroscope import shannon
 
 sales = pd.read_csv("sales.csv")["units_sold"]
 demand_entropy = shannon.rolling(sales, window=21, bins=10)
@@ -26,7 +26,7 @@ or anomalous bursts spread power across many frequencies, spectral entropy
 **jumps**.
 
 ```python
-from entropix import spectral
+from entroscope import spectral
 
 requests = pd.read_csv("access_log_hourly.csv")["requests"]
 anomaly_score = spectral.rolling(requests, window=72, sf=24.0)  # 24 samples/day
@@ -39,7 +39,7 @@ Permutation entropy is a noise-robust gauge of how disordered price moves are.
 It **rises** as a calm, trending market turns turbulent.
 
 ```python
-from entropix import permutation
+from entroscope import permutation
 
 prices = pd.read_csv("prices.csv")["close"]
 uncertainty = permutation.rolling(prices, window=50, order=3)
@@ -53,7 +53,7 @@ process drifts out of control, its profile **diverges** from the in-control
 baseline — often most visibly at coarser scales.
 
 ```python
-from entropix import multiscale
+from entroscope import multiscale
 
 readings = pd.read_csv("qc_sensor.csv")["dimension_mm"]
 baseline = multiscale.compute(readings.iloc[:400], scales=range(1, 6))

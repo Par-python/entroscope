@@ -21,7 +21,8 @@ coverage.xml
 .DS_Store
 
 # Local Claude scratch
-/claude
+/.claude
+claude.md
 
 # Superpowers brainstorming/spec docs (local only)
 docs/superpowers/

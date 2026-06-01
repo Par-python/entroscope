@@ -2,7 +2,7 @@ import numpy as np
 import pandas as pd
 import pytest
 import matplotlib
-from entropix import shannon
+from entroscope import shannon
 
 
 def test_constant_series_zero_entropy():

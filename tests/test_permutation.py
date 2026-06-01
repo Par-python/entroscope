@@ -2,7 +2,7 @@ import numpy as np
 import pandas as pd
 import pytest
 import matplotlib
-from entropix import permutation
+from entroscope import permutation
 
 
 def test_monotonic_series_low_entropy():

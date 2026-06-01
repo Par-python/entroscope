@@ -15,7 +15,7 @@ import numpy as np
 import pandas as pd
 import pytest
 
-from entropix import (
+from entroscope import (
     approximate,
     differential,
     multiscale,
@@ -219,14 +219,14 @@ def test_shannon_normalized_uniform():
 
 def test_shannon_normalized_max_zero():
     """normalize.by_max returns 0.0 when max_value==0 (bins=1)."""
-    from entropix.utils.normalize import by_max
+    from entroscope.utils.normalize import by_max
 
     assert by_max(1.0, 0.0) == 0.0
 
 
 def test_shannon_normalize_clip():
     """normalize.by_max clips values outside [0, 1]."""
-    from entropix.utils.normalize import by_max
+    from entroscope.utils.normalize import by_max
 
     assert by_max(-1.0, 1.0) == 0.0
     assert by_max(2.0, 1.0) == 1.0
@@ -440,7 +440,7 @@ def test_shannon_kernel_zero_total():
     Actually the as_array guard catches empty arrays before reaching _kernel,
     so we call the private function directly.
     """
-    from entropix.shannon import _kernel as shannon_kernel
+    from entroscope.shannon import _kernel as shannon_kernel
 
     # Manually trigger: bins > 0 but no data (only reachable directly)
     # counts.sum() == 0 can't happen for non-empty input with np.histogram,
@@ -460,7 +460,7 @@ def test_shannon_kernel_zero_total():
 
 def test_sliding_windows_invalid_window_zero():
     """sliding_windows raises for window=0."""
-    from entropix.utils.windows import sliding_windows
+    from entroscope.utils.windows import sliding_windows
 
     with pytest.raises(ValueError, match="positive"):
         list(sliding_windows(np.arange(10, dtype=float), window=0))
@@ -468,7 +468,7 @@ def test_sliding_windows_invalid_window_zero():
 
 def test_sliding_windows_window_too_large():
     """sliding_windows raises when window > len(values)."""
-    from entropix.utils.windows import sliding_windows
+    from entroscope.utils.windows import sliding_windows
 
     with pytest.raises(ValueError, match="larger"):
         list(sliding_windows(np.arange(5, dtype=float), window=10))
@@ -481,7 +481,7 @@ def test_sliding_windows_window_too_large():
 
 def test_dashboard_with_odd_number_of_measures():
     """dashboard with an odd number of measures triggers ax.axis('off') on last cell."""
-    from entropix.utils.plot import dashboard
+    from entroscope.utils.plot import dashboard
     import matplotlib.pyplot as plt
 
     s = pd.Series(np.random.RandomState(13).rand(120))

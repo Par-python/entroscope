@@ -4,7 +4,7 @@ Measure market uncertainty over time with permutation and spectral entropy.
 
 ```python
 import pandas as pd
-from entropix import permutation, spectral
+from entroscope import permutation, spectral
 
 stock_prices = pd.read_csv("sp500.csv")["close"]
 perm_entropy = permutation.rolling(stock_prices, window=50, order=3)

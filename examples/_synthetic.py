@@ -1,4 +1,4 @@
-"""Synthetic-data generators for the entropix examples.
+"""Synthetic-data generators for the entroscope examples.
 
 These produce realistic-shaped signals so every example runs with no external
 data files. Each generator returns a ``pd.Series`` with a meaningful index.

@@ -2,7 +2,7 @@
 
 Four worked examples on physiological data. Each pairs a measure to the kind of
 change it detects best. Runnable end-to-end in
-[`examples/medical.py`](https://github.com/entropix/entropix/blob/master/examples/medical.py)
+[`examples/medical.py`](https://github.com/entroscope/entroscope/blob/master/examples/medical.py)
 (uses synthetic data so it runs with no files — swap in `pd.read_csv(...)` for
 your own recordings).
 
@@ -13,7 +13,7 @@ Reduced beat-to-beat variability is clinically meaningful. Sample entropy
 
 ```python
 import pandas as pd
-from entropix import sample
+from entroscope import sample
 
 bpm = pd.read_csv("ecg.csv")["bpm"]
 regularity = sample.rolling(bpm, window=100, m=2, r=0.2)
@@ -27,7 +27,7 @@ permutation and spectral entropy **fall** as broadband background activity gives
 way to a single frequency.
 
 ```python
-from entropix import permutation, spectral
+from entroscope import permutation, spectral
 
 eeg = pd.read_csv("eeg.csv")["uv"]
 perm = permutation.rolling(eeg, window=100, order=4)
@@ -41,7 +41,7 @@ Approximate entropy **rises** as a steady breathing cycle breaks down into
 irregular, labored breathing.
 
 ```python
-from entropix import approximate
+from entroscope import approximate
 
 chest = pd.read_csv("respiration.csv")["expansion"]
 irregularity = approximate.rolling(chest, window=80, m=2, r=0.2)
@@ -54,7 +54,7 @@ Differential entropy is a function of spread, so it **rises** when glucose
 variability increases — a shift from well-controlled to a volatile regime.
 
 ```python
-from entropix import differential
+from entroscope import differential
 
 glucose = pd.read_csv("cgm.csv")["mgdl"]
 variability = differential.rolling(glucose, window=48, dist="normal")

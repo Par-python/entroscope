@@ -1,14 +1,14 @@
-# entropix
+# entroscope
 
-[![CI](https://github.com/entropix/entropix/actions/workflows/ci.yml/badge.svg)](https://github.com/entropix/entropix/actions/workflows/ci.yml)
+[![CI](https://github.com/entroscope/entroscope/actions/workflows/ci.yml/badge.svg)](https://github.com/entroscope/entroscope/actions/workflows/ci.yml)
 
 **The definitive entropy toolkit for time series data.**
 
-`pip install entropix` and get every entropy measure you'd ever need, with one
+`pip install entroscope` and get every entropy measure you'd ever need, with one
 consistent interface that works directly on pandas Series and numpy arrays.
 
 Born from [NextOnMenu](https://nextonmenu.com), where Shannon entropy of food-trend
-search interest had to be computed by hand. entropix makes that a one-liner.
+search interest had to be computed by hand. entroscope makes that a one-liner.
 
 ## Install
 
@@ -16,18 +16,11 @@ search interest had to be computed by hand. entropix makes that a one-liner.
 pip install entroscope
 ```
 
-The distribution is published as `entroscope` (the name `entropix` was already
-taken on PyPI), but you import it as `entropix`:
-
-```python
-from entropix import shannon
-```
-
 ## Quick start
 
 ```python
 import pandas as pd
-from entropix import shannon
+from entroscope import shannon
 
 s = pd.Series([10, 20, 15, 80, 90, 85, 88, 92])
 shannon.compute(s)              # single entropy value
@@ -56,7 +49,7 @@ Every measure shares the same API: `compute`, `rolling`, `delta`, `plot`
 
 ```python
 import pandas as pd
-from entropix import shannon
+from entroscope import shannon
 
 matcha_trends = pd.read_csv("matcha_trends.csv")["interest"]
 shannon.plot(matcha_trends, window=20, title="Matcha — entropy over time")

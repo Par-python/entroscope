@@ -8,7 +8,7 @@ external files. Swap the generator call for ``pd.read_csv(...)['column']`` to
 use your own recordings.
 """
 
-from entropix import sample, approximate, permutation, spectral, differential
+from entroscope import sample, approximate, permutation, spectral, differential
 
 try:  # examples run both as a script and as a module
     from . import _synthetic as data

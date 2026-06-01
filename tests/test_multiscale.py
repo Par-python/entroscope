@@ -1,6 +1,6 @@
 import numpy as np
 import matplotlib
-from entropix import multiscale
+from entroscope import multiscale
 
 
 def test_compute_returns_dict_keyed_by_scale():
@@ -13,7 +13,7 @@ def test_compute_returns_dict_keyed_by_scale():
 
 
 def test_scale_one_matches_sample_entropy():
-    from entropix import sample
+    from entroscope import sample
 
     rng = np.random.RandomState(1)
     data = rng.rand(400)

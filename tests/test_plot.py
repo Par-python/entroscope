@@ -1,6 +1,6 @@
 import numpy as np
 import matplotlib
-from entropix import plot
+from entroscope import plot
 
 
 def _data():

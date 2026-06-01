@@ -1,4 +1,4 @@
-# entropix
+# entroscope
 
 The definitive entropy toolkit for time series data. Seven measures, one
 consistent interface, native pandas/numpy support.
@@ -10,7 +10,7 @@ consistent interface, native pandas/numpy support.
   [business & operational](examples/business.md) (sales, web traffic, prices, QC).
 
 Runnable versions of the medical and business examples live in the
-[`examples/`](https://github.com/entropix/entropix/tree/master/examples)
+[`examples/`](https://github.com/entroscope/entroscope/tree/master/examples)
 directory — `python examples/medical.py` and `python examples/business.py`.
 
 ## Measures at a glance
