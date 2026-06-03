@@ -9,6 +9,7 @@ from . import (
     differential,
     multiscale,
     transfer,
+    divergence,
 )
 from .utils import plot
 
@@ -22,5 +23,6 @@ __all__ = [
     "differential",
     "multiscale",
     "transfer",
+    "divergence",
     "plot",
 ]

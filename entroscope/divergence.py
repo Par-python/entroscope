@@ -71,3 +71,21 @@ def js(p, q, bins=10):
     pp, qq = _binned_probs(pa, qa, bins)
     m = 0.5 * (pp + qq)
     return 0.5 * _kl_bits(pp, m) + 0.5 * _kl_bits(qq, m)
+
+
+def plot(p, q, bins=10, title=None):
+    """Overlay the two binned distributions. Returns a Figure; never shows it."""
+    pa, _ = _core.as_array(p)
+    qa, _ = _core.as_array(q)
+    pp, qq = _binned_probs(pa, qa, bins)
+    x = np.arange(len(pp))
+    fig, ax = plt.subplots(figsize=(10, 4))
+    width = 0.4
+    ax.bar(x - width / 2, pp, width=width, label="p", alpha=0.8)
+    ax.bar(x + width / 2, qq, width=width, label="q", alpha=0.8)
+    ax.set_title(title or f"Binned distributions (bins={bins})")
+    ax.set_xlabel("bin")
+    ax.set_ylabel("probability")
+    ax.legend()
+    fig.tight_layout()
+    return fig

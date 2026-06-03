@@ -83,3 +83,21 @@ def test_js_known_value():
     q = np.array([0.9, 0.9])   # both in bin1
     val = dv.js(p, q, bins=2)
     assert val == pytest.approx(1.0, abs=1e-3)
+
+
+import matplotlib
+
+
+def test_plot_returns_figure():
+    rng = np.random.RandomState(4)
+    a = rng.randn(1000)
+    b = rng.randn(1000) + 1.0
+    fig = dv.plot(a, b, bins=20)
+    assert isinstance(fig, matplotlib.figure.Figure)
+
+
+def test_divergence_in_public_api():
+    import entroscope
+    assert "divergence" in entroscope.__all__
+    assert hasattr(entroscope.divergence, "kl")
+    assert hasattr(entroscope.divergence, "js")
