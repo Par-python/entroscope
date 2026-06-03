@@ -25,7 +25,8 @@ def _load(module_name):
 
 
 @pytest.mark.parametrize(
-    "name", ["medical", "business", "correlation_stability", "information_flow"]
+    "name",
+    ["medical", "business", "correlation_stability", "information_flow", "drift"],
 )
 def test_example_runs(name, capsys):
     module = _load(name)
@@ -83,3 +84,13 @@ def test_lead_lag_assets_is_directional_frame():
     assert isinstance(df, pd.DataFrame)
     assert list(df.columns) == ["a", "b"]
     assert len(df) > 0
+
+
+def test_distribution_drift_returns_two_series():
+    import pandas as pd
+
+    data = _load("_synthetic")
+    reference, drifted = data.distribution_drift()
+    assert isinstance(reference, pd.Series)
+    assert isinstance(drifted, pd.Series)
+    assert len(reference) > 0 and len(drifted) > 0

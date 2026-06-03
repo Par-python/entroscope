@@ -179,3 +179,16 @@ def lead_lag_assets(seed=15):
     b[1:] = a[:-1] + 0.3 * rng.randn(n - 1)
     idx = pd.date_range("2025-01-01", periods=n, freq="B")
     return pd.DataFrame({"a": a, "b": b}, index=idx)
+
+
+def distribution_drift(seed=16):
+    """A reference batch and a drifted batch of the same measurement.
+
+    The reference is centered and tight; the drifted batch shifts and widens, as
+    production data does when the world changes under a trained model. Returns a
+    (reference, drifted) tuple of pd.Series.
+    """
+    rng = _rng(seed)
+    reference = pd.Series(100 + 5 * rng.randn(2000), name="reference")
+    drifted = pd.Series(108 + 9 * rng.randn(2000), name="drifted")
+    return reference, drifted
