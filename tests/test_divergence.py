@@ -35,8 +35,8 @@ def test_kl_identical_is_zero():
 def test_kl_known_value():
     # Construct samples that bin into known probabilities over 2 bins on [0,1).
     # p: 75% in bin0, 25% in bin1 ; q: 50/50.
-    p = np.array([0.1, 0.1, 0.1, 0.6])           # 3 in [0,0.5), 1 in [0.5,1)
-    q = np.array([0.1, 0.6])                       # 1 in each
+    p = np.array([0.1, 0.1, 0.1, 0.6])  # 3 in [0,0.5), 1 in [0.5,1)
+    q = np.array([0.1, 0.6])  # 1 in each
     # KL = 0.75*log2(0.75/0.5) + 0.25*log2(0.25/0.5) = 0.75*0.585 - 0.25 = 0.1887
     val = dv.kl(p, q, bins=2)
     assert val == pytest.approx(0.1887, abs=0.005)
@@ -79,8 +79,8 @@ def test_js_bounded_zero_to_one():
 
 def test_js_known_value():
     # Two 2-bin distributions: p=[1,0], q=[0,1] (disjoint) -> JS = 1 bit exactly.
-    p = np.array([0.1, 0.1])   # both in bin0 of shared range [0.1,0.9]
-    q = np.array([0.9, 0.9])   # both in bin1
+    p = np.array([0.1, 0.1])  # both in bin0 of shared range [0.1,0.9]
+    q = np.array([0.9, 0.9])  # both in bin1
     val = dv.js(p, q, bins=2)
     assert val == pytest.approx(1.0, abs=1e-3)
 
@@ -98,6 +98,7 @@ def test_plot_returns_figure():
 
 def test_divergence_in_public_api():
     import entroscope
+
     assert "divergence" in entroscope.__all__
     assert hasattr(entroscope.divergence, "kl")
     assert hasattr(entroscope.divergence, "js")
