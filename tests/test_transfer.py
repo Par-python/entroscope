@@ -131,3 +131,17 @@ def test_binned_ksg_cross_check():
     te_b = est.te_binned(yf, yp, xp, bins=12)
     te_k = est.te_ksg(yf, yp, xp, k=4)
     assert te_b == pytest.approx(te_k, abs=0.1)
+
+
+def test_gate_b_ksg_mutual_information_matches_analytic():
+    # Correlated bivariate Gaussian; analytic MI = -0.5 ln(1 - r^2) nats.
+    r = 0.6
+    rng = np.random.RandomState(13)
+    n = 20000
+    a = rng.randn(n)
+    b = r * a + np.sqrt(1 - r ** 2) * rng.randn(n)
+    true_mi_nats = -0.5 * np.log(1 - r ** 2)
+    mi_nats = est.ksg_mutual_information(
+        a.reshape(-1, 1), b.reshape(-1, 1), k=4
+    )
+    assert mi_nats == pytest.approx(true_mi_nats, abs=0.03)

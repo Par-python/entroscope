@@ -92,3 +92,20 @@ def te_ksg(y_future, y_past, x_past, k=4):
     terms = digamma(n_yp + 1) - digamma(n_fp + 1) - digamma(n_px + 1)
     te_nats = digamma(k) + np.mean(terms)
     return float(te_nats / _LN2)
+
+
+def ksg_mutual_information(a, b, k=4):
+    """KSG (Kraskov algorithm 1) mutual information between a and b, in NATS.
+
+    a, b are (n, da) and (n, db). Returns I(a; b) in nats so it can be checked
+    against the analytic -0.5 ln(1 - r^2) for correlated Gaussians.
+    """
+    a = np.asarray(a, dtype=float)
+    b = np.asarray(b, dtype=float)
+    n = len(a)
+    joint = np.column_stack([a, b])
+    eps = knn.kth_neighbor_distance(joint, k=k)
+    n_a = knn.count_within_radius(a, eps)
+    n_b = knn.count_within_radius(b, eps)
+    mi = digamma(k) + digamma(n) - np.mean(digamma(n_a + 1) + digamma(n_b + 1))
+    return float(mi)
