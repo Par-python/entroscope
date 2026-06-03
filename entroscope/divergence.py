@@ -35,3 +35,27 @@ def _binned_probs(p, q, bins):
     pp = cp / cp.sum()
     qq = cq / cq.sum()
     return pp, qq
+
+
+_LN2 = np.log(2.0)
+
+
+def _kl_bits(pp, qq):
+    """KL(pp || qq) in bits, with epsilon smoothing so the result stays finite."""
+    pp = pp + _EPS
+    qq = qq + _EPS
+    pp = pp / pp.sum()
+    qq = qq / qq.sum()
+    return float(np.sum(rel_entr(pp, qq)) / _LN2)
+
+
+def kl(p, q, bins=10):
+    """Kullback-Leibler divergence KL(p || q) in bits (directional).
+
+    p, q are raw samples; both are binned over a shared range. Epsilon smoothing
+    keeps the result finite even when q has an empty bin where p has mass.
+    """
+    pa, _ = _core.as_array(p)
+    qa, _ = _core.as_array(q)
+    pp, qq = _binned_probs(pa, qa, bins)
+    return _kl_bits(pp, qq)
