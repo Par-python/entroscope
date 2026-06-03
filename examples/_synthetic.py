@@ -131,3 +131,35 @@ def qc_sensor(seed=13):
     out_of_control = 50 + np.linspace(0, 3, 400) + 1.5 * rng.randn(400)
     values = np.concatenate([in_control, out_of_control])
     return pd.Series(values, name="dimension_mm")
+
+
+def correlated_assets(seed=14):
+    """Two asset return streams whose correlation regime breaks down halfway.
+
+    First half: both are driven by a shared market factor, so their rolling
+    correlation sits in a stable, high band. Second half: the shared driver
+    fades and a sign-flipping component takes over, so the correlation wanders
+    all over the place. The *correlation series itself* goes from steady to
+    erratic — that is what entropy of the rolling correlation is meant to catch.
+
+    Returns a 2-column DataFrame of daily returns (``a``, ``b``).
+    """
+    rng = _rng(seed)
+    n = 400
+
+    # Stable regime: strong shared factor + small idiosyncratic noise.
+    factor = rng.randn(n)
+    a_stable = factor + 0.4 * rng.randn(n)
+    b_stable = factor + 0.4 * rng.randn(n)
+
+    # Breakdown regime: shared factor weakens and a slow sign-flipping driver
+    # drags the correlation up and down, so it never settles.
+    factor2 = rng.randn(n)
+    flip = np.sin(np.linspace(0, 6 * np.pi, n))  # swings the coupling sign
+    a_unstable = factor2 + 0.8 * rng.randn(n)
+    b_unstable = flip * factor2 + 0.8 * rng.randn(n)
+
+    a = np.concatenate([a_stable, a_unstable])
+    b = np.concatenate([b_stable, b_unstable])
+    idx = pd.date_range("2025-01-01", periods=len(a), freq="B")
+    return pd.DataFrame({"a": a, "b": b}, index=idx)

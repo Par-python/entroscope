@@ -24,7 +24,7 @@ def _load(module_name):
     return module
 
 
-@pytest.mark.parametrize("name", ["medical", "business"])
+@pytest.mark.parametrize("name", ["medical", "business", "correlation_stability"])
 def test_example_runs(name, capsys):
     module = _load(name)
     module.main()  # must not raise
@@ -49,3 +49,25 @@ def test_synthetic_generators_return_series():
         series = gen()
         assert isinstance(series, pd.Series)
         assert len(series) > 0
+
+
+def test_correlated_assets_has_regime_breakdown():
+    """The generator must actually deliver the stable->broken regime it claims.
+
+    The correlation-stability example is only meaningful if the first half is
+    genuinely more correlated than the second. Assert that behavioral contract,
+    not just the type — if the regime logic is broken later, this fails loudly.
+    """
+    import pandas as pd
+
+    data = _load("_synthetic")
+    df = data.correlated_assets()
+
+    assert isinstance(df, pd.DataFrame)
+    assert list(df.columns) == ["a", "b"]
+    assert len(df) > 0
+
+    half = len(df) // 2
+    stable_corr = df["a"].iloc[:half].corr(df["b"].iloc[:half])
+    broken_corr = df["a"].iloc[half:].corr(df["b"].iloc[half:])
+    assert stable_corr > broken_corr
