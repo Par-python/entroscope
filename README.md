@@ -35,6 +35,17 @@ shannon.plot(s, window=20)      # a matplotlib Figure
 Every method accepts a `pd.Series` **or** a `np.ndarray`. Pass a Series and you
 get a Series back with its index preserved; pass an array and you get an array.
 
+### Headless environments (Docker, CI)
+
+`entroscope` does not change your matplotlib backend on import, so interactive
+plotting in notebooks keeps working. In a headless environment (a Docker
+container or CI runner) where you want a guaranteed non-interactive backend, set
+the standard environment variable:
+
+```bash
+export MPLBACKEND=Agg        # or, in a Dockerfile:  ENV MPLBACKEND=Agg
+```
+
 ## The seven measures
 
 | Measure          | Import                    | Captures                                         |

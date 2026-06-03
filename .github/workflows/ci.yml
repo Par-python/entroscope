@@ -25,6 +25,8 @@ jobs:
   test:
     name: Test (Python ${{ matrix.python-version }})
     runs-on: ubuntu-latest
+    env:
+      MPLBACKEND: Agg
     strategy:
       fail-fast: false
       matrix:
