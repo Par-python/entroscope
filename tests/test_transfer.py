@@ -47,3 +47,25 @@ def test_count_within_radius_excludes_self_and_boundary():
     counts = knn.count_within_radius(pts, radii=np.array([1.5, 1.5, 1.5]))
     # point 0: neighbor at 1 (dist1<1.5) -> 1 ; point 1: 0 and 2 -> 2 ; point2: 1 ->1
     np.testing.assert_array_equal(counts, [1, 2, 1])
+
+
+def test_te_binned_independent_near_zero():
+    rng = np.random.RandomState(0)
+    x = rng.randn(4000)
+    y = rng.randn(4000)
+    yf, yp, xp = est.embed(x, y, lag=1)
+    te = est.te_binned(yf, yp, xp, bins=6)
+    assert abs(te) < 0.05
+
+
+def test_te_binned_directional_coupling():
+    rng = np.random.RandomState(1)
+    x = rng.randn(4000)
+    y = np.empty_like(x)
+    y[0] = rng.randn()
+    y[1:] = x[:-1] + 0.1 * rng.randn(3999)  # y_t driven by x_{t-1}
+    yf, yp, xp = est.embed(x, y, lag=1)
+    te_xy = est.te_binned(yf, yp, xp, bins=6)
+    yf2, yp2, xp2 = est.embed(y, x, lag=1)  # reverse direction
+    te_yx = est.te_binned(yf2, yp2, xp2, bins=6)
+    assert te_xy > te_yx + 0.1
