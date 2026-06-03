@@ -24,7 +24,9 @@ def _load(module_name):
     return module
 
 
-@pytest.mark.parametrize("name", ["medical", "business", "correlation_stability"])
+@pytest.mark.parametrize(
+    "name", ["medical", "business", "correlation_stability", "information_flow"]
+)
 def test_example_runs(name, capsys):
     module = _load(name)
     module.main()  # must not raise
@@ -71,3 +73,13 @@ def test_correlated_assets_has_regime_breakdown():
     stable_corr = df["a"].iloc[:half].corr(df["b"].iloc[:half])
     broken_corr = df["a"].iloc[half:].corr(df["b"].iloc[half:])
     assert stable_corr > broken_corr
+
+
+def test_lead_lag_assets_is_directional_frame():
+    import pandas as pd
+
+    data = _load("_synthetic")
+    df = data.lead_lag_assets()
+    assert isinstance(df, pd.DataFrame)
+    assert list(df.columns) == ["a", "b"]
+    assert len(df) > 0

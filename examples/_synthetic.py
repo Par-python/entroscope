@@ -163,3 +163,19 @@ def correlated_assets(seed=14):
     b = np.concatenate([b_stable, b_unstable])
     idx = pd.date_range("2025-01-01", periods=len(a), freq="B")
     return pd.DataFrame({"a": a, "b": b}, index=idx)
+
+
+def lead_lag_assets(seed=15):
+    """Two assets where A leads B by one step, plus reverse-direction noise.
+
+    A drives B (B_t depends on A_{t-1}), so transfer entropy should be clearly
+    larger in the A->B direction than B->A. Returns a 2-column DataFrame (a, b).
+    """
+    rng = _rng(seed)
+    n = 600
+    a = rng.randn(n)
+    b = np.empty(n)
+    b[0] = rng.randn()
+    b[1:] = a[:-1] + 0.3 * rng.randn(n - 1)
+    idx = pd.date_range("2025-01-01", periods=n, freq="B")
+    return pd.DataFrame({"a": a, "b": b}, index=idx)
