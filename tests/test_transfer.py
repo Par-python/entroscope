@@ -28,3 +28,22 @@ def test_embed_lag2():
 def test_embed_too_short_raises():
     with pytest.raises(ValueError):
         est.embed(np.array([1.0]), np.array([2.0]), lag=1)
+
+
+from entroscope.utils import knn
+
+
+def test_kth_neighbor_distance_chebyshev():
+    # Points on a line, spacing 1. For point at 0 with k=1, nearest is at 1 -> dist 1.
+    pts = np.array([[0.0], [1.0], [2.0], [5.0]])
+    d = knn.kth_neighbor_distance(pts, k=1)
+    assert d[0] == pytest.approx(1.0)
+    assert d[3] == pytest.approx(3.0)  # nearest to 5 is 2
+
+
+def test_count_within_radius_excludes_self_and_boundary():
+    pts = np.array([[0.0], [1.0], [2.0]])
+    # radius strictly greater than distance: count points with dist < r (excl self).
+    counts = knn.count_within_radius(pts, radii=np.array([1.5, 1.5, 1.5]))
+    # point 0: neighbor at 1 (dist1<1.5) -> 1 ; point 1: 0 and 2 -> 2 ; point2: 1 ->1
+    np.testing.assert_array_equal(counts, [1, 2, 1])
