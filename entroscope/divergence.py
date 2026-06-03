@@ -59,3 +59,15 @@ def kl(p, q, bins=10):
     qa, _ = _core.as_array(q)
     pp, qq = _binned_probs(pa, qa, bins)
     return _kl_bits(pp, qq)
+
+
+def js(p, q, bins=10):
+    """Jensen-Shannon divergence in bits, symmetric and bounded to [0, 1].
+
+    js(p, q) = 0.5*KL(p || m) + 0.5*KL(q || m) with m = (p + q) / 2.
+    """
+    pa, _ = _core.as_array(p)
+    qa, _ = _core.as_array(q)
+    pp, qq = _binned_probs(pa, qa, bins)
+    m = 0.5 * (pp + qq)
+    return 0.5 * _kl_bits(pp, m) + 0.5 * _kl_bits(qq, m)

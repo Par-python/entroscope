@@ -53,3 +53,33 @@ def test_kl_finite_when_q_has_empty_bin():
 def test_kl_bad_bins_raises():
     with pytest.raises(ValueError):
         dv.kl(np.array([1.0, 2.0]), np.array([1.0, 2.0]), bins=0)
+
+
+def test_js_identical_is_zero():
+    rng = np.random.RandomState(1)
+    x = rng.randn(5000)
+    assert dv.js(x, x.copy(), bins=20) == pytest.approx(0.0, abs=1e-6)
+
+
+def test_js_is_symmetric():
+    rng = np.random.RandomState(2)
+    a = rng.randn(3000)
+    b = rng.randn(3000) + 2.0
+    assert dv.js(a, b, bins=20) == pytest.approx(dv.js(b, a, bins=20), abs=1e-9)
+
+
+def test_js_bounded_zero_to_one():
+    rng = np.random.RandomState(3)
+    a = rng.randn(3000)
+    b = rng.randn(3000) + 50.0  # effectively disjoint supports
+    val = dv.js(a, b, bins=20)
+    assert 0.0 <= val <= 1.0
+    assert val > 0.9  # near the upper bound for disjoint distributions
+
+
+def test_js_known_value():
+    # Two 2-bin distributions: p=[1,0], q=[0,1] (disjoint) -> JS = 1 bit exactly.
+    p = np.array([0.1, 0.1])   # both in bin0 of shared range [0.1,0.9]
+    q = np.array([0.9, 0.9])   # both in bin1
+    val = dv.js(p, q, bins=2)
+    assert val == pytest.approx(1.0, abs=1e-3)
