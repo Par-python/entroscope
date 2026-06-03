@@ -1,6 +1,15 @@
 """entroscope: the definitive entropy toolkit for time series data."""
 
-from . import shannon, permutation, spectral, sample, approximate, differential, multiscale, transfer
+from . import (
+    shannon,
+    permutation,
+    spectral,
+    sample,
+    approximate,
+    differential,
+    multiscale,
+    transfer,
+)
 from .utils import plot
 
 __version__ = "0.1.1"

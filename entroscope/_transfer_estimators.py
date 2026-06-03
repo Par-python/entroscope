@@ -45,10 +45,10 @@ def _hist_prob(*cols, bins):
 
 def te_binned(y_future, y_past, x_past, bins=6):
     """Transfer entropy X->Y via equal-width histogram probabilities (base 2)."""
-    p_fpx = _hist_prob(y_future, y_past, x_past, bins=bins)   # p(yf, yp, xp)
-    p_fp = p_fpx.sum(axis=2)                                  # p(yf, yp)
-    p_px = p_fpx.sum(axis=0)                                  # p(yp, xp)
-    p_p = p_fpx.sum(axis=(0, 2))                              # p(yp)
+    p_fpx = _hist_prob(y_future, y_past, x_past, bins=bins)  # p(yf, yp, xp)
+    p_fp = p_fpx.sum(axis=2)  # p(yf, yp)
+    p_px = p_fpx.sum(axis=0)  # p(yp, xp)
+    p_p = p_fpx.sum(axis=(0, 2))  # p(yp)
 
     te = 0.0
     nf, npq, nx = p_fpx.shape

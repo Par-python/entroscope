@@ -60,9 +60,7 @@ def rolling(x, y, window=120, *, k=4, lag=1, method="ksg", bins=6):
     xa, ya, yindex = _coerce_pair(x, y)
     n = len(xa)
     if window <= _EMBED_DIM + lag:
-        raise ValueError(
-            f"window ({window}) must exceed embedding+lag ({_EMBED_DIM + lag})"
-        )
+        raise ValueError(f"window ({window}) must exceed embedding+lag ({_EMBED_DIM + lag})")
     if window > n:
         raise ValueError(f"window ({window}) larger than series length ({n})")
     out = np.full(n, np.nan)
