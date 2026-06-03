@@ -5,8 +5,10 @@ thin. Both estimators consume the SAME embedded vectors from ``embed`` — the
 embedding is verified in isolation (see tests) so a bug here cannot silently fool
 both estimators.
 
-NOTE: imports for later estimators (digamma from scipy, knn from .utils) are
-added in the tasks that implement the binned and KSG estimators respectively.
+Correctness is established by three independent test authorities (see
+tests/test_transfer.py): the bivariate-Gaussian closed form (magnitude), the
+Kraskov-2004 analytic mutual information (KSG core), and a hand-checked isolated
+embedding test.
 """
 
 import numpy as np

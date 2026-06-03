@@ -52,7 +52,11 @@ def compute(x, y, *, k=4, lag=1, method="ksg", bins=6):
 
 
 def rolling(x, y, window=120, *, k=4, lag=1, method="ksg", bins=6):
-    """Rolling TE(X->Y) over sliding windows. Series-in -> Series-out."""
+    """Rolling TE(X->Y) over sliding windows. Series-in -> Series-out.
+
+    Note: with method="ksg" this runs a k-NN search per window, so it is
+    noticeably slower than the single-series rolling measures on long inputs.
+    """
     xa, ya, yindex = _coerce_pair(x, y)
     n = len(xa)
     if window <= _EMBED_DIM + lag:
