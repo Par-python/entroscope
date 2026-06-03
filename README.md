@@ -1,9 +1,11 @@
 # entroscope
 
-[![PyPI version](https://img.shields.io/pypi/v/entroscope.svg)](https://pypi.org/project/entroscope/)
-[![Python versions](https://img.shields.io/pypi/pyversions/entroscope.svg)](https://pypi.org/project/entroscope/)
-[![CI](https://github.com/Par-python/entroscope/actions/workflows/ci.yml/badge.svg)](https://github.com/Par-python/entroscope/actions/workflows/ci.yml)
-[![License: MIT](https://img.shields.io/badge/license-MIT-green.svg)](https://opensource.org/licenses/MIT)
+[![CI](https://img.shields.io/github/actions/workflow/status/Par-python/entroscope/ci.yml?style=flat-square&logo=githubactions&logoColor=white&label=CI&labelColor=24292e)](https://github.com/Par-python/entroscope/actions/workflows/ci.yml)
+[![PyPI](https://img.shields.io/pypi/v/entroscope.svg?style=flat-square&logo=pypi&logoColor=white&labelColor=24292e&color=blue)](https://pypi.org/project/entroscope/)
+[![Downloads](https://img.shields.io/pepy/dt/entroscope.svg?style=flat-square&logo=python&logoColor=white&labelColor=24292e&color=blue)](https://pepy.tech/project/entroscope)
+[![Python](https://img.shields.io/pypi/pyversions/entroscope.svg?style=flat-square&logo=python&logoColor=white&labelColor=24292e&color=blue)](https://pypi.org/project/entroscope/)
+[![Stars](https://img.shields.io/github/stars/Par-python/entroscope.svg?style=flat-square&logo=github&logoColor=white&labelColor=24292e&color=yellow)](https://github.com/Par-python/entroscope/stargazers)
+[![License](https://img.shields.io/badge/license-MIT-blue.svg?style=flat-square&logo=opensourceinitiative&logoColor=white&labelColor=24292e)](https://opensource.org/licenses/MIT)
 
 **The definitive entropy toolkit for time series data.** Seven entropy measures,
 one consistent interface, working directly on pandas Series and numpy arrays.
