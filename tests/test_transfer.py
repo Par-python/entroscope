@@ -145,3 +145,38 @@ def test_gate_b_ksg_mutual_information_matches_analytic():
         a.reshape(-1, 1), b.reshape(-1, 1), k=4
     )
     assert mi_nats == pytest.approx(true_mi_nats, abs=0.03)
+
+
+import warnings
+import pandas as pd
+from entroscope import transfer
+
+
+def test_compute_returns_float_ksg():
+    rng = np.random.RandomState(5)
+    x = rng.randn(2000)
+    y = np.empty_like(x); y[0] = 0.0
+    y[1:] = x[:-1] + 0.1 * rng.randn(1999)
+    val = transfer.compute(x, y, method="ksg", k=4)
+    assert isinstance(val, float)
+    assert val > 0.1
+
+
+def test_compute_method_binned():
+    rng = np.random.RandomState(6)
+    x = rng.randn(3000)
+    y = rng.randn(3000)
+    val = transfer.compute(x, y, method="binned", bins=6)
+    assert isinstance(val, float)
+
+
+def test_compute_length_mismatch_raises():
+    with pytest.raises(ValueError):
+        transfer.compute(np.zeros(10), np.zeros(9))
+
+
+def test_compute_warns_on_thin_sample():
+    x = np.arange(20, dtype=float)
+    y = np.arange(20, dtype=float) + 0.1
+    with pytest.warns(UserWarning, match="sample size"):
+        transfer.compute(x, y, method="ksg", k=2)
