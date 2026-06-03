@@ -10,6 +10,8 @@ added in the tasks that implement the binned and KSG estimators respectively.
 """
 
 import numpy as np
+from scipy.special import digamma
+from .utils import knn
 
 
 def embed(x, y, lag=1):
@@ -60,3 +62,33 @@ def te_binned(y_future, y_past, x_past, bins=6):
                     continue
                 te += pijk * np.log2(numer / denom)
     return float(te)
+
+
+_LN2 = np.log(2.0)
+
+
+def te_ksg(y_future, y_past, x_past, k=4):
+    """Transfer entropy X->Y via the KSG (Kraskov) k-NN estimator, in bits.
+
+    Joint space Z = (y_future, y_past, x_past). eps = Chebyshev distance to the
+    k-th neighbor in Z; marginal neighbor counts within eps give the digamma
+    terms. Returned in bits (nats / ln 2) to match the library's base-2 output.
+    """
+    yf = np.asarray(y_future, dtype=float).reshape(-1, 1)
+    yp = np.asarray(y_past, dtype=float).reshape(-1, 1)
+    xp = np.asarray(x_past, dtype=float).reshape(-1, 1)
+
+    z = np.column_stack([yf, yp, xp])
+    eps = knn.kth_neighbor_distance(z, k=k)
+
+    sp_yp = yp
+    sp_fp = np.column_stack([yf, yp])
+    sp_px = np.column_stack([yp, xp])
+
+    n_yp = knn.count_within_radius(sp_yp, eps)
+    n_fp = knn.count_within_radius(sp_fp, eps)
+    n_px = knn.count_within_radius(sp_px, eps)
+
+    terms = digamma(n_yp + 1) - digamma(n_fp + 1) - digamma(n_px + 1)
+    te_nats = digamma(k) + np.mean(terms)
+    return float(te_nats / _LN2)

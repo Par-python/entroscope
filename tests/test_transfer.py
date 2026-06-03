@@ -69,3 +69,25 @@ def test_te_binned_directional_coupling():
     yf2, yp2, xp2 = est.embed(y, x, lag=1)  # reverse direction
     te_yx = est.te_binned(yf2, yp2, xp2, bins=6)
     assert te_xy > te_yx + 0.1
+
+
+def test_te_ksg_independent_near_zero():
+    rng = np.random.RandomState(2)
+    x = rng.randn(2000)
+    y = rng.randn(2000)
+    yf, yp, xp = est.embed(x, y, lag=1)
+    te = est.te_ksg(yf, yp, xp, k=4)
+    assert abs(te) < 0.05
+
+
+def test_te_ksg_directional_coupling():
+    rng = np.random.RandomState(3)
+    x = rng.randn(2000)
+    y = np.empty_like(x)
+    y[0] = rng.randn()
+    y[1:] = x[:-1] + 0.1 * rng.randn(1999)
+    yf, yp, xp = est.embed(x, y, lag=1)
+    te_xy = est.te_ksg(yf, yp, xp, k=4)
+    yf2, yp2, xp2 = est.embed(y, x, lag=1)
+    te_yx = est.te_ksg(yf2, yp2, xp2, k=4)
+    assert te_xy > te_yx + 0.1
