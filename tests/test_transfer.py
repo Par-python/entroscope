@@ -180,3 +180,52 @@ def test_compute_warns_on_thin_sample():
     y = np.arange(20, dtype=float) + 0.1
     with pytest.warns(UserWarning, match="sample size"):
         transfer.compute(x, y, method="ksg", k=2)
+
+
+import matplotlib
+
+
+def _coupled(n, seed=9):
+    rng = np.random.RandomState(seed)
+    x = rng.randn(n)
+    y = np.empty_like(x); y[0] = 0.0
+    y[1:] = x[:-1] + 0.1 * rng.randn(n - 1)
+    return x, y
+
+
+def test_rolling_array_in_array_out():
+    x, y = _coupled(400)
+    out = transfer.rolling(x, y, window=120, method="ksg", k=4)
+    assert isinstance(out, np.ndarray)
+    assert len(out) == len(y)
+    assert np.isnan(out[:119]).all()
+    assert not np.isnan(out[-1])
+
+
+def test_rolling_series_in_series_out_preserves_index():
+    x, y = _coupled(400)
+    idx = pd.date_range("2025-01-01", periods=400, freq="D")
+    sx, sy = pd.Series(x, index=idx), pd.Series(y, index=idx)
+    out = transfer.rolling(sx, sy, window=120, method="ksg", k=4)
+    assert isinstance(out, pd.Series)
+    assert out.index.equals(idx)
+
+
+def test_rolling_window_too_small_raises():
+    x, y = _coupled(50)
+    with pytest.raises(ValueError):
+        transfer.rolling(x, y, window=2)
+
+
+def test_delta_is_first_difference():
+    x, y = _coupled(400)
+    roll = transfer.rolling(x, y, window=120, method="ksg", k=4)
+    d = transfer.delta(x, y, window=120, method="ksg", k=4)
+    assert len(d) == len(roll)
+    np.testing.assert_allclose(d[121:], np.diff(roll)[120:], rtol=1e-9)
+
+
+def test_plot_returns_figure():
+    x, y = _coupled(400)
+    fig = transfer.plot(x, y, window=120, method="ksg", k=4)
+    assert isinstance(fig, matplotlib.figure.Figure)
