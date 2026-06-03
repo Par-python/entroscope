@@ -91,3 +91,43 @@ def test_te_ksg_directional_coupling():
     yf2, yp2, xp2 = est.embed(y, x, lag=1)
     te_yx = est.te_ksg(yf2, yp2, xp2, k=4)
     assert te_xy > te_yx + 0.1
+
+
+def _gaussian_system(n, a=0.5, b=0.7, sigma=0.5, seed=7):
+    rng = np.random.RandomState(seed)
+    x = rng.randn(n)
+    y = np.empty(n)
+    y[0] = rng.randn()
+    eps = sigma * rng.randn(n)
+    for t in range(1, n):
+        y[t] = a * y[t - 1] + b * x[t - 1] + eps[t]
+    return x, y
+
+
+def test_gate_a_gaussian_closed_form_ksg():
+    b, sigma = 0.7, 0.5
+    true_te = 0.5 * np.log2(1 + (b ** 2) / (sigma ** 2))
+    x, y = _gaussian_system(20000, a=0.5, b=b, sigma=sigma)
+    yf, yp, xp = est.embed(x, y, lag=1)
+    te = est.te_ksg(yf, yp, xp, k=4)
+    assert te == pytest.approx(true_te, abs=0.05)
+
+
+def test_gate_a_gaussian_closed_form_binned():
+    b, sigma = 0.7, 0.5
+    true_te = 0.5 * np.log2(1 + (b ** 2) / (sigma ** 2))
+    x, y = _gaussian_system(40000, a=0.5, b=b, sigma=sigma)
+    yf, yp, xp = est.embed(x, y, lag=1)
+    # bins=16 reduces discretisation bias enough to land within 0.1 bits of
+    # truth; bins=12 has ~0.11 bias (histogram underestimation of continuous MI)
+    te = est.te_binned(yf, yp, xp, bins=16)
+    assert te == pytest.approx(true_te, abs=0.1)
+
+
+def test_binned_ksg_cross_check():
+    # consistency, not correctness — backs up Gate A.
+    x, y = _gaussian_system(20000, a=0.4, b=0.6, sigma=0.6, seed=11)
+    yf, yp, xp = est.embed(x, y, lag=1)
+    te_b = est.te_binned(yf, yp, xp, bins=12)
+    te_k = est.te_ksg(yf, yp, xp, k=4)
+    assert te_b == pytest.approx(te_k, abs=0.1)
