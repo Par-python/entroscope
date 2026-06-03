@@ -19,8 +19,6 @@ Synthetic data lives in ``_synthetic`` so this runs with no external files. Swap
 on real data.
 """
 
-import pandas as pd
-
 from entroscope import permutation
 
 try:

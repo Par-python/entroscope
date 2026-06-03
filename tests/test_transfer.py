@@ -147,7 +147,6 @@ def test_gate_b_ksg_mutual_information_matches_analytic():
     assert mi_nats == pytest.approx(true_mi_nats, abs=0.03)
 
 
-import warnings
 import pandas as pd
 from entroscope import transfer
 
@@ -155,7 +154,8 @@ from entroscope import transfer
 def test_compute_returns_float_ksg():
     rng = np.random.RandomState(5)
     x = rng.randn(2000)
-    y = np.empty_like(x); y[0] = 0.0
+    y = np.empty_like(x)
+    y[0] = 0.0
     y[1:] = x[:-1] + 0.1 * rng.randn(1999)
     val = transfer.compute(x, y, method="ksg", k=4)
     assert isinstance(val, float)
@@ -188,7 +188,8 @@ import matplotlib
 def _coupled(n, seed=9):
     rng = np.random.RandomState(seed)
     x = rng.randn(n)
-    y = np.empty_like(x); y[0] = 0.0
+    y = np.empty_like(x)
+    y[0] = 0.0
     y[1:] = x[:-1] + 0.1 * rng.randn(n - 1)
     return x, y
 
