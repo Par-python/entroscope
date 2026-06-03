@@ -3,16 +3,18 @@
 Every measure module delegates its standard methods here so the
 "Series in -> Series out, array in -> array out" contract and the windowing
 logic live in exactly one place.
+
+This module does NOT force a matplotlib backend. Plot helpers build a Figure and
+return it (never calling ``plt.show()``), so they work under whatever backend the
+environment provides. Headless / Docker / CI users who want a guaranteed
+non-interactive backend should set ``MPLBACKEND=Agg`` in their environment.
 """
 
-import matplotlib
+import matplotlib.pyplot as plt
+import numpy as np
+import pandas as pd
 
-matplotlib.use("Agg")  # headless-safe; never opens a window
-import matplotlib.pyplot as plt  # noqa: E402
-import numpy as np  # noqa: E402
-import pandas as pd  # noqa: E402
-
-from .utils.windows import sliding_windows  # noqa: E402
+from .utils.windows import sliding_windows
 
 
 def as_array(x):
