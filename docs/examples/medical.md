@@ -60,3 +60,11 @@ glucose = pd.read_csv("cgm.csv")["mgdl"]
 variability = differential.rolling(glucose, window=48, dist="normal")
 # controlled-phase mean ~2.98 -> volatile-phase mean ~5.29 : a clear rise
 ```
+
+> **⚠️ Medical / biomedical disclaimer**
+>
+> These examples are provided for **research, educational, and signal-analysis purposes only**. `entroscope` is a general-purpose time series analysis toolkit and is **not a medical device, diagnostic tool, or substitute for professional medical evaluation**.
+>
+> Entropy measures can produce false positives, false negatives, or misleading signals depending on the data, preprocessing, sampling rate, parameter choices, noise, and underlying physiology. A detected change in entropy should **not be interpreted as evidence of a medical condition or used to make clinical decisions** without appropriate validation by qualified medical and/or biomedical professionals.
+>
+> The authors and contributors of `entroscope` are **not responsible for medical decisions, diagnoses, treatments, or other consequences resulting from the use or misuse of these signals**. Always validate biomedical applications against appropriate clinical datasets and established medical methods before drawing conclusions.
