@@ -1,6 +1,6 @@
 # Changelog
 
-## Unreleased
+## 0.3.0 — 2026-09-13
 
 - **Validated against independent implementations.** Sample, approximate,
   permutation, spectral and multiscale entropy now match antropy and/or
@@ -23,6 +23,10 @@
   features.
 - New optional extras: `sklearn`, `polars`, `reference`, `docs`.
 - Docs site (MkDocs Material) with validation and integrations pages.
+- README: corrected the quick-start value (`shannon.compute` returns 1.75, not
+  0.73), listed all nine measures, and fixed the PyPI Homepage and docs links.
+- CI: ruff pinned so new ruff releases can't break the build; GitHub Actions
+  bumped off the deprecated Node 20 runtime.
 
 ## 0.2.0 — 2026-06-03
 
