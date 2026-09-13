@@ -5,15 +5,31 @@ import numpy as np
 from . import _core
 
 
-def _count_matches(values, m, tol):
-    """Count template-vector pairs (length m) within Chebyshev distance `tol`."""
-    n = len(values)
-    templates = np.array([values[i : i + m] for i in range(n - m + 1)])
+def _count_matches(values, m, tol, n_templates):
+    """Count template-vector pairs (length m) within Chebyshev distance `tol`.
+
+    Only the first `n_templates` templates are used, so the length-m and
+    length-(m+1) counts are taken over the same starting points.
+    """
+    templates = np.array([values[i : i + m] for i in range(n_templates)])
     count = 0
     for i in range(len(templates) - 1):
         dist = np.max(np.abs(templates[i + 1 :] - templates[i]), axis=1)
         count += np.count_nonzero(dist <= tol)
     return count
+
+
+def _sampen(values, m, tol):
+    """Sample entropy with an absolute tolerance (Richman & Moorman, 2000)."""
+    n = len(values)
+    if tol == 0:
+        return 0.0  # constant signal: perfectly regular
+    b = _count_matches(values, m, tol, n - m)
+    a = _count_matches(values, m + 1, tol, n - m)
+    if b == 0 or a == 0:
+        # no regularity detected; return a large-but-finite ceiling
+        return float(np.log((n - m) * (n - m - 1)))
+    return float(-np.log(a / b))
 
 
 def _kernel(values, m=2, r=0.2):
@@ -23,18 +39,9 @@ def _kernel(values, m=2, r=0.2):
     if m < 1:
         raise ValueError("m must be >= 1")
     values = np.asarray(values, dtype=float)
-    n = len(values)
-    if n <= m + 1:
+    if len(values) <= m + 1:
         raise ValueError("series too short for given m")
-    tol = r * np.std(values)
-    if tol == 0:
-        return 0.0  # constant signal: perfectly regular
-    b = _count_matches(values, m, tol)
-    a = _count_matches(values, m + 1, tol)
-    if b == 0 or a == 0:
-        # no regularity detected; return a large-but-finite ceiling
-        return float(np.log((n - m) * (n - m - 1)))
-    return float(-np.log(a / b))
+    return _sampen(values, m, r * np.std(values))
 
 
 def compute(series, m=2, r=0.2):

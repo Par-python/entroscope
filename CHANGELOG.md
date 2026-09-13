@@ -1,5 +1,29 @@
 # Changelog
 
+## Unreleased
+
+- **Validated against independent implementations.** Sample, approximate,
+  permutation, spectral and multiscale entropy now match antropy and/or
+  EntropyHub exactly (relative error < 1e-10) on four signal types; Shannon and
+  normal differential entropy match scipy. See `docs/validation.md`. The checks
+  live in `tests/test_reference.py` and run in a dedicated CI job.
+- **Fixed (changes results):** sample entropy counts length-`m` matches over the
+  same `N - m` templates as length-`m+1` matches (Richman & Moorman 2000).
+  Values shift by roughly 0.001 to 0.003.
+- **Fixed (changes results):** multiscale entropy fixes the tolerance from the
+  original series instead of recomputing it per scale (Costa et al. 2002). The
+  old behaviour made white noise look more complex at coarser scales.
+  `multiscale.compute` gains `m` and `r` arguments.
+- **Faster transfer entropy:** KSG neighbour counting is vectorized with a
+  single k-d tree query, about 250x faster on 20,000 points (identical results).
+- **polars support:** every measure accepts a polars Series; rolling and delta
+  return a polars Series with the input's name.
+- **scikit-learn integration:** `entroscope.features.EntropyFeatures`, a
+  pipeline-ready transformer that turns time-series windows into entropy
+  features.
+- New optional extras: `sklearn`, `polars`, `reference`, `docs`.
+- Docs site (MkDocs Material) with validation and integrations pages.
+
 ## 0.2.0 — 2026-06-03
 
 - **Transfer entropy** (`entroscope.transfer`) — the first bivariate measure:

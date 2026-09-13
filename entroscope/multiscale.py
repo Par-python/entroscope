@@ -1,6 +1,7 @@
 """Multiscale entropy — sample entropy across coarse-grained time scales."""
 
 import matplotlib.pyplot as plt
+import numpy as np
 
 from . import _core, sample
 
@@ -12,24 +13,33 @@ def _coarse_grain(values, scale):
     return trimmed.reshape(n, scale).mean(axis=1)
 
 
-def compute(series, scales=range(1, 10), method="sample"):
+def compute(series, scales=range(1, 10), method="sample", m=2, r=0.2):
     """Return {scale: entropy} by coarse-graining then applying `method`.
+
+    Following Costa et al. (2002), the tolerance is fixed at ``r * std`` of the
+    ORIGINAL series and reused at every scale, so white noise loses entropy as
+    the scale grows while 1/f-like signals keep it.
 
     Scales that coarse-grain the series below sample entropy's minimum
     length are skipped (omitted from the result).
     """
     if method != "sample":
         raise ValueError("only method='sample' is supported")
+    if r <= 0:
+        raise ValueError("r must be positive")
+    if m < 1:
+        raise ValueError("m must be >= 1")
     arr, _ = _core.as_array(series)
+    tol = r * np.std(arr)
     result = {}
     for scale in scales:
         if scale == 1:
             grained = arr
         else:
             grained = _coarse_grain(arr, scale)
-        if len(grained) < 4:  # sample entropy needs n > m+1 (m=2 default)
+        if len(grained) <= m + 1:  # sample entropy needs n > m+1
             continue
-        result[int(scale)] = sample.compute(grained)
+        result[int(scale)] = sample._sampen(grained, m, tol)
     return result
 
 

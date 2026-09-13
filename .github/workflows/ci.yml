@@ -24,6 +24,23 @@ jobs:
       - name: Ruff format check
         run: ruff format --check entroscope tests examples
 
+  reference:
+    name: Cross-check vs antropy & EntropyHub
+    runs-on: ubuntu-latest
+    env:
+      MPLBACKEND: Agg
+    steps:
+      - uses: actions/checkout@v5
+      - uses: actions/setup-python@v6
+        with:
+          python-version: "3.12"
+      - name: Install package with reference implementations
+        run: |
+          python -m pip install --upgrade pip
+          pip install -e ".[dev,reference]"
+      - name: Compare against independent implementations
+        run: pytest tests/test_reference.py -q -rs
+
   test:
     name: Test (Python ${{ matrix.python-version }})
     runs-on: ubuntu-latest
@@ -62,7 +79,7 @@ jobs:
       - name: Check distribution metadata
         run: twine check dist/*
       - name: Upload build artifacts
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v5
         with:
           name: dist
           path: dist/*

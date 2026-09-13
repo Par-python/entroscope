@@ -8,7 +8,13 @@
 [![License](https://img.shields.io/badge/license-MIT-blue.svg?style=flat-square&logo=opensourceinitiative&logoColor=white&labelColor=24292e)](https://opensource.org/licenses/MIT)
 
 **The definitive entropy toolkit for time series data.** Nine entropy measures,
-one consistent interface, working directly on pandas Series and numpy arrays.
+one consistent interface, working directly on pandas and polars Series and numpy
+arrays. Results are [validated against antropy, EntropyHub and scipy](#validated-results).
+
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/Par-python/entroscope/master/docs/assets/entropy-drop-dark.png">
+  <img alt="Two stacked charts. Top: a synthetic signal that is random noise until step 180, then a regular cycle. Bottom: its rolling spectral entropy, high during the noise and falling sharply shortly after step 180." src="https://raw.githubusercontent.com/Par-python/entroscope/master/docs/assets/entropy-drop-light.png">
+</picture>
 
 It started in [NextOnMenu](https://github.com/Par-python/nextonmenu): a falling
 Shannon entropy of a food's regional search interest turned out to be an early
@@ -99,6 +105,43 @@ plot.drop_events(s, measure="shannon", window=20, threshold=0.4)
 
 All plot functions return a `matplotlib.figure.Figure` and never call
 `plt.show()`, so they're safe in scripts, notebooks, and CI alike.
+
+## Integrations
+
+**polars**: pass a polars Series anywhere a pandas Series works; rolling and
+delta results come back as a polars Series with the same name.
+
+**scikit-learn**: `EntropyFeatures` turns time-series windows into entropy
+features inside a pipeline:
+
+```python
+from sklearn.ensemble import RandomForestClassifier
+from sklearn.pipeline import make_pipeline
+from entroscope.features import EntropyFeatures
+
+# windows: shape (n_windows, window_length); one row per window
+model = make_pipeline(EntropyFeatures(), RandomForestClassifier())
+model.fit(windows, labels)
+```
+
+Install the optional dependencies with `pip install "entroscope[sklearn]"` or
+`"entroscope[polars]"`. See the [integrations guide](docs/integrations.md).
+
+## Validated results
+
+Every measure is checked against an independent implementation, on every CI run:
+
+| Measure                          | Checked against                                   |
+| -------------------------------- | ------------------------------------------------- |
+| sample, approximate, permutation | antropy and EntropyHub: exact match (< 1e-10)     |
+| spectral                         | antropy: exact match                              |
+| multiscale                       | EntropyHub `MSEn`: exact match                    |
+| shannon, differential (normal)   | scipy: exact match                                |
+| transfer                         | analytic Gaussian closed form and Kraskov (2004)  |
+
+Details, including two definitions corrected along the way, are in
+[docs/validation.md](docs/validation.md). Run the checks yourself with
+`pip install -e ".[dev,reference]" && pytest tests/test_reference.py`.
 
 ## Real-world examples
 

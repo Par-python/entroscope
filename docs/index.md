@@ -1,9 +1,15 @@
 # entroscope
 
 The definitive entropy toolkit for time series data. Nine measures, one
-consistent interface, native pandas/numpy support.
+consistent interface, native pandas/polars/numpy support.
+
+![Rolling spectral entropy falling when a noisy signal turns into a regular cycle](assets/entropy-drop-light.png#only-light)
+![Rolling spectral entropy falling when a noisy signal turns into a regular cycle](assets/entropy-drop-dark.png#only-dark)
 
 - **[Quickstart](quickstart.md)** — install and first entropy in 60 seconds.
+- **[Validation](validation.md)** — how every measure is checked against antropy,
+  EntropyHub and scipy.
+- **[Integrations](integrations.md)** — polars input and a scikit-learn transformer.
 - **Examples** — [food trends](examples/food_trends.md),
   [finance](examples/finance.md), [biomedical](examples/biomedical.md),
   [medical & biomedical](examples/medical.md) (HRV, EEG, respiration, glucose),
