@@ -1,5 +1,11 @@
 # Changelog
 
+## Unreleased
+
+- CI: move the remaining GitHub Actions off the deprecated Node 20 runtime
+  (`upload-artifact` and `download-artifact` to v7, `upload-pages-artifact` and
+  `deploy-pages` to v5).
+
 ## 0.3.0 — 2026-09-13
 
 - **Validated against independent implementations.** Sample, approximate,
@@ -25,8 +31,8 @@
 - Docs site (MkDocs Material) with validation and integrations pages.
 - README: corrected the quick-start value (`shannon.compute` returns 1.75, not
   0.73), listed all nine measures, and fixed the PyPI Homepage and docs links.
-- CI: ruff pinned so new ruff releases can't break the build; GitHub Actions
-  bumped off the deprecated Node 20 runtime.
+- CI: ruff pinned so new ruff releases can't break the build; `checkout` and
+  `setup-python` bumped off the deprecated Node 20 runtime.
 
 ## 0.2.0 — 2026-06-03
 
