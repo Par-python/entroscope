@@ -2,6 +2,7 @@
 
 import matplotlib.pyplot as plt
 import numpy as np
+import pandas as pd
 
 from .. import approximate, differential, permutation, sample, shannon, spectral
 
@@ -24,7 +25,7 @@ def _resolve(name):
 
 def _xy(roll):
     """Return (x, y) for plotting: use the Series index when available."""
-    if hasattr(roll, "to_numpy"):  # pandas Series
+    if isinstance(roll, pd.Series):
         return roll.index, roll.to_numpy()
     arr = np.asarray(roll)
     return range(len(arr)), arr
@@ -72,7 +73,7 @@ def drop_events(series, measure="shannon", window=20, threshold=0.4):
     """Plot rolling entropy and mark positions where it drops > `threshold`."""
     mod = _resolve(measure)
     roll = mod.rolling(series, window=window)
-    is_series = hasattr(roll, "to_numpy")
+    is_series = isinstance(roll, pd.Series)
     x, y = _xy(roll)
     drops = np.diff(y, prepend=np.nan)
     fig, ax = plt.subplots(figsize=(10, 4))

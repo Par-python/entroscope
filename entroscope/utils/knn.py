@@ -25,16 +25,11 @@ def count_within_radius(points, radii):
     points = np.asarray(points, dtype=float)
     radii = np.asarray(radii, dtype=float)
     tree = cKDTree(points)
-    counts = np.empty(len(points), dtype=int)
-    for i, (p, r) in enumerate(zip(points, radii)):
-        # ball_point with p=inf, count neighbors strictly inside r, minus self.
-        idx = tree.query_ball_point(p, r=r, p=np.inf)
-        # exclude self and any point exactly at radius r (strict inequality).
-        c = 0
-        for j in idx:
-            if j == i:
-                continue
-            if np.max(np.abs(points[j] - p)) < r:
-                c += 1
-        counts[i] = c
-    return counts
+    # query_ball_point counts distance <= r; shrinking each radius to the next
+    # float below it gives the strict inequality. Subtract 1 for the point itself.
+    inner = np.nextafter(radii, 0)
+    counts = np.asarray(
+        tree.query_ball_point(points, r=inner, p=np.inf, return_length=True), dtype=int
+    )
+    # Nothing is strictly within a zero radius, but duplicates sit at distance 0.
+    return np.where(radii > 0, counts - 1, 0)

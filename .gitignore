@@ -26,3 +26,6 @@ claude.md
 
 # Superpowers brainstorming/spec docs (local only)
 docs/superpowers/
+
+# mkdocs build output
+site/

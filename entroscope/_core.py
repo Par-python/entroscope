@@ -17,11 +17,31 @@ import pandas as pd
 from .utils.windows import sliding_windows
 
 
+class _PolarsName:
+    """Stand-in 'index' for polars input, which has no index — only a name."""
+
+    def __init__(self, name):
+        self.name = name
+
+
+def _is_polars_series(x):
+    # Checked by module name so polars stays an optional dependency.
+    cls = type(x)
+    return cls.__name__ == "Series" and cls.__module__.startswith("polars")
+
+
 def as_array(x):
-    """Coerce input to a 1-D float ndarray, returning (array, index_or_None)."""
+    """Coerce input to a 1-D float ndarray, returning (array, index_or_None).
+
+    pandas input returns its index; polars input returns a `_PolarsName` so
+    `wrap` can rebuild a polars Series; anything else returns None.
+    """
     if isinstance(x, pd.Series):
         index = x.index
         arr = x.to_numpy(dtype=float)
+    elif _is_polars_series(x):
+        index = _PolarsName(x.name)
+        arr = np.asarray(x.to_numpy(), dtype=float)
     else:
         index = None
         arr = np.asarray(x, dtype=float)
@@ -33,8 +53,12 @@ def as_array(x):
 
 
 def wrap(values, index):
-    """Wrap a result array as a Series (if index given) or return the ndarray."""
+    """Wrap a result array to match the input type: pandas, polars, or ndarray."""
     values = np.asarray(values, dtype=float)
+    if isinstance(index, _PolarsName):
+        import polars as pl
+
+        return pl.Series(index.name, values)
     if index is not None:
         return pd.Series(values, index=index)
     return values
@@ -60,11 +84,14 @@ def rolling(x, window, kernel, **params):
 
 def delta(x, window, kernel, **params):
     """First difference of the rolling entropy."""
-    roll = rolling(x, window, kernel, **params)
-    if isinstance(roll, pd.Series):
-        return roll.diff()
-    out = np.full_like(roll, np.nan)
-    out[1:] = np.diff(roll)
+    arr, index = as_array(x)
+    return wrap(first_difference(rolling(arr, window, kernel, **params)), index)
+
+
+def first_difference(values):
+    """`values[t] - values[t-1]`, with NaN at position 0 (like `Series.diff`)."""
+    out = np.full(len(values), np.nan)
+    out[1:] = np.diff(values)
     return out
 
 
@@ -75,7 +102,7 @@ def make_plot(x, window, kernel, *, title=None, ylabel="entropy", **params):
     if isinstance(roll, pd.Series):
         ax.plot(roll.index, roll.to_numpy())
     else:
-        ax.plot(range(len(roll)), roll)
+        ax.plot(range(len(roll)), np.asarray(roll))
     ax.set_title(title or f"Rolling {ylabel} (window={window})")
     ax.set_xlabel("position")
     ax.set_ylabel(ylabel)

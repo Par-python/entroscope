@@ -30,7 +30,12 @@ classifiers = [
 dependencies = ["numpy", "pandas", "scipy", "matplotlib"]
 
 [project.optional-dependencies]
-dev = ["pytest", "pytest-cov", "ruff==0.16.7"]
+sklearn = ["scikit-learn"]
+polars = ["polars"]
+# Independent implementations used by tests/test_reference.py to cross-check results.
+reference = ["antropy", "EntropyHub"]
+docs = ["mkdocs-material", "mkdocs<2"]
+dev = ["pytest", "pytest-cov", "ruff==0.16.7", "scikit-learn", "polars"]
 
 [project.urls]
 Homepage = "https://github.com/Par-python/entroscope"

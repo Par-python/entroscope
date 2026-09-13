@@ -73,12 +73,9 @@ def rolling(x, y, window=120, *, k=4, lag=1, method="ksg", bins=6):
 
 def delta(x, y, window=120, *, k=4, lag=1, method="ksg", bins=6):
     """First difference of the rolling transfer entropy."""
-    roll = rolling(x, y, window, k=k, lag=lag, method=method, bins=bins)
-    if isinstance(roll, pd.Series):
-        return roll.diff()
-    out = np.full_like(roll, np.nan)
-    out[1:] = np.diff(roll)
-    return out
+    xa, ya, yindex = _coerce_pair(x, y)
+    roll = rolling(xa, ya, window, k=k, lag=lag, method=method, bins=bins)
+    return _core.wrap(_core.first_difference(roll), yindex)
 
 
 def plot(x, y, window=120, *, k=4, lag=1, method="ksg", bins=6, title=None):
@@ -88,7 +85,7 @@ def plot(x, y, window=120, *, k=4, lag=1, method="ksg", bins=6, title=None):
     if isinstance(roll, pd.Series):
         ax.plot(roll.index, roll.to_numpy())
     else:
-        ax.plot(range(len(roll)), roll)
+        ax.plot(range(len(roll)), np.asarray(roll))
     ax.set_title(title or f"Rolling transfer entropy (window={window})")
     ax.set_xlabel("position")
     ax.set_ylabel("transfer entropy (bits)")

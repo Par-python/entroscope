@@ -1,0 +1,51 @@
+site_name: entroscope
+site_description: The definitive entropy toolkit for time series data
+site_url: https://par-python.github.io/entroscope/
+repo_url: https://github.com/Par-python/entroscope
+repo_name: Par-python/entroscope
+edit_uri: edit/master/docs/
+
+# Local-only planning notes (gitignored) must never be published.
+exclude_docs: |
+  superpowers/
+  assets/*.py
+
+theme:
+  name: material
+  palette:
+    - media: "(prefers-color-scheme: light)"
+      scheme: default
+      primary: indigo
+      toggle:
+        icon: material/brightness-7
+        name: Switch to dark mode
+    - media: "(prefers-color-scheme: dark)"
+      scheme: slate
+      primary: indigo
+      toggle:
+        icon: material/brightness-4
+        name: Switch to light mode
+  features:
+    - content.code.copy
+    - navigation.sections
+    - navigation.top
+
+markdown_extensions:
+  - admonition
+  - tables
+  - toc:
+      permalink: true
+  - pymdownx.highlight
+  - pymdownx.superfences
+
+nav:
+  - Home: index.md
+  - Quickstart: quickstart.md
+  - Validation: validation.md
+  - Integrations: integrations.md
+  - Examples:
+      - Food trends: examples/food_trends.md
+      - Finance: examples/finance.md
+      - Biomedical: examples/biomedical.md
+      - Medical: examples/medical.md
+      - Business: examples/business.md
