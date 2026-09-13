@@ -1,6 +1,7 @@
 import numpy as np
 import pandas as pd
 import pytest
+
 from entroscope import _core
 from entroscope.utils import windows
 

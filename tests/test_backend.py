@@ -23,6 +23,7 @@ def test_import_does_not_change_backend():
         env={"MPLBACKEND": "template", "PATH": __import__("os").environ["PATH"]},
         capture_output=True,
         text=True,
+        check=False,
     )
     assert result.returncode == 0, (
         f"subprocess failed:\nSTDOUT:{result.stdout}\nSTDERR:{result.stderr}"

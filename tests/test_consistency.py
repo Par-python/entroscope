@@ -481,8 +481,9 @@ def test_sliding_windows_window_too_large():
 
 def test_dashboard_with_odd_number_of_measures():
     """dashboard with an odd number of measures triggers ax.axis('off') on last cell."""
-    from entroscope.utils.plot import dashboard
     import matplotlib.pyplot as plt
+
+    from entroscope.utils.plot import dashboard
 
     s = pd.Series(np.random.RandomState(13).rand(120))
     # 3 measures → 2 rows × 2 cols = 4 subplots, 1 unused → hits axis("off")

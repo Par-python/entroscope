@@ -1,6 +1,6 @@
 # entroscope
 
-The definitive entropy toolkit for time series data. Seven measures, one
+The definitive entropy toolkit for time series data. Nine measures, one
 consistent interface, native pandas/numpy support.
 
 - **[Quickstart](quickstart.md)** — install and first entropy in 60 seconds.
@@ -10,7 +10,7 @@ consistent interface, native pandas/numpy support.
   [business & operational](examples/business.md) (sales, web traffic, prices, QC).
 
 Runnable versions of the medical and business examples live in the
-[`examples/`](https://github.com/entroscope/entroscope/tree/master/examples)
+[`examples/`](https://github.com/Par-python/entroscope/tree/master/examples)
 directory — `python examples/medical.py` and `python examples/business.py`.
 
 ## Measures at a glance
@@ -24,3 +24,5 @@ directory — `python examples/medical.py` and `python examples/business.py`.
 | spectral      | Spread of the power spectrum (frequency domain)   |
 | differential  | Continuous entropy via a fitted distribution      |
 | multiscale    | Sample entropy across coarse-grained time scales  |
+| transfer      | Directional information flow X → Y (KSG/binned)   |
+| divergence    | KL and Jensen-Shannon distance between samples    |

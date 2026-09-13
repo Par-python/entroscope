@@ -3,7 +3,7 @@
 import matplotlib.pyplot as plt
 import numpy as np
 
-from .. import shannon, permutation, spectral, sample, approximate, differential
+from .. import approximate, differential, permutation, sample, shannon, spectral
 
 # Registry of measures usable by the rolling-based helpers.
 _REGISTRY = {

@@ -1,7 +1,7 @@
 # Business & operational data
 
 Four worked examples on raw business data. Runnable end-to-end in
-[`examples/business.py`](https://github.com/entroscope/entroscope/blob/master/examples/business.py)
+[`examples/business.py`](https://github.com/Par-python/entroscope/blob/master/examples/business.py)
 (uses synthetic data so it runs with no files — swap in `pd.read_csv(...)` for
 your sales exports, server logs, price feeds, or sensor dumps).
 

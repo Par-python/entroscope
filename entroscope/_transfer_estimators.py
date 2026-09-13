@@ -13,6 +13,7 @@ embedding test.
 
 import numpy as np
 from scipy.special import digamma
+
 from .utils import knn
 
 

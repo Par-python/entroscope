@@ -2,7 +2,7 @@
 
 Four worked examples on physiological data. Each pairs a measure to the kind of
 change it detects best. Runnable end-to-end in
-[`examples/medical.py`](https://github.com/entroscope/entroscope/blob/master/examples/medical.py)
+[`examples/medical.py`](https://github.com/Par-python/entroscope/blob/master/examples/medical.py)
 (uses synthetic data so it runs with no files — swap in `pd.read_csv(...)` for
 your own recordings).
 

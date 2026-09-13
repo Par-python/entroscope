@@ -7,7 +7,7 @@
 [![Stars](https://img.shields.io/github/stars/Par-python/entroscope.svg?style=flat-square&logo=github&logoColor=white&labelColor=24292e&color=yellow)](https://github.com/Par-python/entroscope/stargazers)
 [![License](https://img.shields.io/badge/license-MIT-blue.svg?style=flat-square&logo=opensourceinitiative&logoColor=white&labelColor=24292e)](https://opensource.org/licenses/MIT)
 
-**The definitive entropy toolkit for time series data.** Seven entropy measures,
+**The definitive entropy toolkit for time series data.** Nine entropy measures,
 one consistent interface, working directly on pandas Series and numpy arrays.
 
 It started in [NextOnMenu](https://github.com/Par-python/nextonmenu): a falling
@@ -27,7 +27,7 @@ from entroscope import shannon
 
 s = pd.Series([10, 20, 15, 80, 90, 85, 88, 92])
 
-shannon.compute(s)              # 0.73 (a single entropy value)
+shannon.compute(s)              # 1.75 (a single entropy value, in bits)
 shannon.rolling(s, window=20)   # rolling entropy over time (a Series)
 shannon.delta(s, window=20)     # rate of change of entropy
 shannon.normalized(s)           # entropy scaled to [0, 1]
@@ -48,7 +48,7 @@ the standard environment variable:
 export MPLBACKEND=Agg        # or, in a Dockerfile:  ENV MPLBACKEND=Agg
 ```
 
-## The seven measures
+## The nine measures
 
 | Measure          | Import                    | Captures                                         |
 | ---------------- | ------------------------- | ------------------------------------------------ |
@@ -59,6 +59,8 @@ export MPLBACKEND=Agg        # or, in a Dockerfile:  ENV MPLBACKEND=Agg
 | **Spectral**     | `entroscope.spectral`     | Spread of the power spectrum (frequency domain)  |
 | **Differential** | `entroscope.differential` | Continuous entropy via a fitted distribution     |
 | **Multiscale**   | `entroscope.multiscale`   | Sample entropy across coarse-grained time scales |
+| **Transfer**     | `entroscope.transfer`     | Directional information flow X → Y (KSG/binned)  |
+| **Divergence**   | `entroscope.divergence`   | KL and Jensen-Shannon distance between samples   |
 
 ## One consistent API
 
@@ -74,6 +76,11 @@ Every measure exposes the same methods, so switching measures is a one-word chan
 
 Shannon additionally provides `geographic(df, col=...)` for spatial distributions
 (e.g. search interest by region). Multiscale provides `compute` and `plot`.
+
+The two-input measures take a pair of series. `transfer.compute(x, y)` (plus
+`rolling`, `delta`, `plot`) estimates how much `x`'s past tells you about `y`'s
+future; `divergence.kl(p, q)` and `divergence.js(p, q)` (plus `plot`) compare two
+samples' distributions over shared bins.
 
 ## Visualization
 

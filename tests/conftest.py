@@ -10,6 +10,6 @@ import os
 # Set before matplotlib is imported anywhere, so it never picks a GUI backend.
 os.environ.setdefault("MPLBACKEND", "Agg")
 
-import matplotlib  # noqa: E402
+import matplotlib
 
 matplotlib.use("Agg", force=True)

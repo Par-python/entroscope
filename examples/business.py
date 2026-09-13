@@ -7,7 +7,7 @@ external files. Swap the generator call for ``pd.read_csv(...)['column']`` to
 use your own data (sales exports, server logs, price feeds, sensor dumps).
 """
 
-from entroscope import shannon, spectral, permutation, multiscale
+from entroscope import multiscale, permutation, shannon, spectral
 
 try:
     from . import _synthetic as data

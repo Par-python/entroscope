@@ -30,10 +30,10 @@ classifiers = [
 dependencies = ["numpy", "pandas", "scipy", "matplotlib"]
 
 [project.optional-dependencies]
-dev = ["pytest", "pytest-cov", "ruff"]
+dev = ["pytest", "pytest-cov", "ruff==0.16.7"]
 
 [project.urls]
-Homepage = "https://github.com/entroscope/entroscope"
+Homepage = "https://github.com/Par-python/entroscope"
 
 [tool.setuptools.packages.find]
 include = ["entroscope*"]
