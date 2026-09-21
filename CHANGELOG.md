@@ -1,6 +1,6 @@
 # Changelog
 
-## Unreleased
+## 0.3.1 — 2026-09-21
 
 - **Fixed (changes results):** missing and infinite values no longer produce
   plausible-looking numbers. Previously one NaN made `permutation.compute`
