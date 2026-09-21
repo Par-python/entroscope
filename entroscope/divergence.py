@@ -40,6 +40,11 @@ def _binned_probs(p, q, bins):
 _LN2 = np.log(2.0)
 
 
+def _all_finite(*arrays):
+    """False if any sample holds NaN or +/-inf; kl/js then return NaN."""
+    return all(np.isfinite(a).all() for a in arrays)
+
+
 def _kl_bits(pp, qq):
     """KL(pp || qq) in bits, with epsilon smoothing so the result stays finite."""
     pp = pp + _EPS
@@ -57,6 +62,8 @@ def kl(p, q, bins=10):
     """
     pa, _ = _core.as_array(p)
     qa, _ = _core.as_array(q)
+    if not _all_finite(pa, qa):
+        return float("nan")
     pp, qq = _binned_probs(pa, qa, bins)
     return _kl_bits(pp, qq)
 
@@ -68,6 +75,8 @@ def js(p, q, bins=10):
     """
     pa, _ = _core.as_array(p)
     qa, _ = _core.as_array(q)
+    if not _all_finite(pa, qa):
+        return float("nan")
     pp, qq = _binned_probs(pa, qa, bins)
     m = 0.5 * (pp + qq)
     return 0.5 * _kl_bits(pp, m) + 0.5 * _kl_bits(qq, m)

@@ -6,6 +6,7 @@ from . import _core
 from .utils import normalize
 
 
+@_core.nan_on_non_finite
 def _kernel(values, bins=10):
     """Shannon entropy (base 2) of `values` histogrammed into `bins`."""
     if bins <= 0:
@@ -16,7 +17,7 @@ def _kernel(values, bins=10):
     if total == 0:
         return 0.0
     p = counts[counts > 0] / total
-    return float(-np.sum(p * np.log2(p)))
+    return float(-np.sum(p * np.log2(p))) + 0.0  # + 0.0 turns -0.0 into 0.0
 
 
 def compute(series, bins=10):
@@ -44,7 +45,7 @@ def geographic(region_df, col="interest"):
     if total == 0:
         return 0.0
     p = values[values > 0] / total
-    return float(-np.sum(p * np.log2(p)))
+    return float(-np.sum(p * np.log2(p))) + 0.0  # + 0.0 turns -0.0 into 0.0
 
 
 def plot(series, window=20, bins=10, title=None):

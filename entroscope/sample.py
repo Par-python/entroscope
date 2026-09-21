@@ -32,6 +32,7 @@ def _sampen(values, m, tol):
     return float(-np.log(a / b))
 
 
+@_core.nan_on_non_finite
 def _kernel(values, m=2, r=0.2):
     """Sample entropy: -ln(A/B) of length-(m+1) vs length-m matches."""
     if r <= 0:

@@ -36,13 +36,15 @@ def _guard(n_samples, k, method):
 
 
 def _estimate(xa, ya, k, lag, method, bins):
+    if method not in ("ksg", "binned"):
+        raise ValueError(f"unknown method {method!r}; use 'ksg' or 'binned'")
+    if not (np.isfinite(xa).all() and np.isfinite(ya).all()):
+        return float("nan")
     yf, yp, xp = est.embed(xa, ya, lag=lag)
     _guard(len(yf), k, method)
     if method == "ksg":
         return est.te_ksg(yf, yp, xp, k=k)
-    if method == "binned":
-        return est.te_binned(yf, yp, xp, bins=bins)
-    raise ValueError(f"unknown method {method!r}; use 'ksg' or 'binned'")
+    return est.te_binned(yf, yp, xp, bins=bins)
 
 
 def compute(x, y, *, k=4, lag=1, method="ksg", bins=6):

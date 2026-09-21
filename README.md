@@ -83,6 +83,11 @@ Every measure exposes the same methods, so switching measures is a one-word chan
 Shannon additionally provides `geographic(df, col=...)` for spatial distributions
 (e.g. search interest by region). Multiscale provides `compute` and `plot`.
 
+**Missing values.** Any NaN or ±inf in the input makes the result NaN, never a
+made-up number. `rolling` and `delta` are NaN only for the windows that contain
+the gap, so the rest of the series is unaffected. `rolling` is causal: the value
+at position t uses positions t−window+1 through t.
+
 The two-input measures take a pair of series. `transfer.compute(x, y)` (plus
 `rolling`, `delta`, `plot`) estimates how much `x`'s past tells you about `y`'s
 future; `divergence.kl(p, q)` and `divergence.js(p, q)` (plus `plot`) compare two

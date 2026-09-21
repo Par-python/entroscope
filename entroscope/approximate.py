@@ -16,6 +16,7 @@ def _phi(values, m, tol):
     return float(np.mean(np.log(counts)))
 
 
+@_core.nan_on_non_finite
 def _kernel(values, m=2, r=0.2):
     """Approximate entropy: phi(m) - phi(m+1)."""
     if r <= 0:

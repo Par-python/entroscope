@@ -15,6 +15,7 @@ def _psd(values, sf):
     return freqs, psd
 
 
+@_core.nan_on_non_finite
 def _kernel(values, sf=1.0):
     """Spectral entropy (base 2) of the normalized power spectrum."""
     _, psd = _psd(values, sf)
@@ -22,7 +23,7 @@ def _kernel(values, sf=1.0):
     if total == 0:
         return 0.0
     p = psd[psd > 0] / total
-    return float(-np.sum(p * np.log2(p)))
+    return float(-np.sum(p * np.log2(p))) + 0.0  # + 0.0 turns -0.0 into 0.0
 
 
 def compute(series, sf=1.0):
@@ -41,6 +42,8 @@ def delta(series, window=50, sf=1.0):
 def normalized(series, sf=1.0):
     """Entropy scaled to [0, 1] by log2(number of frequency bins)."""
     arr, _ = _core.as_array(series)
+    if not np.isfinite(arr).all():
+        return float("nan")
     _, psd_vals = _psd(arr, sf)
     n_bins = int(np.count_nonzero(psd_vals > 0))
     if n_bins <= 1:

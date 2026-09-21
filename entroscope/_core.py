@@ -10,6 +10,8 @@ environment provides. Headless / Docker / CI users who want a guaranteed
 non-interactive backend should set ``MPLBACKEND=Agg`` in their environment.
 """
 
+import functools
+
 import matplotlib.pyplot as plt
 import numpy as np
 import pandas as pd
@@ -28,6 +30,23 @@ def _is_polars_series(x):
     # Checked by module name so polars stays an optional dependency.
     cls = type(x)
     return cls.__name__ == "Series" and cls.__module__.startswith("polars")
+
+
+def nan_on_non_finite(kernel):
+    """Make `kernel` return NaN when its input contains NaN or +/-inf.
+
+    Without this, kernels turn missing values into plausible-looking numbers (argsort
+    ranks NaN last, a NaN spectrum sums to NaN, ...). Applied to each measure's
+    `_kernel`, it also makes `rolling` NaN for exactly the windows that hold a gap.
+    """
+
+    @functools.wraps(kernel)
+    def wrapper(values, *args, **kwargs):
+        if not np.isfinite(np.asarray(values, dtype=float)).all():
+            return float("nan")
+        return kernel(values, *args, **kwargs)
+
+    return wrapper
 
 
 def as_array(x):

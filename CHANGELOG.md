@@ -2,6 +2,16 @@
 
 ## Unreleased
 
+- **Fixed (changes results):** missing and infinite values no longer produce
+  plausible-looking numbers. Previously one NaN made `permutation.compute`
+  return a finite value, `spectral.compute` return `-0.0`, `sample.compute`
+  return a large finite value, and `shannon.compute` raise. Now every measure
+  (`compute`, `normalized`, `multiscale`, `transfer`, `divergence.kl`/`js`)
+  returns NaN when its input holds NaN or ±inf, and `rolling`/`delta` are NaN
+  for exactly the windows that contain one. Reported while building the
+  training early-warning study.
+- **Fixed:** zero entropy is returned as `0.0`, never `-0.0` (constant or
+  perfectly ordered input, a single region in `shannon.geographic`).
 - CI: move the remaining GitHub Actions off the deprecated Node 20 runtime
   (`upload-artifact` and `download-artifact` to v7, `upload-pages-artifact` and
   `deploy-pages` to v5).

@@ -9,6 +9,7 @@ from . import _core
 from .utils import normalize
 
 
+@_core.nan_on_non_finite
 def _kernel(values, order=3, delay=1):
     """Permutation entropy (base 2) of ordinal patterns of length `order`."""
     if order < 2:
@@ -28,7 +29,7 @@ def _kernel(values, order=3, delay=1):
         counts[perm_index[pattern]] += 1
     total = counts.sum()
     p = counts[counts > 0] / total
-    return float(-np.sum(p * np.log2(p)))
+    return float(-np.sum(p * np.log2(p))) + 0.0  # + 0.0 turns -0.0 into 0.0
 
 
 def _check_window(window, order, delay):
