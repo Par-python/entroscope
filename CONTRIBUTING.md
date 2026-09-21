@@ -74,6 +74,23 @@ Follow the existing modules as a template (shannon is the simplest):
 - Add a line to `CHANGELOG.md` under an `## Unreleased` heading.
 - Match the style of the surrounding code (ruff handles formatting).
 
+## Releasing (maintainers)
+
+CI never publishes to PyPI; uploads are done by hand.
+
+1. In a release PR, bump `version` in `pyproject.toml` and `__version__` in
+   `entroscope/__init__.py`, and rename `## Unreleased` in `CHANGELOG.md` to
+   `## X.Y.Z — YYYY-MM-DD`. Merge once CI is green.
+2. Tag the merge commit `vX.Y.Z`, push the tag, and create the GitHub release.
+3. Build from the tag and upload:
+
+   ```bash
+   git checkout vX.Y.Z
+   rm -rf dist && python -m build
+   twine check dist/*
+   twine upload dist/*
+   ```
+
 ## Reporting bugs and requesting features
 
 Open an issue at https://github.com/Par-python/entroscope/issues. For bugs, a

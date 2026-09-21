@@ -1,5 +1,10 @@
 # Changelog
 
+## Unreleased
+
+- CI: removed the tag-triggered PyPI publish workflow (`publish.yml`). Releases
+  are uploaded to PyPI manually; see "Releasing" in `CONTRIBUTING.md`.
+
 ## 0.3.1 — 2026-09-21
 
 - **Fixed (changes results):** missing and infinite values no longer produce
