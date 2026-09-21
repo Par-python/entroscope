@@ -6,6 +6,7 @@ from scipy import stats
 from . import _core
 
 
+@_core.nan_on_non_finite
 def _kernel(values, dist="normal"):
     """Differential entropy (nats). dist in {'normal', 'kde'}."""
     values = np.asarray(values, dtype=float)

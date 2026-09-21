@@ -30,6 +30,7 @@ def compute(series, scales=range(1, 10), method="sample", m=2, r=0.2):
     if m < 1:
         raise ValueError("m must be >= 1")
     arr, _ = _core.as_array(series)
+    finite = bool(np.isfinite(arr).all())
     tol = r * np.std(arr)
     result = {}
     for scale in scales:
@@ -39,7 +40,7 @@ def compute(series, scales=range(1, 10), method="sample", m=2, r=0.2):
             grained = _coarse_grain(arr, scale)
         if len(grained) <= m + 1:  # sample entropy needs n > m+1
             continue
-        result[int(scale)] = sample._sampen(grained, m, tol)
+        result[int(scale)] = sample._sampen(grained, m, tol) if finite else float("nan")
     return result
 
 
