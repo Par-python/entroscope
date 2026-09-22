@@ -14,7 +14,7 @@ import pytest
 
 ROOT = Path(__file__).resolve().parent.parent
 PAGES = ["README.md", "docs/quickstart.md"]
-BLOCK = re.compile(r"```python\n(.*?)```", re.S)
+BLOCK = re.compile(r"```python\n(.*?)```", re.DOTALL)
 # `expr  # -> 6.05 ...` or `expr  # -> (3.64, 0.70) ...`: the numbers to check.
 CLAIM = re.compile(r"^(?P<expr>[^#]+?)\s+# -> (?P<value>\(?-?\d[\d.,\s-]*\)?)")
 ASSIGNMENT = re.compile(r"^\s*[A-Za-z_][\w.\[\]]*\s*=(?!=)")
@@ -31,7 +31,8 @@ def test_examples_run_and_claims_hold(page, monkeypatch):
     assert blocks, f"no python blocks in {page}"
     namespace = {}
     for i, block in enumerate(blocks, 1):
-        exec(compile(block, f"{page}:block{i}", "exec"), namespace)
+        # Running the docs' own example code is the point of this test.
+        exec(compile(block, f"{page}:block{i}", "exec"), namespace)  # noqa: S102
         plt.close("all")
         for line in block.splitlines():
             claim = CLAIM.match(line)
