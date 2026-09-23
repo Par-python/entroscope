@@ -2,6 +2,13 @@
 
 ## Unreleased
 
+- Docs: README rewritten with a banner, runnable examples that show their real
+  outputs, a "Why trust the numbers" validation table, a guide to choosing a
+  measure, and an "Honest limits" section. The quickstart examples in the README
+  and on the docs site crashed (`window=20` on an 8-point series); they now run,
+  and `tests/test_readme.py` executes every example and checks the numbers it
+  claims.
+
 - CI: removed the tag-triggered PyPI publish workflow (`publish.yml`). Releases
   are uploaded to PyPI manually; see "Releasing" in `CONTRIBUTING.md`.
 
