@@ -1,0 +1,571 @@
+{
+ "dataset": {
+  "name": "wine",
+  "source_notes": "UCI ML Wine recognition data, as bundled with scikit-learn (load_wine). The installed description names R.A. Fisher as creator and Forina, M. et al. (PARVUS, Institute of Pharmaceutical and Food Analysis and Technologies, Genoa) as original owners, and cites Lichman, M. (2013), UCI Machine Learning Repository. The installed description states no license terms.",
+  "disclaimer": "A statistical walkthrough of a public teaching dataset. Associations are descriptive only: no causal or predictive claim is made.",
+  "split": {
+   "stratified": true,
+   "train_fraction": 0.7,
+   "random_state": 42,
+   "train_rows": 124,
+   "holdout_rows": 54,
+   "holdout_used": false
+  }
+ },
+ "run": {
+  "baseline_seconds": 0.1702730000251904,
+  "audit_seconds": 51.21174412500113,
+  "n_permutations": 1999,
+  "n_subsamples": 30,
+  "reduced_resampling": false,
+  "source_hash": "f425c1ce3be50129a9eb2fcb41bf38ffa69c7cb2f8b96b3431043cefe5906db9"
+ },
+ "baseline": {
+  "features": [
+   {
+    "feature": "alcohol",
+    "missing_count": 0,
+    "nunique": 98,
+    "pearson_r_with_target": null,
+    "raw_mi_bits": 0.721886716592513
+   },
+   {
+    "feature": "malic_acid",
+    "missing_count": 0,
+    "nunique": 95,
+    "pearson_r_with_target": null,
+    "raw_mi_bits": 0.46963418061083056
+   },
+   {
+    "feature": "ash",
+    "missing_count": 0,
+    "nunique": 67,
+    "pearson_r_with_target": null,
+    "raw_mi_bits": 0.21408720018367505
+   },
+   {
+    "feature": "alcalinity_of_ash",
+    "missing_count": 0,
+    "nunique": 51,
+    "pearson_r_with_target": null,
+    "raw_mi_bits": 0.3319560038602773
+   },
+   {
+    "feature": "magnesium",
+    "missing_count": 0,
+    "nunique": 48,
+    "pearson_r_with_target": null,
+    "raw_mi_bits": 0.3105935651445496
+   },
+   {
+    "feature": "total_phenols",
+    "missing_count": 0,
+    "nunique": 76,
+    "pearson_r_with_target": null,
+    "raw_mi_bits": 0.5950801107611744
+   },
+   {
+    "feature": "flavanoids",
+    "missing_count": 0,
+    "nunique": 97,
+    "pearson_r_with_target": null,
+    "raw_mi_bits": 0.952771947147427
+   },
+   {
+    "feature": "nonflavanoid_phenols",
+    "missing_count": 0,
+    "nunique": 34,
+    "pearson_r_with_target": null,
+    "raw_mi_bits": 0.2207220298426199
+   },
+   {
+    "feature": "proanthocyanins",
+    "missing_count": 0,
+    "nunique": 80,
+    "pearson_r_with_target": null,
+    "raw_mi_bits": 0.3936713216185391
+   },
+   {
+    "feature": "color_intensity",
+    "missing_count": 0,
+    "nunique": 103,
+    "pearson_r_with_target": null,
+    "raw_mi_bits": 0.8635356220709217
+   },
+   {
+    "feature": "hue",
+    "missing_count": 0,
+    "nunique": 65,
+    "pearson_r_with_target": null,
+    "raw_mi_bits": 0.6190119020917071
+   },
+   {
+    "feature": "od280/od315_of_diluted_wines",
+    "missing_count": 0,
+    "nunique": 92,
+    "pearson_r_with_target": null,
+    "raw_mi_bits": 0.7340011297396676
+   },
+   {
+    "feature": "proline",
+    "missing_count": 0,
+    "nunique": 90,
+    "pearson_r_with_target": null,
+    "raw_mi_bits": 0.7418131176511503
+   }
+  ],
+  "exact_duplicates": [],
+  "pearson_applicable": false
+ },
+ "audit": {
+  "features": [
+   {
+    "feature": "alcohol",
+    "declared_type": "continuous",
+    "n_total": 124,
+    "n_observed": 124,
+    "missing_fraction": 0.0,
+    "n_unique_observed": 98,
+    "dominant_fraction": 0.04838709677419355,
+    "entropy_bits": null,
+    "value_status": "eligible",
+    "warning_codes": [
+     "insufficient_subsample_support"
+    ],
+    "subsample_mi_median": null,
+    "subsample_mi_p10": null,
+    "subsample_mi_p90": null,
+    "subsample_valid_count": 0
+   },
+   {
+    "feature": "malic_acid",
+    "declared_type": "continuous",
+    "n_total": 124,
+    "n_observed": 124,
+    "missing_fraction": 0.0,
+    "n_unique_observed": 95,
+    "dominant_fraction": 0.056451612903225805,
+    "entropy_bits": null,
+    "value_status": "eligible",
+    "warning_codes": [
+     "insufficient_subsample_support"
+    ],
+    "subsample_mi_median": null,
+    "subsample_mi_p10": null,
+    "subsample_mi_p90": null,
+    "subsample_valid_count": 0
+   },
+   {
+    "feature": "ash",
+    "declared_type": "continuous",
+    "n_total": 124,
+    "n_observed": 124,
+    "missing_fraction": 0.0,
+    "n_unique_observed": 67,
+    "dominant_fraction": 0.04838709677419355,
+    "entropy_bits": null,
+    "value_status": "eligible",
+    "warning_codes": [
+     "insufficient_subsample_support"
+    ],
+    "subsample_mi_median": null,
+    "subsample_mi_p10": null,
+    "subsample_mi_p90": null,
+    "subsample_valid_count": 0
+   },
+   {
+    "feature": "alcalinity_of_ash",
+    "declared_type": "continuous",
+    "n_total": 124,
+    "n_observed": 124,
+    "missing_fraction": 0.0,
+    "n_unique_observed": 51,
+    "dominant_fraction": 0.0967741935483871,
+    "entropy_bits": null,
+    "value_status": "eligible",
+    "warning_codes": [
+     "insufficient_subsample_support"
+    ],
+    "subsample_mi_median": null,
+    "subsample_mi_p10": null,
+    "subsample_mi_p90": null,
+    "subsample_valid_count": 0
+   },
+   {
+    "feature": "magnesium",
+    "declared_type": "continuous",
+    "n_total": 124,
+    "n_observed": 124,
+    "missing_fraction": 0.0,
+    "n_unique_observed": 48,
+    "dominant_fraction": 0.08064516129032258,
+    "entropy_bits": null,
+    "value_status": "eligible",
+    "warning_codes": [
+     "insufficient_subsample_support"
+    ],
+    "subsample_mi_median": null,
+    "subsample_mi_p10": null,
+    "subsample_mi_p90": null,
+    "subsample_valid_count": 0
+   },
+   {
+    "feature": "total_phenols",
+    "declared_type": "continuous",
+    "n_total": 124,
+    "n_observed": 124,
+    "missing_fraction": 0.0,
+    "n_unique_observed": 76,
+    "dominant_fraction": 0.056451612903225805,
+    "entropy_bits": null,
+    "value_status": "eligible",
+    "warning_codes": [
+     "insufficient_subsample_support"
+    ],
+    "subsample_mi_median": null,
+    "subsample_mi_p10": null,
+    "subsample_mi_p90": null,
+    "subsample_valid_count": 0
+   },
+   {
+    "feature": "flavanoids",
+    "declared_type": "continuous",
+    "n_total": 124,
+    "n_observed": 124,
+    "missing_fraction": 0.0,
+    "n_unique_observed": 97,
+    "dominant_fraction": 0.03225806451612903,
+    "entropy_bits": null,
+    "value_status": "eligible",
+    "warning_codes": [
+     "insufficient_subsample_support"
+    ],
+    "subsample_mi_median": null,
+    "subsample_mi_p10": null,
+    "subsample_mi_p90": null,
+    "subsample_valid_count": 0
+   },
+   {
+    "feature": "nonflavanoid_phenols",
+    "declared_type": "continuous",
+    "n_total": 124,
+    "n_observed": 124,
+    "missing_fraction": 0.0,
+    "n_unique_observed": 34,
+    "dominant_fraction": 0.07258064516129033,
+    "entropy_bits": null,
+    "value_status": "eligible",
+    "warning_codes": [
+     "insufficient_subsample_support"
+    ],
+    "subsample_mi_median": null,
+    "subsample_mi_p10": null,
+    "subsample_mi_p90": null,
+    "subsample_valid_count": 0
+   },
+   {
+    "feature": "proanthocyanins",
+    "declared_type": "continuous",
+    "n_total": 124,
+    "n_observed": 124,
+    "missing_fraction": 0.0,
+    "n_unique_observed": 80,
+    "dominant_fraction": 0.04838709677419355,
+    "entropy_bits": null,
+    "value_status": "eligible",
+    "warning_codes": [
+     "insufficient_subsample_support"
+    ],
+    "subsample_mi_median": null,
+    "subsample_mi_p10": null,
+    "subsample_mi_p90": null,
+    "subsample_valid_count": 0
+   },
+   {
+    "feature": "color_intensity",
+    "declared_type": "continuous",
+    "n_total": 124,
+    "n_observed": 124,
+    "missing_fraction": 0.0,
+    "n_unique_observed": 103,
+    "dominant_fraction": 0.024193548387096774,
+    "entropy_bits": null,
+    "value_status": "eligible",
+    "warning_codes": [
+     "insufficient_subsample_support"
+    ],
+    "subsample_mi_median": null,
+    "subsample_mi_p10": null,
+    "subsample_mi_p90": null,
+    "subsample_valid_count": 0
+   },
+   {
+    "feature": "hue",
+    "declared_type": "continuous",
+    "n_total": 124,
+    "n_observed": 124,
+    "missing_fraction": 0.0,
+    "n_unique_observed": 65,
+    "dominant_fraction": 0.04032258064516129,
+    "entropy_bits": null,
+    "value_status": "eligible",
+    "warning_codes": [
+     "insufficient_subsample_support"
+    ],
+    "subsample_mi_median": null,
+    "subsample_mi_p10": null,
+    "subsample_mi_p90": null,
+    "subsample_valid_count": 0
+   },
+   {
+    "feature": "od280/od315_of_diluted_wines",
+    "declared_type": "continuous",
+    "n_total": 124,
+    "n_observed": 124,
+    "missing_fraction": 0.0,
+    "n_unique_observed": 92,
+    "dominant_fraction": 0.03225806451612903,
+    "entropy_bits": null,
+    "value_status": "eligible",
+    "warning_codes": [
+     "insufficient_subsample_support"
+    ],
+    "subsample_mi_median": null,
+    "subsample_mi_p10": null,
+    "subsample_mi_p90": null,
+    "subsample_valid_count": 0
+   },
+   {
+    "feature": "proline",
+    "declared_type": "continuous",
+    "n_total": 124,
+    "n_observed": 124,
+    "missing_fraction": 0.0,
+    "n_unique_observed": 90,
+    "dominant_fraction": 0.03225806451612903,
+    "entropy_bits": null,
+    "value_status": "eligible",
+    "warning_codes": [
+     "insufficient_subsample_support"
+    ],
+    "subsample_mi_median": null,
+    "subsample_mi_p10": null,
+    "subsample_mi_p90": null,
+    "subsample_valid_count": 0
+   }
+  ],
+  "tests": [
+   {
+    "feature": "alcohol",
+    "kind": "value",
+    "n": 124,
+    "mi_bits": 0.721886716592513,
+    "null_median_bits": 0.0,
+    "excess_bits": 0.721886716592513,
+    "p_value": 0.0005,
+    "p_holm": 0.006500000000000001,
+    "n_permutations": 1999,
+    "assessment": "above_permutation_null"
+   },
+   {
+    "feature": "malic_acid",
+    "kind": "value",
+    "n": 124,
+    "mi_bits": 0.46963418061083056,
+    "null_median_bits": 0.0,
+    "excess_bits": 0.46963418061083056,
+    "p_value": 0.0005,
+    "p_holm": 0.006500000000000001,
+    "n_permutations": 1999,
+    "assessment": "above_permutation_null"
+   },
+   {
+    "feature": "ash",
+    "kind": "value",
+    "n": 124,
+    "mi_bits": 0.21408720018367505,
+    "null_median_bits": 0.0,
+    "excess_bits": 0.21408720018367505,
+    "p_value": 0.002,
+    "p_holm": 0.006500000000000001,
+    "n_permutations": 1999,
+    "assessment": "above_permutation_null"
+   },
+   {
+    "feature": "alcalinity_of_ash",
+    "kind": "value",
+    "n": 124,
+    "mi_bits": 0.3319560038602773,
+    "null_median_bits": 0.0,
+    "excess_bits": 0.3319560038602773,
+    "p_value": 0.0005,
+    "p_holm": 0.006500000000000001,
+    "n_permutations": 1999,
+    "assessment": "above_permutation_null"
+   },
+   {
+    "feature": "magnesium",
+    "kind": "value",
+    "n": 124,
+    "mi_bits": 0.3105935651445496,
+    "null_median_bits": 0.0,
+    "excess_bits": 0.3105935651445496,
+    "p_value": 0.001,
+    "p_holm": 0.006500000000000001,
+    "n_permutations": 1999,
+    "assessment": "above_permutation_null"
+   },
+   {
+    "feature": "total_phenols",
+    "kind": "value",
+    "n": 124,
+    "mi_bits": 0.5950801107611744,
+    "null_median_bits": 0.0,
+    "excess_bits": 0.5950801107611744,
+    "p_value": 0.0005,
+    "p_holm": 0.006500000000000001,
+    "n_permutations": 1999,
+    "assessment": "above_permutation_null"
+   },
+   {
+    "feature": "flavanoids",
+    "kind": "value",
+    "n": 124,
+    "mi_bits": 0.952771947147427,
+    "null_median_bits": 0.0,
+    "excess_bits": 0.952771947147427,
+    "p_value": 0.0005,
+    "p_holm": 0.006500000000000001,
+    "n_permutations": 1999,
+    "assessment": "above_permutation_null"
+   },
+   {
+    "feature": "nonflavanoid_phenols",
+    "kind": "value",
+    "n": 124,
+    "mi_bits": 0.2207220298426199,
+    "null_median_bits": 0.0,
+    "excess_bits": 0.2207220298426199,
+    "p_value": 0.0025,
+    "p_holm": 0.006500000000000001,
+    "n_permutations": 1999,
+    "assessment": "above_permutation_null"
+   },
+   {
+    "feature": "proanthocyanins",
+    "kind": "value",
+    "n": 124,
+    "mi_bits": 0.3936713216185391,
+    "null_median_bits": 0.0,
+    "excess_bits": 0.3936713216185391,
+    "p_value": 0.0005,
+    "p_holm": 0.006500000000000001,
+    "n_permutations": 1999,
+    "assessment": "above_permutation_null"
+   },
+   {
+    "feature": "color_intensity",
+    "kind": "value",
+    "n": 124,
+    "mi_bits": 0.8635356220709217,
+    "null_median_bits": 0.0,
+    "excess_bits": 0.8635356220709217,
+    "p_value": 0.0005,
+    "p_holm": 0.006500000000000001,
+    "n_permutations": 1999,
+    "assessment": "above_permutation_null"
+   },
+   {
+    "feature": "hue",
+    "kind": "value",
+    "n": 124,
+    "mi_bits": 0.6190119020917071,
+    "null_median_bits": 0.0,
+    "excess_bits": 0.6190119020917071,
+    "p_value": 0.0005,
+    "p_holm": 0.006500000000000001,
+    "n_permutations": 1999,
+    "assessment": "above_permutation_null"
+   },
+   {
+    "feature": "od280/od315_of_diluted_wines",
+    "kind": "value",
+    "n": 124,
+    "mi_bits": 0.7340011297396676,
+    "null_median_bits": 0.0,
+    "excess_bits": 0.7340011297396676,
+    "p_value": 0.0005,
+    "p_holm": 0.006500000000000001,
+    "n_permutations": 1999,
+    "assessment": "above_permutation_null"
+   },
+   {
+    "feature": "proline",
+    "kind": "value",
+    "n": 124,
+    "mi_bits": 0.7418131176511503,
+    "null_median_bits": 0.0,
+    "excess_bits": 0.7418131176511503,
+    "p_value": 0.0005,
+    "p_holm": 0.006500000000000001,
+    "n_permutations": 1999,
+    "assessment": "above_permutation_null"
+   }
+  ],
+  "duplicates": [],
+  "warnings": [
+   "Some eligible features had fewer than 10 subsamples meeting the support rules (insufficient_subsample_support); their stability summary is left empty and their value status is unchanged.",
+   "Feature and target names appear in this report and may themselves be sensitive; review before sharing."
+  ],
+  "metadata": {
+   "schema_version": "0.1",
+   "target_name": "target",
+   "n_rows": 124,
+   "target_class_count": 3,
+   "target_entropy_bits": 1.5645394747666606,
+   "n_tests": 13,
+   "configuration": {
+    "n_permutations": 1999,
+    "n_subsamples": 30,
+    "random_state": 0,
+    "subsample_fraction": 0.8,
+    "n_neighbors": 3,
+    "alpha": 0.05,
+    "min_rows": 100,
+    "max_rows": 5000,
+    "max_predictors": 50,
+    "max_classes": 20,
+    "min_class_count": 10,
+    "minimum_attainable_p": 0.0005
+   },
+   "versions": {
+    "python": "3.13.5",
+    "numpy": "2.4.6",
+    "pandas": "3.0.3",
+    "scipy": "1.17.1",
+    "sklearn": "1.9.1",
+    "prototype_schema": "0.1"
+   },
+   "assume_iid": true,
+   "limitations": [
+    "Run this on training data only; results describe this sample, not a population or a deployment setting.",
+    "Rows are assumed independent (acknowledged via assume_iid=True, not tested). Repeated subjects, groups or time order invalidate the permutation null.",
+    "Value tests use rows where the feature is observed; missingness tests use all rows. These are different populations, so scores are not a universal ranking across features.",
+    "'not_distinguished_from_null' is not evidence that a feature is useless: power can be low and marginal tests miss interactions.",
+    "Interaction blind spot: each feature is tested alone against the target. Features that matter only jointly (for example XOR) can show zero individual MI.",
+    "No causal claim, leakage verdict, accuracy guarantee or column-removal advice is made. Exclusion codes are conservative policies, and duplicate pairs are facts about values, not recommendations.",
+    "Holm adjustment controls the family-wise error rate across this report's tests under exchangeability; adjusted p-values are not FDR q-values and change when the family of tests changes.",
+    "subsample_mi_p10/p90 summarize sensitivity to stratified 80% subsamples without replacement; they are not confidence intervals.",
+    "Continuous MI uses scikit-learn's k-nearest-neighbour estimator (k=3), which assumes genuinely continuous values; categorical MI is a plug-in estimate that is biased upward when categories are many relative to rows.",
+    "possible_identifier only catches unique values that are strictly monotone in row order; it can flag a legitimate measurement, and a shuffled numeric ID cannot be recognized reliably."
+   ]
+  }
+ },
+ "comparison": [
+  "Raw MI is positive but the audit withholds value inference (0): none. The exclusion codes say why. For identifiers and sparse categories, positive MI can reflect memorization; other codes flag a declared-type or support problem.",
+  "Positive raw MI, not distinguished from the shuffled-label null after Holm (0): none.",
+  "Value associations above the permutation null (13): alcohol, malic_acid, ash, alcalinity_of_ash, magnesium, total_phenols, flavanoids, nonflavanoid_phenols, proanthocyanins, color_intensity, hue, od280/od315_of_diluted_wines, proline. This is association in this training sample, not causation or model value.",
+  "Missingness associated with the target (0): none.",
+  "Holm family size m=13. Features are tested one at a time, so interactions are not examined."
+ ]
+}

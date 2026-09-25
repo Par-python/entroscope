@@ -1,0 +1,24 @@
+{
+ "n_rows": 1000,
+ "predictors": "5 continuous, 5 categorical",
+ "configuration": "defaults (B=1999, 30 subsamples, one worker)",
+ "elapsed_s": 35.985922915977426,
+ "ru_maxrss_before_bytes": 132694016,
+ "ru_maxrss_after_bytes": 166936576,
+ "incremental_peak_bytes": 34242560,
+ "ru_maxrss_unit_note": "ru_maxrss is bytes on macOS and KiB on Linux; converted to bytes here. Incremental = high-water mark after minus before.",
+ "time_target_s": 300,
+ "memory_target_bytes": 1073741824,
+ "environment": {
+  "python": "3.13.5",
+  "platform": "macOS-26.6.2-arm64-arm-64bit-Mach-O",
+  "machine": "arm64",
+  "processor": "arm",
+  "numpy": "2.4.6",
+  "pandas": "3.0.3",
+  "scipy": "1.17.1",
+  "sklearn": "1.9.1"
+ },
+ "source_hash": "bf827bd402563405b83677ef7a278c096e2db7a5aac418f3fcc5de9f4b2de970",
+ "passed": true
+}

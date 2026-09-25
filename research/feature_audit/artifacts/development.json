@@ -1,0 +1,5353 @@
+{
+ "protocol": "research/feature_audit/PROTOCOL.md",
+ "config": {
+  "label": "official",
+  "n_rows": 400,
+  "n_permutations": 1999,
+  "n_subsamples": 30,
+  "random_state": 0
+ },
+ "config_hash": "a0dafce07b03d8cf47bbe190191a65562759e80069bd3eca561f900ba929ff5c",
+ "source_hash": "123567ac9dda8b511a7ef9fbe026193464980ef0d353f46b6ccc0ce92ef6e172",
+ "environment": {
+  "python": "3.13.5",
+  "platform": "macOS-26.6.2-arm64-arm-64bit-Mach-O",
+  "machine": "arm64",
+  "processor": "arm",
+  "numpy": "2.4.6",
+  "pandas": "3.0.3",
+  "scipy": "1.17.1",
+  "sklearn": "1.9.1"
+ },
+ "records": [
+  {
+   "case": "nonlinear",
+   "seed": 6000,
+   "partition": "development",
+   "elapsed_s": 54.54992699995637,
+   "n_tests": 9,
+   "n_rejections": 2,
+   "any_rejection": true,
+   "rejected": [
+    [
+     "x",
+     "value"
+    ],
+    [
+     "x_copy",
+     "value"
+    ]
+   ],
+   "value_status": {
+    "x": "eligible",
+    "x_copy": "eligible",
+    "noise": "eligible",
+    "cat0": "eligible",
+    "cat1": "eligible",
+    "cat2": "eligible",
+    "cat3": "eligible",
+    "cat4": "eligible",
+    "cat5": "eligible",
+    "id": "high_cardinality"
+   },
+   "duplicates": [
+    [
+     "x",
+     "x_copy"
+    ]
+   ],
+   "tests": [
+    {
+     "feature": "x",
+     "kind": "value",
+     "n": 400,
+     "mi_bits": 0.9895427151575149,
+     "null_median_bits": 0.0,
+     "p_value": 0.0005,
+     "p_holm": 0.0045000000000000005,
+     "assessment": "above_permutation_null"
+    },
+    {
+     "feature": "x_copy",
+     "kind": "value",
+     "n": 400,
+     "mi_bits": 0.9888213676370706,
+     "null_median_bits": 0.0,
+     "p_value": 0.0005,
+     "p_holm": 0.0045000000000000005,
+     "assessment": "above_permutation_null"
+    },
+    {
+     "feature": "noise",
+     "kind": "value",
+     "n": 400,
+     "mi_bits": 0.0,
+     "null_median_bits": 0.0,
+     "p_value": 1.0,
+     "p_holm": 1.0,
+     "assessment": "not_distinguished_from_null"
+    },
+    {
+     "feature": "cat0",
+     "kind": "value",
+     "n": 400,
+     "mi_bits": 0.0028880125922874085,
+     "null_median_bits": 0.004190005008495937,
+     "p_value": 0.6495,
+     "p_holm": 1.0,
+     "assessment": "not_distinguished_from_null"
+    },
+    {
+     "feature": "cat1",
+     "kind": "value",
+     "n": 400,
+     "mi_bits": 0.014536620434055375,
+     "null_median_bits": 0.004047125990630058,
+     "p_value": 0.045,
+     "p_holm": 0.315,
+     "assessment": "not_distinguished_from_null"
+    },
+    {
+     "feature": "cat2",
+     "kind": "value",
+     "n": 400,
+     "mi_bits": 0.004481645759332139,
+     "null_median_bits": 0.004047125990630058,
+     "p_value": 0.4725,
+     "p_holm": 1.0,
+     "assessment": "not_distinguished_from_null"
+    },
+    {
+     "feature": "cat3",
+     "kind": "value",
+     "n": 400,
+     "mi_bits": 0.009709739517014315,
+     "null_median_bits": 0.004480252409293134,
+     "p_value": 0.1495,
+     "p_holm": 0.897,
+     "assessment": "not_distinguished_from_null"
+    },
+    {
+     "feature": "cat4",
+     "kind": "value",
+     "n": 400,
+     "mi_bits": 0.0038999956572570572,
+     "null_median_bits": 0.004480252409293134,
+     "p_value": 0.5575,
+     "p_holm": 1.0,
+     "assessment": "not_distinguished_from_null"
+    },
+    {
+     "feature": "cat5",
+     "kind": "value",
+     "n": 400,
+     "mi_bits": 0.003902789113025566,
+     "null_median_bits": 0.004047125990630058,
+     "p_value": 0.5135,
+     "p_holm": 1.0,
+     "assessment": "not_distinguished_from_null"
+    }
+   ],
+   "x_pearson_r": -8.62101001118825e-18,
+   "x_mi_bits": 0.9895427151575149,
+   "x_p_holm": 0.0045000000000000005,
+   "x_above_null": true,
+   "id_value_status": "high_cardinality",
+   "duplicate_pair_reported": true,
+   "source_hash": "123567ac9dda8b511a7ef9fbe026193464980ef0d353f46b6ccc0ce92ef6e172",
+   "config_hash": "a0dafce07b03d8cf47bbe190191a65562759e80069bd3eca561f900ba929ff5c"
+  },
+  {
+   "case": "nonlinear",
+   "seed": 6001,
+   "partition": "development",
+   "elapsed_s": 53.562188041978516,
+   "n_tests": 9,
+   "n_rejections": 2,
+   "any_rejection": true,
+   "rejected": [
+    [
+     "x",
+     "value"
+    ],
+    [
+     "x_copy",
+     "value"
+    ]
+   ],
+   "value_status": {
+    "x": "eligible",
+    "x_copy": "eligible",
+    "noise": "eligible",
+    "cat0": "eligible",
+    "cat1": "eligible",
+    "cat2": "eligible",
+    "cat3": "eligible",
+    "cat4": "eligible",
+    "cat5": "eligible",
+    "id": "high_cardinality"
+   },
+   "duplicates": [
+    [
+     "x",
+     "x_copy"
+    ]
+   ],
+   "tests": [
+    {
+     "feature": "x",
+     "kind": "value",
+     "n": 400,
+     "mi_bits": 0.9888213676370703,
+     "null_median_bits": 0.0,
+     "p_value": 0.0005,
+     "p_holm": 0.0045000000000000005,
+     "assessment": "above_permutation_null"
+    },
+    {
+     "feature": "x_copy",
+     "kind": "value",
+     "n": 400,
+     "mi_bits": 0.9907449610249224,
+     "null_median_bits": 0.0,
+     "p_value": 0.0005,
+     "p_holm": 0.0045000000000000005,
+     "assessment": "above_permutation_null"
+    },
+    {
+     "feature": "noise",
+     "kind": "value",
+     "n": 400,
+     "mi_bits": 0.030420287650920138,
+     "null_median_bits": 0.0,
+     "p_value": 0.1985,
+     "p_holm": 1.0,
+     "assessment": "not_distinguished_from_null"
+    },
+    {
+     "feature": "cat0",
+     "kind": "value",
+     "n": 400,
+     "mi_bits": 0.006796633504462027,
+     "null_median_bits": 0.004190005008495937,
+     "p_value": 0.2925,
+     "p_holm": 1.0,
+     "assessment": "not_distinguished_from_null"
+    },
+    {
+     "feature": "cat1",
+     "kind": "value",
+     "n": 400,
+     "mi_bits": 0.0036099863060181777,
+     "null_median_bits": 0.004047125990630058,
+     "p_value": 0.5825,
+     "p_holm": 1.0,
+     "assessment": "not_distinguished_from_null"
+    },
+    {
+     "feature": "cat2",
+     "kind": "value",
+     "n": 400,
+     "mi_bits": 0.004047125990630058,
+     "null_median_bits": 0.004047125990630058,
+     "p_value": 0.511,
+     "p_holm": 1.0,
+     "assessment": "not_distinguished_from_null"
+    },
+    {
+     "feature": "cat3",
+     "kind": "value",
+     "n": 400,
+     "mi_bits": 0.0010103584210628218,
+     "null_median_bits": 0.004047125990630058,
+     "p_value": 0.916,
+     "p_holm": 1.0,
+     "assessment": "not_distinguished_from_null"
+    },
+    {
+     "feature": "cat4",
+     "kind": "value",
+     "n": 400,
+     "mi_bits": 0.013068095998861518,
+     "null_median_bits": 0.004047125990630058,
+     "p_value": 0.0675,
+     "p_holm": 0.47250000000000003,
+     "assessment": "not_distinguished_from_null"
+    },
+    {
+     "feature": "cat5",
+     "kind": "value",
+     "n": 400,
+     "mi_bits": 0.0021657487160066527,
+     "null_median_bits": 0.004480252409293134,
+     "p_value": 0.7635,
+     "p_holm": 1.0,
+     "assessment": "not_distinguished_from_null"
+    }
+   ],
+   "x_pearson_r": 9.57890001243139e-19,
+   "x_mi_bits": 0.9888213676370703,
+   "x_p_holm": 0.0045000000000000005,
+   "x_above_null": true,
+   "id_value_status": "high_cardinality",
+   "duplicate_pair_reported": true,
+   "source_hash": "123567ac9dda8b511a7ef9fbe026193464980ef0d353f46b6ccc0ce92ef6e172",
+   "config_hash": "a0dafce07b03d8cf47bbe190191a65562759e80069bd3eca561f900ba929ff5c"
+  },
+  {
+   "case": "nonlinear",
+   "seed": 6002,
+   "partition": "development",
+   "elapsed_s": 54.299934667069465,
+   "n_tests": 9,
+   "n_rejections": 2,
+   "any_rejection": true,
+   "rejected": [
+    [
+     "x",
+     "value"
+    ],
+    [
+     "x_copy",
+     "value"
+    ]
+   ],
+   "value_status": {
+    "x": "eligible",
+    "x_copy": "eligible",
+    "noise": "eligible",
+    "cat0": "eligible",
+    "cat1": "eligible",
+    "cat2": "eligible",
+    "cat3": "eligible",
+    "cat4": "eligible",
+    "cat5": "eligible",
+    "id": "high_cardinality"
+   },
+   "duplicates": [
+    [
+     "x",
+     "x_copy"
+    ]
+   ],
+   "tests": [
+    {
+     "feature": "x",
+     "kind": "value",
+     "n": 400,
+     "mi_bits": 0.9902640626779594,
+     "null_median_bits": 0.0,
+     "p_value": 0.0005,
+     "p_holm": 0.0045000000000000005,
+     "assessment": "above_permutation_null"
+    },
+    {
+     "feature": "x_copy",
+     "kind": "value",
+     "n": 400,
+     "mi_bits": 0.9864168759022554,
+     "null_median_bits": 0.0006644522149145191,
+     "p_value": 0.0005,
+     "p_holm": 0.0045000000000000005,
+     "assessment": "above_permutation_null"
+    },
+    {
+     "feature": "noise",
+     "kind": "value",
+     "n": 400,
+     "mi_bits": 0.05658855569081642,
+     "null_median_bits": 0.0,
+     "p_value": 0.0565,
+     "p_holm": 0.3955,
+     "assessment": "not_distinguished_from_null"
+    },
+    {
+     "feature": "cat0",
+     "kind": "value",
+     "n": 400,
+     "mi_bits": 0.004190005008495937,
+     "null_median_bits": 0.004047125990630058,
+     "p_value": 0.487,
+     "p_holm": 1.0,
+     "assessment": "not_distinguished_from_null"
+    },
+    {
+     "feature": "cat1",
+     "kind": "value",
+     "n": 400,
+     "mi_bits": 0.002744605362313226,
+     "null_median_bits": 0.004480252409293134,
+     "p_value": 0.6905,
+     "p_holm": 1.0,
+     "assessment": "not_distinguished_from_null"
+    },
+    {
+     "feature": "cat2",
+     "kind": "value",
+     "n": 400,
+     "mi_bits": 0.007517019978860369,
+     "null_median_bits": 0.004047125990630058,
+     "p_value": 0.247,
+     "p_holm": 1.0,
+     "assessment": "not_distinguished_from_null"
+    },
+    {
+     "feature": "cat3",
+     "kind": "value",
+     "n": 400,
+     "mi_bits": 0.0021657487160066527,
+     "null_median_bits": 0.004047125990630058,
+     "p_value": 0.7795,
+     "p_holm": 1.0,
+     "assessment": "not_distinguished_from_null"
+    },
+    {
+     "feature": "cat4",
+     "kind": "value",
+     "n": 400,
+     "mi_bits": 0.007371282995526375,
+     "null_median_bits": 0.004481645759332139,
+     "p_value": 0.279,
+     "p_holm": 1.0,
+     "assessment": "not_distinguished_from_null"
+    },
+    {
+     "feature": "cat5",
+     "kind": "value",
+     "n": 400,
+     "mi_bits": 0.007670442601376401,
+     "null_median_bits": 0.004480252409293134,
+     "p_value": 0.2485,
+     "p_holm": 1.0,
+     "assessment": "not_distinguished_from_null"
+    }
+   ],
+   "x_pearson_r": 6.705230008701971e-18,
+   "x_mi_bits": 0.9902640626779594,
+   "x_p_holm": 0.0045000000000000005,
+   "x_above_null": true,
+   "id_value_status": "high_cardinality",
+   "duplicate_pair_reported": true,
+   "source_hash": "123567ac9dda8b511a7ef9fbe026193464980ef0d353f46b6ccc0ce92ef6e172",
+   "config_hash": "a0dafce07b03d8cf47bbe190191a65562759e80069bd3eca561f900ba929ff5c"
+  },
+  {
+   "case": "nonlinear",
+   "seed": 6003,
+   "partition": "development",
+   "elapsed_s": 54.39721712504979,
+   "n_tests": 9,
+   "n_rejections": 2,
+   "any_rejection": true,
+   "rejected": [
+    [
+     "x",
+     "value"
+    ],
+    [
+     "x_copy",
+     "value"
+    ]
+   ],
+   "value_status": {
+    "x": "eligible",
+    "x_copy": "eligible",
+    "noise": "eligible",
+    "cat0": "eligible",
+    "cat1": "eligible",
+    "cat2": "eligible",
+    "cat3": "eligible",
+    "cat4": "eligible",
+    "cat5": "eligible",
+    "id": "high_cardinality"
+   },
+   "duplicates": [
+    [
+     "x",
+     "x_copy"
+    ]
+   ],
+   "tests": [
+    {
+     "feature": "x",
+     "kind": "value",
+     "n": 400,
+     "mi_bits": 0.9868977742492187,
+     "null_median_bits": 0.0,
+     "p_value": 0.0005,
+     "p_holm": 0.0045000000000000005,
+     "assessment": "above_permutation_null"
+    },
+    {
+     "feature": "x_copy",
+     "kind": "value",
+     "n": 400,
+     "mi_bits": 0.9914663085453667,
+     "null_median_bits": 0.0,
+     "p_value": 0.0005,
+     "p_holm": 0.0045000000000000005,
+     "assessment": "above_permutation_null"
+    },
+    {
+     "feature": "noise",
+     "kind": "value",
+     "n": 400,
+     "mi_bits": 0.0,
+     "null_median_bits": 0.0,
+     "p_value": 1.0,
+     "p_holm": 1.0,
+     "assessment": "not_distinguished_from_null"
+    },
+    {
+     "feature": "cat0",
+     "kind": "value",
+     "n": 400,
+     "mi_bits": 0.0030339163597896167,
+     "null_median_bits": 0.004481645759332139,
+     "p_value": 0.672,
+     "p_holm": 1.0,
+     "assessment": "not_distinguished_from_null"
+    },
+    {
+     "feature": "cat1",
+     "kind": "value",
+     "n": 400,
+     "mi_bits": 0.003902789113025566,
+     "null_median_bits": 0.004047125990630058,
+     "p_value": 0.52,
+     "p_holm": 1.0,
+     "assessment": "not_distinguished_from_null"
+    },
+    {
+     "feature": "cat2",
+     "kind": "value",
+     "n": 400,
+     "mi_bits": 0.002744605362313226,
+     "null_median_bits": 0.004480252409293134,
+     "p_value": 0.6875,
+     "p_holm": 1.0,
+     "assessment": "not_distinguished_from_null"
+    },
+    {
+     "feature": "cat3",
+     "kind": "value",
+     "n": 400,
+     "mi_bits": 0.003468967698085974,
+     "null_median_bits": 0.004190005008495937,
+     "p_value": 0.5895,
+     "p_holm": 1.0,
+     "assessment": "not_distinguished_from_null"
+    },
+    {
+     "feature": "cat4",
+     "kind": "value",
+     "n": 400,
+     "mi_bits": 0.006510115962754145,
+     "null_median_bits": 0.004480252409293134,
+     "p_value": 0.313,
+     "p_holm": 1.0,
+     "assessment": "not_distinguished_from_null"
+    },
+    {
+     "feature": "cat5",
+     "kind": "value",
+     "n": 400,
+     "mi_bits": 0.012620620047782735,
+     "null_median_bits": 0.004480252409293134,
+     "p_value": 0.077,
+     "p_holm": 0.539,
+     "assessment": "not_distinguished_from_null"
+    }
+   ],
+   "x_pearson_r": -1.915780002486278e-18,
+   "x_mi_bits": 0.9868977742492187,
+   "x_p_holm": 0.0045000000000000005,
+   "x_above_null": true,
+   "id_value_status": "high_cardinality",
+   "duplicate_pair_reported": true,
+   "source_hash": "123567ac9dda8b511a7ef9fbe026193464980ef0d353f46b6ccc0ce92ef6e172",
+   "config_hash": "a0dafce07b03d8cf47bbe190191a65562759e80069bd3eca561f900ba929ff5c"
+  },
+  {
+   "case": "nonlinear",
+   "seed": 6004,
+   "partition": "development",
+   "elapsed_s": 69.53437895909883,
+   "n_tests": 9,
+   "n_rejections": 2,
+   "any_rejection": true,
+   "rejected": [
+    [
+     "x",
+     "value"
+    ],
+    [
+     "x_copy",
+     "value"
+    ]
+   ],
+   "value_status": {
+    "x": "eligible",
+    "x_copy": "eligible",
+    "noise": "eligible",
+    "cat0": "eligible",
+    "cat1": "eligible",
+    "cat2": "eligible",
+    "cat3": "eligible",
+    "cat4": "eligible",
+    "cat5": "eligible",
+    "id": "high_cardinality"
+   },
+   "duplicates": [
+    [
+     "x",
+     "x_copy"
+    ]
+   ],
+   "tests": [
+    {
+     "feature": "x",
+     "kind": "value",
+     "n": 400,
+     "mi_bits": 0.9902640626779594,
+     "null_median_bits": 0.0,
+     "p_value": 0.0005,
+     "p_holm": 0.0045000000000000005,
+     "assessment": "above_permutation_null"
+    },
+    {
+     "feature": "x_copy",
+     "kind": "value",
+     "n": 400,
+     "mi_bits": 0.987619121769663,
+     "null_median_bits": 0.0,
+     "p_value": 0.0005,
+     "p_holm": 0.0045000000000000005,
+     "assessment": "above_permutation_null"
+    },
+    {
+     "feature": "noise",
+     "kind": "value",
+     "n": 400,
+     "mi_bits": 0.0,
+     "null_median_bits": 0.0,
+     "p_value": 1.0,
+     "p_holm": 1.0,
+     "assessment": "not_distinguished_from_null"
+    },
+    {
+     "feature": "cat0",
+     "kind": "value",
+     "n": 400,
+     "mi_bits": 0.0025984114322610313,
+     "null_median_bits": 0.004481645759332139,
+     "p_value": 0.706,
+     "p_holm": 1.0,
+     "assessment": "not_distinguished_from_null"
+    },
+    {
+     "feature": "cat1",
+     "kind": "value",
+     "n": 400,
+     "mi_bits": 0.004770261760532013,
+     "null_median_bits": 0.004481645759332139,
+     "p_value": 0.481,
+     "p_holm": 1.0,
+     "assessment": "not_distinguished_from_null"
+    },
+    {
+     "feature": "cat2",
+     "kind": "value",
+     "n": 400,
+     "mi_bits": 0.002744605362313226,
+     "null_median_bits": 0.004480252409293134,
+     "p_value": 0.6905,
+     "p_holm": 1.0,
+     "assessment": "not_distinguished_from_null"
+    },
+    {
+     "feature": "cat3",
+     "kind": "value",
+     "n": 400,
+     "mi_bits": 0.0021657487160066527,
+     "null_median_bits": 0.004047125990630058,
+     "p_value": 0.7465,
+     "p_holm": 1.0,
+     "assessment": "not_distinguished_from_null"
+    },
+    {
+     "feature": "cat4",
+     "kind": "value",
+     "n": 400,
+     "mi_bits": 0.0030339163597896167,
+     "null_median_bits": 0.004047125990630058,
+     "p_value": 0.629,
+     "p_holm": 1.0,
+     "assessment": "not_distinguished_from_null"
+    },
+    {
+     "feature": "cat5",
+     "kind": "value",
+     "n": 400,
+     "mi_bits": 0.0017326222973435776,
+     "null_median_bits": 0.004190005008495937,
+     "p_value": 0.8225,
+     "p_holm": 1.0,
+     "assessment": "not_distinguished_from_null"
+    }
+   ],
+   "x_pearson_r": -5.747340007458833e-18,
+   "x_mi_bits": 0.9902640626779594,
+   "x_p_holm": 0.0045000000000000005,
+   "x_above_null": true,
+   "id_value_status": "high_cardinality",
+   "duplicate_pair_reported": true,
+   "source_hash": "123567ac9dda8b511a7ef9fbe026193464980ef0d353f46b6ccc0ce92ef6e172",
+   "config_hash": "a0dafce07b03d8cf47bbe190191a65562759e80069bd3eca561f900ba929ff5c"
+  },
+  {
+   "case": "nonlinear",
+   "seed": 6005,
+   "partition": "development",
+   "elapsed_s": 69.86003358301241,
+   "n_tests": 9,
+   "n_rejections": 2,
+   "any_rejection": true,
+   "rejected": [
+    [
+     "x",
+     "value"
+    ],
+    [
+     "x_copy",
+     "value"
+    ]
+   ],
+   "value_status": {
+    "x": "eligible",
+    "x_copy": "eligible",
+    "noise": "eligible",
+    "cat0": "eligible",
+    "cat1": "eligible",
+    "cat2": "eligible",
+    "cat3": "eligible",
+    "cat4": "eligible",
+    "cat5": "eligible",
+    "id": "high_cardinality"
+   },
+   "duplicates": [
+    [
+     "x",
+     "x_copy"
+    ]
+   ],
+   "tests": [
+    {
+     "feature": "x",
+     "kind": "value",
+     "n": 400,
+     "mi_bits": 0.9883404692901074,
+     "null_median_bits": 0.0,
+     "p_value": 0.0005,
+     "p_holm": 0.0045000000000000005,
+     "assessment": "above_permutation_null"
+    },
+    {
+     "feature": "x_copy",
+     "kind": "value",
+     "n": 400,
+     "mi_bits": 0.9883404692901078,
+     "null_median_bits": 0.00070502250815034,
+     "p_value": 0.0005,
+     "p_holm": 0.0045000000000000005,
+     "assessment": "above_permutation_null"
+    },
+    {
+     "feature": "noise",
+     "kind": "value",
+     "n": 400,
+     "mi_bits": 0.0,
+     "null_median_bits": 0.0,
+     "p_value": 1.0,
+     "p_holm": 1.0,
+     "assessment": "not_distinguished_from_null"
+    },
+    {
+     "feature": "cat0",
+     "kind": "value",
+     "n": 400,
+     "mi_bits": 0.008258501315992055,
+     "null_median_bits": 0.004480252409293134,
+     "p_value": 0.205,
+     "p_holm": 1.0,
+     "assessment": "not_distinguished_from_null"
+    },
+    {
+     "feature": "cat1",
+     "kind": "value",
+     "n": 400,
+     "mi_bits": 0.0005772320023997466,
+     "null_median_bits": 0.004047125990630058,
+     "p_value": 0.9555,
+     "p_holm": 1.0,
+     "assessment": "not_distinguished_from_null"
+    },
+    {
+     "feature": "cat2",
+     "kind": "value",
+     "n": 400,
+     "mi_bits": 0.0038999956572570572,
+     "null_median_bits": 0.004190005008495937,
+     "p_value": 0.5675,
+     "p_holm": 1.0,
+     "assessment": "not_distinguished_from_null"
+    },
+    {
+     "feature": "cat3",
+     "kind": "value",
+     "n": 400,
+     "mi_bits": 0.0038999956572570572,
+     "null_median_bits": 0.004190005008495937,
+     "p_value": 0.557,
+     "p_holm": 1.0,
+     "assessment": "not_distinguished_from_null"
+    },
+    {
+     "feature": "cat4",
+     "kind": "value",
+     "n": 400,
+     "mi_bits": 0.012630762424956216,
+     "null_median_bits": 0.004190005008495937,
+     "p_value": 0.0755,
+     "p_holm": 0.5285,
+     "assessment": "not_distinguished_from_null"
+    },
+    {
+     "feature": "cat5",
+     "kind": "value",
+     "n": 400,
+     "mi_bits": 0.0030339163597896167,
+     "null_median_bits": 0.004047125990630058,
+     "p_value": 0.6365,
+     "p_holm": 1.0,
+     "assessment": "not_distinguished_from_null"
+    }
+   ],
+   "x_pearson_r": -3.8315600049725554e-18,
+   "x_mi_bits": 0.9883404692901074,
+   "x_p_holm": 0.0045000000000000005,
+   "x_above_null": true,
+   "id_value_status": "high_cardinality",
+   "duplicate_pair_reported": true,
+   "source_hash": "123567ac9dda8b511a7ef9fbe026193464980ef0d353f46b6ccc0ce92ef6e172",
+   "config_hash": "a0dafce07b03d8cf47bbe190191a65562759e80069bd3eca561f900ba929ff5c"
+  },
+  {
+   "case": "nonlinear",
+   "seed": 6006,
+   "partition": "development",
+   "elapsed_s": 70.1272489168914,
+   "n_tests": 9,
+   "n_rejections": 2,
+   "any_rejection": true,
+   "rejected": [
+    [
+     "x",
+     "value"
+    ],
+    [
+     "x_copy",
+     "value"
+    ]
+   ],
+   "value_status": {
+    "x": "eligible",
+    "x_copy": "eligible",
+    "noise": "eligible",
+    "cat0": "eligible",
+    "cat1": "eligible",
+    "cat2": "eligible",
+    "cat3": "eligible",
+    "cat4": "eligible",
+    "cat5": "eligible",
+    "id": "high_cardinality"
+   },
+   "duplicates": [
+    [
+     "x",
+     "x_copy"
+    ]
+   ],
+   "tests": [
+    {
+     "feature": "x",
+     "kind": "value",
+     "n": 400,
+     "mi_bits": 0.9902640626779594,
+     "null_median_bits": 0.0,
+     "p_value": 0.0005,
+     "p_holm": 0.0045000000000000005,
+     "assessment": "above_permutation_null"
+    },
+    {
+     "feature": "x_copy",
+     "kind": "value",
+     "n": 400,
+     "mi_bits": 0.9890618168105519,
+     "null_median_bits": 0.0,
+     "p_value": 0.0005,
+     "p_holm": 0.0045000000000000005,
+     "assessment": "above_permutation_null"
+    },
+    {
+     "feature": "noise",
+     "kind": "value",
+     "n": 400,
+     "mi_bits": 0.0,
+     "null_median_bits": 0.0,
+     "p_value": 1.0,
+     "p_holm": 1.0,
+     "assessment": "not_distinguished_from_null"
+    },
+    {
+     "feature": "cat0",
+     "kind": "value",
+     "n": 400,
+     "mi_bits": 0.00274321201227422,
+     "null_median_bits": 0.004480252409293134,
+     "p_value": 0.699,
+     "p_holm": 1.0,
+     "assessment": "not_distinguished_from_null"
+    },
+    {
+     "feature": "cat1",
+     "kind": "value",
+     "n": 400,
+     "mi_bits": 0.0010103584210628218,
+     "null_median_bits": 0.004480252409293134,
+     "p_value": 0.9285,
+     "p_holm": 1.0,
+     "assessment": "not_distinguished_from_null"
+    },
+    {
+     "feature": "cat2",
+     "kind": "value",
+     "n": 400,
+     "mi_bits": 0.010587213500682304,
+     "null_median_bits": 0.004481645759332139,
+     "p_value": 0.11,
+     "p_holm": 0.6685,
+     "assessment": "not_distinguished_from_null"
+    },
+    {
+     "feature": "cat3",
+     "kind": "value",
+     "n": 400,
+     "mi_bits": 0.011743997145665142,
+     "null_median_bits": 0.004190005008495937,
+     "p_value": 0.0955,
+     "p_holm": 0.6685,
+     "assessment": "not_distinguished_from_null"
+    },
+    {
+     "feature": "cat4",
+     "kind": "value",
+     "n": 400,
+     "mi_bits": 0.0017326222973435776,
+     "null_median_bits": 0.004480252409293134,
+     "p_value": 0.8365,
+     "p_holm": 1.0,
+     "assessment": "not_distinguished_from_null"
+    },
+    {
+     "feature": "cat5",
+     "kind": "value",
+     "n": 400,
+     "mi_bits": 0.004621561179775324,
+     "null_median_bits": 0.004190005008495937,
+     "p_value": 0.462,
+     "p_holm": 1.0,
+     "assessment": "not_distinguished_from_null"
+    }
+   ],
+   "x_pearson_r": 3.831560004972556e-18,
+   "x_mi_bits": 0.9902640626779594,
+   "x_p_holm": 0.0045000000000000005,
+   "x_above_null": true,
+   "id_value_status": "high_cardinality",
+   "duplicate_pair_reported": true,
+   "source_hash": "123567ac9dda8b511a7ef9fbe026193464980ef0d353f46b6ccc0ce92ef6e172",
+   "config_hash": "a0dafce07b03d8cf47bbe190191a65562759e80069bd3eca561f900ba929ff5c"
+  },
+  {
+   "case": "nonlinear",
+   "seed": 6007,
+   "partition": "development",
+   "elapsed_s": 70.45348016696516,
+   "n_tests": 9,
+   "n_rejections": 2,
+   "any_rejection": true,
+   "rejected": [
+    [
+     "x",
+     "value"
+    ],
+    [
+     "x_copy",
+     "value"
+    ]
+   ],
+   "value_status": {
+    "x": "eligible",
+    "x_copy": "eligible",
+    "noise": "eligible",
+    "cat0": "eligible",
+    "cat1": "eligible",
+    "cat2": "eligible",
+    "cat3": "eligible",
+    "cat4": "eligible",
+    "cat5": "eligible",
+    "id": "high_cardinality"
+   },
+   "duplicates": [
+    [
+     "x",
+     "x_copy"
+    ]
+   ],
+   "tests": [
+    {
+     "feature": "x",
+     "kind": "value",
+     "n": 400,
+     "mi_bits": 0.987619121769663,
+     "null_median_bits": 0.0,
+     "p_value": 0.0005,
+     "p_holm": 0.0045000000000000005,
+     "assessment": "above_permutation_null"
+    },
+    {
+     "feature": "x_copy",
+     "kind": "value",
+     "n": 400,
+     "mi_bits": 0.9895427151575149,
+     "null_median_bits": 0.0,
+     "p_value": 0.0005,
+     "p_holm": 0.0045000000000000005,
+     "assessment": "above_permutation_null"
+    },
+    {
+     "feature": "noise",
+     "kind": "value",
+     "n": 400,
+     "mi_bits": 0.01281766463534079,
+     "null_median_bits": 0.0,
+     "p_value": 0.3585,
+     "p_holm": 0.717,
+     "assessment": "not_distinguished_from_null"
+    },
+    {
+     "feature": "cat0",
+     "kind": "value",
+     "n": 400,
+     "mi_bits": 0.005202516285573889,
+     "null_median_bits": 0.004480252409293134,
+     "p_value": 0.418,
+     "p_holm": 0.717,
+     "assessment": "not_distinguished_from_null"
+    },
+    {
+     "feature": "cat1",
+     "kind": "value",
+     "n": 400,
+     "mi_bits": 0.008537915248882848,
+     "null_median_bits": 0.004047125990630058,
+     "p_value": 0.192,
+     "p_holm": 0.706,
+     "assessment": "not_distinguished_from_null"
+    },
+    {
+     "feature": "cat2",
+     "kind": "value",
+     "n": 400,
+     "mi_bits": 0.008819012395068897,
+     "null_median_bits": 0.004480252409293134,
+     "p_value": 0.1765,
+     "p_holm": 0.706,
+     "assessment": "not_distinguished_from_null"
+    },
+    {
+     "feature": "cat3",
+     "kind": "value",
+     "n": 400,
+     "mi_bits": 0.015238089274684796,
+     "null_median_bits": 0.004481645759332139,
+     "p_value": 0.0405,
+     "p_holm": 0.28350000000000003,
+     "assessment": "not_distinguished_from_null"
+    },
+    {
+     "feature": "cat4",
+     "kind": "value",
+     "n": 400,
+     "mi_bits": 0.011894044744683809,
+     "null_median_bits": 0.004480252409293134,
+     "p_value": 0.0885,
+     "p_holm": 0.4425,
+     "assessment": "not_distinguished_from_null"
+    },
+    {
+     "feature": "cat5",
+     "kind": "value",
+     "n": 400,
+     "mi_bits": 0.01407849182449874,
+     "null_median_bits": 0.004480252409293134,
+     "p_value": 0.0565,
+     "p_holm": 0.339,
+     "assessment": "not_distinguished_from_null"
+    }
+   ],
+   "x_pearson_r": 1.915780002486278e-18,
+   "x_mi_bits": 0.987619121769663,
+   "x_p_holm": 0.0045000000000000005,
+   "x_above_null": true,
+   "id_value_status": "high_cardinality",
+   "duplicate_pair_reported": true,
+   "source_hash": "123567ac9dda8b511a7ef9fbe026193464980ef0d353f46b6ccc0ce92ef6e172",
+   "config_hash": "a0dafce07b03d8cf47bbe190191a65562759e80069bd3eca561f900ba929ff5c"
+  },
+  {
+   "case": "nonlinear",
+   "seed": 6008,
+   "partition": "development",
+   "elapsed_s": 76.3456561670173,
+   "n_tests": 9,
+   "n_rejections": 2,
+   "any_rejection": true,
+   "rejected": [
+    [
+     "x",
+     "value"
+    ],
+    [
+     "x_copy",
+     "value"
+    ]
+   ],
+   "value_status": {
+    "x": "eligible",
+    "x_copy": "eligible",
+    "noise": "eligible",
+    "cat0": "eligible",
+    "cat1": "eligible",
+    "cat2": "eligible",
+    "cat3": "eligible",
+    "cat4": "eligible",
+    "cat5": "eligible",
+    "id": "high_cardinality"
+   },
+   "duplicates": [
+    [
+     "x",
+     "x_copy"
+    ]
+   ],
+   "tests": [
+    {
+     "feature": "x",
+     "kind": "value",
+     "n": 400,
+     "mi_bits": 0.991466308545367,
+     "null_median_bits": 0.0,
+     "p_value": 0.0005,
+     "p_holm": 0.0045000000000000005,
+     "assessment": "above_permutation_null"
+    },
+    {
+     "feature": "x_copy",
+     "kind": "value",
+     "n": 400,
+     "mi_bits": 0.9914663085453667,
+     "null_median_bits": 0.0011752165431322791,
+     "p_value": 0.0005,
+     "p_holm": 0.0045000000000000005,
+     "assessment": "above_permutation_null"
+    },
+    {
+     "feature": "noise",
+     "kind": "value",
+     "n": 400,
+     "mi_bits": 0.0,
+     "null_median_bits": 0.0,
+     "p_value": 1.0,
+     "p_holm": 1.0,
+     "assessment": "not_distinguished_from_null"
+    },
+    {
+     "feature": "cat0",
+     "kind": "value",
+     "n": 400,
+     "mi_bits": 0.0141008740994825,
+     "null_median_bits": 0.004047125990630058,
+     "p_value": 0.0595,
+     "p_holm": 0.357,
+     "assessment": "not_distinguished_from_null"
+    },
+    {
+     "feature": "cat1",
+     "kind": "value",
+     "n": 400,
+     "mi_bits": 0.009695635297186492,
+     "null_median_bits": 0.004480252409293134,
+     "p_value": 0.168,
+     "p_holm": 0.8400000000000001,
+     "assessment": "not_distinguished_from_null"
+    },
+    {
+     "feature": "cat2",
+     "kind": "value",
+     "n": 400,
+     "mi_bits": 0.0030339163597896167,
+     "null_median_bits": 0.004480252409293134,
+     "p_value": 0.648,
+     "p_holm": 1.0,
+     "assessment": "not_distinguished_from_null"
+    },
+    {
+     "feature": "cat3",
+     "kind": "value",
+     "n": 400,
+     "mi_bits": 0.017744504871052065,
+     "null_median_bits": 0.004047125990630058,
+     "p_value": 0.0215,
+     "p_holm": 0.1505,
+     "assessment": "not_distinguished_from_null"
+    },
+    {
+     "feature": "cat4",
+     "kind": "value",
+     "n": 400,
+     "mi_bits": 0.003757052129691571,
+     "null_median_bits": 0.004480252409293134,
+     "p_value": 0.565,
+     "p_holm": 1.0,
+     "assessment": "not_distinguished_from_null"
+    },
+    {
+     "feature": "cat5",
+     "kind": "value",
+     "n": 400,
+     "mi_bits": 0.004480252409293134,
+     "null_median_bits": 0.004047125990630058,
+     "p_value": 0.48,
+     "p_holm": 1.0,
+     "assessment": "not_distinguished_from_null"
+    }
+   ],
+   "x_pearson_r": -9.578900012431387e-18,
+   "x_mi_bits": 0.991466308545367,
+   "x_p_holm": 0.0045000000000000005,
+   "x_above_null": true,
+   "id_value_status": "high_cardinality",
+   "duplicate_pair_reported": true,
+   "source_hash": "123567ac9dda8b511a7ef9fbe026193464980ef0d353f46b6ccc0ce92ef6e172",
+   "config_hash": "a0dafce07b03d8cf47bbe190191a65562759e80069bd3eca561f900ba929ff5c"
+  },
+  {
+   "case": "nonlinear",
+   "seed": 6009,
+   "partition": "development",
+   "elapsed_s": 76.29255370807368,
+   "n_tests": 9,
+   "n_rejections": 2,
+   "any_rejection": true,
+   "rejected": [
+    [
+     "x",
+     "value"
+    ],
+    [
+     "x_copy",
+     "value"
+    ]
+   ],
+   "value_status": {
+    "x": "eligible",
+    "x_copy": "eligible",
+    "noise": "eligible",
+    "cat0": "eligible",
+    "cat1": "eligible",
+    "cat2": "eligible",
+    "cat3": "eligible",
+    "cat4": "eligible",
+    "cat5": "eligible",
+    "id": "high_cardinality"
+   },
+   "duplicates": [
+    [
+     "x",
+     "x_copy"
+    ]
+   ],
+   "tests": [
+    {
+     "feature": "x",
+     "kind": "value",
+     "n": 400,
+     "mi_bits": 0.9871382234227001,
+     "null_median_bits": 0.0,
+     "p_value": 0.0005,
+     "p_holm": 0.0045000000000000005,
+     "assessment": "above_permutation_null"
+    },
+    {
+     "feature": "x_copy",
+     "kind": "value",
+     "n": 400,
+     "mi_bits": 0.9907449610249224,
+     "null_median_bits": 0.0,
+     "p_value": 0.0005,
+     "p_holm": 0.0045000000000000005,
+     "assessment": "above_permutation_null"
+    },
+    {
+     "feature": "noise",
+     "kind": "value",
+     "n": 400,
+     "mi_bits": 0.0,
+     "null_median_bits": 0.0,
+     "p_value": 1.0,
+     "p_holm": 1.0,
+     "assessment": "not_distinguished_from_null"
+    },
+    {
+     "feature": "cat0",
+     "kind": "value",
+     "n": 400,
+     "mi_bits": 0.012885825489269758,
+     "null_median_bits": 0.004480252409293134,
+     "p_value": 0.0715,
+     "p_holm": 0.5005,
+     "assessment": "not_distinguished_from_null"
+    },
+    {
+     "feature": "cat1",
+     "kind": "value",
+     "n": 400,
+     "mi_bits": 0.0010103584210628218,
+     "null_median_bits": 0.004190005008495937,
+     "p_value": 0.929,
+     "p_holm": 1.0,
+     "assessment": "not_distinguished_from_null"
+    },
+    {
+     "feature": "cat2",
+     "kind": "value",
+     "n": 400,
+     "mi_bits": 0.0059235535959838515,
+     "null_median_bits": 0.004047125990630058,
+     "p_value": 0.366,
+     "p_holm": 1.0,
+     "assessment": "not_distinguished_from_null"
+    },
+    {
+     "feature": "cat3",
+     "kind": "value",
+     "n": 400,
+     "mi_bits": 0.005641243209518196,
+     "null_median_bits": 0.004047125990630058,
+     "p_value": 0.373,
+     "p_holm": 1.0,
+     "assessment": "not_distinguished_from_null"
+    },
+    {
+     "feature": "cat4",
+     "kind": "value",
+     "n": 400,
+     "mi_bits": 0.00014427912359538144,
+     "null_median_bits": 0.004047125990630058,
+     "p_value": 0.999,
+     "p_holm": 1.0,
+     "assessment": "not_distinguished_from_null"
+    },
+    {
+     "feature": "cat5",
+     "kind": "value",
+     "n": 400,
+     "mi_bits": 0.005351233858279316,
+     "null_median_bits": 0.004190005008495937,
+     "p_value": 0.404,
+     "p_holm": 1.0,
+     "assessment": "not_distinguished_from_null"
+    }
+   ],
+   "x_pearson_r": 0.0,
+   "x_mi_bits": 0.9871382234227001,
+   "x_p_holm": 0.0045000000000000005,
+   "x_above_null": true,
+   "id_value_status": "high_cardinality",
+   "duplicate_pair_reported": true,
+   "source_hash": "123567ac9dda8b511a7ef9fbe026193464980ef0d353f46b6ccc0ce92ef6e172",
+   "config_hash": "a0dafce07b03d8cf47bbe190191a65562759e80069bd3eca561f900ba929ff5c"
+  },
+  {
+   "case": "nonlinear",
+   "seed": 6010,
+   "partition": "development",
+   "elapsed_s": 75.68705575005151,
+   "n_tests": 9,
+   "n_rejections": 2,
+   "any_rejection": true,
+   "rejected": [
+    [
+     "x",
+     "value"
+    ],
+    [
+     "x_copy",
+     "value"
+    ]
+   ],
+   "value_status": {
+    "x": "eligible",
+    "x_copy": "eligible",
+    "noise": "eligible",
+    "cat0": "eligible",
+    "cat1": "eligible",
+    "cat2": "eligible",
+    "cat3": "eligible",
+    "cat4": "eligible",
+    "cat5": "eligible",
+    "id": "high_cardinality"
+   },
+   "duplicates": [
+    [
+     "x",
+     "x_copy"
+    ]
+   ],
+   "tests": [
+    {
+     "feature": "x",
+     "kind": "value",
+     "n": 400,
+     "mi_bits": 0.987619121769663,
+     "null_median_bits": 0.0,
+     "p_value": 0.0005,
+     "p_holm": 0.0045000000000000005,
+     "assessment": "above_permutation_null"
+    },
+    {
+     "feature": "x_copy",
+     "kind": "value",
+     "n": 400,
+     "mi_bits": 0.9902640626779594,
+     "null_median_bits": 0.001160523761469285,
+     "p_value": 0.0005,
+     "p_holm": 0.0045000000000000005,
+     "assessment": "above_permutation_null"
+    },
+    {
+     "feature": "noise",
+     "kind": "value",
+     "n": 400,
+     "mi_bits": 0.0,
+     "null_median_bits": 0.0,
+     "p_value": 1.0,
+     "p_holm": 1.0,
+     "assessment": "not_distinguished_from_null"
+    },
+    {
+     "feature": "cat0",
+     "kind": "value",
+     "n": 400,
+     "mi_bits": 0.007092515602700138,
+     "null_median_bits": 0.004480252409293134,
+     "p_value": 0.2695,
+     "p_holm": 1.0,
+     "assessment": "not_distinguished_from_null"
+    },
+    {
+     "feature": "cat1",
+     "kind": "value",
+     "n": 400,
+     "mi_bits": 0.016725132816967095,
+     "null_median_bits": 0.004480252409293134,
+     "p_value": 0.028,
+     "p_holm": 0.196,
+     "assessment": "not_distinguished_from_null"
+    },
+    {
+     "feature": "cat2",
+     "kind": "value",
+     "n": 400,
+     "mi_bits": 0.004766769951001015,
+     "null_median_bits": 0.004047125990630058,
+     "p_value": 0.456,
+     "p_holm": 1.0,
+     "assessment": "not_distinguished_from_null"
+    },
+    {
+     "feature": "cat3",
+     "kind": "value",
+     "n": 400,
+     "mi_bits": 0.002744605362313226,
+     "null_median_bits": 0.004190005008495937,
+     "p_value": 0.668,
+     "p_holm": 1.0,
+     "assessment": "not_distinguished_from_null"
+    },
+    {
+     "feature": "cat4",
+     "kind": "value",
+     "n": 400,
+     "mi_bits": 0.0031777317809763015,
+     "null_median_bits": 0.004047125990630058,
+     "p_value": 0.625,
+     "p_holm": 1.0,
+     "assessment": "not_distinguished_from_null"
+    },
+    {
+     "feature": "cat5",
+     "kind": "value",
+     "n": 400,
+     "mi_bits": 0.007087579259021712,
+     "null_median_bits": 0.004480252409293134,
+     "p_value": 0.287,
+     "p_holm": 1.0,
+     "assessment": "not_distinguished_from_null"
+    }
+   ],
+   "x_pearson_r": 3.831560004972556e-18,
+   "x_mi_bits": 0.987619121769663,
+   "x_p_holm": 0.0045000000000000005,
+   "x_above_null": true,
+   "id_value_status": "high_cardinality",
+   "duplicate_pair_reported": true,
+   "source_hash": "123567ac9dda8b511a7ef9fbe026193464980ef0d353f46b6ccc0ce92ef6e172",
+   "config_hash": "a0dafce07b03d8cf47bbe190191a65562759e80069bd3eca561f900ba929ff5c"
+  },
+  {
+   "case": "nonlinear",
+   "seed": 6011,
+   "partition": "development",
+   "elapsed_s": 77.10497279197443,
+   "n_tests": 9,
+   "n_rejections": 2,
+   "any_rejection": true,
+   "rejected": [
+    [
+     "x",
+     "value"
+    ],
+    [
+     "x_copy",
+     "value"
+    ]
+   ],
+   "value_status": {
+    "x": "eligible",
+    "x_copy": "eligible",
+    "noise": "eligible",
+    "cat0": "eligible",
+    "cat1": "eligible",
+    "cat2": "eligible",
+    "cat3": "eligible",
+    "cat4": "eligible",
+    "cat5": "eligible",
+    "id": "high_cardinality"
+   },
+   "duplicates": [
+    [
+     "x",
+     "x_copy"
+    ]
+   ],
+   "tests": [
+    {
+     "feature": "x",
+     "kind": "value",
+     "n": 400,
+     "mi_bits": 0.993389901933219,
+     "null_median_bits": 0.0,
+     "p_value": 0.0005,
+     "p_holm": 0.0045000000000000005,
+     "assessment": "above_permutation_null"
+    },
+    {
+     "feature": "x_copy",
+     "kind": "value",
+     "n": 400,
+     "mi_bits": 0.9856955283818111,
+     "null_median_bits": 0.0,
+     "p_value": 0.0005,
+     "p_holm": 0.0045000000000000005,
+     "assessment": "above_permutation_null"
+    },
+    {
+     "feature": "noise",
+     "kind": "value",
+     "n": 400,
+     "mi_bits": 0.0,
+     "null_median_bits": 0.0,
+     "p_value": 1.0,
+     "p_holm": 1.0,
+     "assessment": "not_distinguished_from_null"
+    },
+    {
+     "feature": "cat0",
+     "kind": "value",
+     "n": 400,
+     "mi_bits": 0.0028880125922874085,
+     "null_median_bits": 0.004190005008495937,
+     "p_value": 0.6605,
+     "p_holm": 1.0,
+     "assessment": "not_distinguished_from_null"
+    },
+    {
+     "feature": "cat1",
+     "kind": "value",
+     "n": 400,
+     "mi_bits": 0.0012992057161305157,
+     "null_median_bits": 0.004480252409293134,
+     "p_value": 0.8525,
+     "p_holm": 1.0,
+     "assessment": "not_distinguished_from_null"
+    },
+    {
+     "feature": "cat2",
+     "kind": "value",
+     "n": 400,
+     "mi_bits": 0.0015882854197390858,
+     "null_median_bits": 0.004480252409293134,
+     "p_value": 0.8345,
+     "p_holm": 1.0,
+     "assessment": "not_distinguished_from_null"
+    },
+    {
+     "feature": "cat3",
+     "kind": "value",
+     "n": 400,
+     "mi_bits": 0.007087579259021712,
+     "null_median_bits": 0.004190005008495937,
+     "p_value": 0.2795,
+     "p_holm": 1.0,
+     "assessment": "not_distinguished_from_null"
+    },
+    {
+     "feature": "cat4",
+     "kind": "value",
+     "n": 400,
+     "mi_bits": 0.005062386563211623,
+     "null_median_bits": 0.004047125990630058,
+     "p_value": 0.4275,
+     "p_holm": 1.0,
+     "assessment": "not_distinguished_from_null"
+    },
+    {
+     "feature": "cat5",
+     "kind": "value",
+     "n": 400,
+     "mi_bits": 0.006221499961554272,
+     "null_median_bits": 0.004480252409293134,
+     "p_value": 0.338,
+     "p_holm": 1.0,
+     "assessment": "not_distinguished_from_null"
+    }
+   ],
+   "x_pearson_r": 7.663120009945111e-18,
+   "x_mi_bits": 0.993389901933219,
+   "x_p_holm": 0.0045000000000000005,
+   "x_above_null": true,
+   "id_value_status": "high_cardinality",
+   "duplicate_pair_reported": true,
+   "source_hash": "123567ac9dda8b511a7ef9fbe026193464980ef0d353f46b6ccc0ce92ef6e172",
+   "config_hash": "a0dafce07b03d8cf47bbe190191a65562759e80069bd3eca561f900ba929ff5c"
+  },
+  {
+   "case": "nonlinear",
+   "seed": 6012,
+   "partition": "development",
+   "elapsed_s": 62.83418233296834,
+   "n_tests": 9,
+   "n_rejections": 2,
+   "any_rejection": true,
+   "rejected": [
+    [
+     "x",
+     "value"
+    ],
+    [
+     "x_copy",
+     "value"
+    ]
+   ],
+   "value_status": {
+    "x": "eligible",
+    "x_copy": "eligible",
+    "noise": "eligible",
+    "cat0": "eligible",
+    "cat1": "eligible",
+    "cat2": "eligible",
+    "cat3": "eligible",
+    "cat4": "eligible",
+    "cat5": "eligible",
+    "id": "high_cardinality"
+   },
+   "duplicates": [
+    [
+     "x",
+     "x_copy"
+    ]
+   ],
+   "tests": [
+    {
+     "feature": "x",
+     "kind": "value",
+     "n": 400,
+     "mi_bits": 0.9921876560658114,
+     "null_median_bits": 0.0,
+     "p_value": 0.0005,
+     "p_holm": 0.0045000000000000005,
+     "assessment": "above_permutation_null"
+    },
+    {
+     "feature": "x_copy",
+     "kind": "value",
+     "n": 400,
+     "mi_bits": 0.9902640626779594,
+     "null_median_bits": 0.0,
+     "p_value": 0.0005,
+     "p_holm": 0.0045000000000000005,
+     "assessment": "above_permutation_null"
+    },
+    {
+     "feature": "noise",
+     "kind": "value",
+     "n": 400,
+     "mi_bits": 0.00826771650782206,
+     "null_median_bits": 0.0,
+     "p_value": 0.3845,
+     "p_holm": 1.0,
+     "assessment": "not_distinguished_from_null"
+    },
+    {
+     "feature": "cat0",
+     "kind": "value",
+     "n": 400,
+     "mi_bits": 0.0018771327148067796,
+     "null_median_bits": 0.004481645759332139,
+     "p_value": 0.8075,
+     "p_holm": 1.0,
+     "assessment": "not_distinguished_from_null"
+    },
+    {
+     "feature": "cat1",
+     "kind": "value",
+     "n": 400,
+     "mi_bits": 0.0012989744222626951,
+     "null_median_bits": 0.003902789113025566,
+     "p_value": 0.881,
+     "p_holm": 1.0,
+     "assessment": "not_distinguished_from_null"
+    },
+    {
+     "feature": "cat2",
+     "kind": "value",
+     "n": 400,
+     "mi_bits": 0.0010103584210628218,
+     "null_median_bits": 0.004190005008495937,
+     "p_value": 0.932,
+     "p_holm": 1.0,
+     "assessment": "not_distinguished_from_null"
+    },
+    {
+     "feature": "cat3",
+     "kind": "value",
+     "n": 400,
+     "mi_bits": 0.0014434848397258972,
+     "null_median_bits": 0.004480252409293134,
+     "p_value": 0.862,
+     "p_holm": 1.0,
+     "assessment": "not_distinguished_from_null"
+    },
+    {
+     "feature": "cat4",
+     "kind": "value",
+     "n": 400,
+     "mi_bits": 0.0028880125922874085,
+     "null_median_bits": 0.004480252409293134,
+     "p_value": 0.6675,
+     "p_holm": 1.0,
+     "assessment": "not_distinguished_from_null"
+    },
+    {
+     "feature": "cat5",
+     "kind": "value",
+     "n": 400,
+     "mi_bits": 0.0059291608569555804,
+     "null_median_bits": 0.004047125990630058,
+     "p_value": 0.3585,
+     "p_holm": 1.0,
+     "assessment": "not_distinguished_from_null"
+    }
+   ],
+   "x_pearson_r": 1.9157800024862777e-18,
+   "x_mi_bits": 0.9921876560658114,
+   "x_p_holm": 0.0045000000000000005,
+   "x_above_null": true,
+   "id_value_status": "high_cardinality",
+   "duplicate_pair_reported": true,
+   "source_hash": "123567ac9dda8b511a7ef9fbe026193464980ef0d353f46b6ccc0ce92ef6e172",
+   "config_hash": "a0dafce07b03d8cf47bbe190191a65562759e80069bd3eca561f900ba929ff5c"
+  },
+  {
+   "case": "nonlinear",
+   "seed": 6013,
+   "partition": "development",
+   "elapsed_s": 62.715345500037074,
+   "n_tests": 9,
+   "n_rejections": 2,
+   "any_rejection": true,
+   "rejected": [
+    [
+     "x",
+     "value"
+    ],
+    [
+     "x_copy",
+     "value"
+    ]
+   ],
+   "value_status": {
+    "x": "eligible",
+    "x_copy": "eligible",
+    "noise": "eligible",
+    "cat0": "eligible",
+    "cat1": "eligible",
+    "cat2": "eligible",
+    "cat3": "eligible",
+    "cat4": "eligible",
+    "cat5": "eligible",
+    "id": "high_cardinality"
+   },
+   "duplicates": [
+    [
+     "x",
+     "x_copy"
+    ]
+   ],
+   "tests": [
+    {
+     "feature": "x",
+     "kind": "value",
+     "n": 400,
+     "mi_bits": 0.9907449610249224,
+     "null_median_bits": 0.00010740114997742498,
+     "p_value": 0.0005,
+     "p_holm": 0.0045000000000000005,
+     "assessment": "above_permutation_null"
+    },
+    {
+     "feature": "x_copy",
+     "kind": "value",
+     "n": 400,
+     "mi_bits": 0.9907449610249224,
+     "null_median_bits": 0.0,
+     "p_value": 0.0005,
+     "p_holm": 0.0045000000000000005,
+     "assessment": "above_permutation_null"
+    },
+    {
+     "feature": "noise",
+     "kind": "value",
+     "n": 400,
+     "mi_bits": 0.02390449938391528,
+     "null_median_bits": 0.0,
+     "p_value": 0.247,
+     "p_holm": 1.0,
+     "assessment": "not_distinguished_from_null"
+    },
+    {
+     "feature": "cat0",
+     "kind": "value",
+     "n": 400,
+     "mi_bits": 0.00274321201227422,
+     "null_median_bits": 0.004480252409293134,
+     "p_value": 0.7045,
+     "p_holm": 1.0,
+     "assessment": "not_distinguished_from_null"
+    },
+    {
+     "feature": "cat1",
+     "kind": "value",
+     "n": 400,
+     "mi_bits": 0.0015882854197390858,
+     "null_median_bits": 0.004481645759332139,
+     "p_value": 0.8405,
+     "p_holm": 1.0,
+     "assessment": "not_distinguished_from_null"
+    },
+    {
+     "feature": "cat2",
+     "kind": "value",
+     "n": 400,
+     "mi_bits": 0.00738392505966852,
+     "null_median_bits": 0.004480252409293134,
+     "p_value": 0.253,
+     "p_holm": 1.0,
+     "assessment": "not_distinguished_from_null"
+    },
+    {
+     "feature": "cat3",
+     "kind": "value",
+     "n": 400,
+     "mi_bits": 0.005062386563211623,
+     "null_median_bits": 0.004480252409293134,
+     "p_value": 0.4355,
+     "p_holm": 1.0,
+     "assessment": "not_distinguished_from_null"
+    },
+    {
+     "feature": "cat4",
+     "kind": "value",
+     "n": 400,
+     "mi_bits": 0.009861747977420537,
+     "null_median_bits": 0.004047125990630058,
+     "p_value": 0.1375,
+     "p_holm": 0.9625000000000001,
+     "assessment": "not_distinguished_from_null"
+    },
+    {
+     "feature": "cat5",
+     "kind": "value",
+     "n": 400,
+     "mi_bits": 0.0018771327148067796,
+     "null_median_bits": 0.004190005008495937,
+     "p_value": 0.812,
+     "p_holm": 1.0,
+     "assessment": "not_distinguished_from_null"
+    }
+   ],
+   "x_pearson_r": -5.747340007458832e-18,
+   "x_mi_bits": 0.9907449610249224,
+   "x_p_holm": 0.0045000000000000005,
+   "x_above_null": true,
+   "id_value_status": "high_cardinality",
+   "duplicate_pair_reported": true,
+   "source_hash": "123567ac9dda8b511a7ef9fbe026193464980ef0d353f46b6ccc0ce92ef6e172",
+   "config_hash": "a0dafce07b03d8cf47bbe190191a65562759e80069bd3eca561f900ba929ff5c"
+  },
+  {
+   "case": "nonlinear",
+   "seed": 6014,
+   "partition": "development",
+   "elapsed_s": 62.7771706659114,
+   "n_tests": 9,
+   "n_rejections": 2,
+   "any_rejection": true,
+   "rejected": [
+    [
+     "x",
+     "value"
+    ],
+    [
+     "x_copy",
+     "value"
+    ]
+   ],
+   "value_status": {
+    "x": "eligible",
+    "x_copy": "eligible",
+    "noise": "eligible",
+    "cat0": "eligible",
+    "cat1": "eligible",
+    "cat2": "eligible",
+    "cat3": "eligible",
+    "cat4": "eligible",
+    "cat5": "eligible",
+    "id": "high_cardinality"
+   },
+   "duplicates": [
+    [
+     "x",
+     "x_copy"
+    ]
+   ],
+   "tests": [
+    {
+     "feature": "x",
+     "kind": "value",
+     "n": 400,
+     "mi_bits": 0.9902640626779594,
+     "null_median_bits": 0.0,
+     "p_value": 0.0005,
+     "p_holm": 0.0045000000000000005,
+     "assessment": "above_permutation_null"
+    },
+    {
+     "feature": "x_copy",
+     "kind": "value",
+     "n": 400,
+     "mi_bits": 0.9890618168105519,
+     "null_median_bits": 0.0,
+     "p_value": 0.0005,
+     "p_holm": 0.0045000000000000005,
+     "assessment": "above_permutation_null"
+    },
+    {
+     "feature": "noise",
+     "kind": "value",
+     "n": 400,
+     "mi_bits": 0.0,
+     "null_median_bits": 0.0,
+     "p_value": 1.0,
+     "p_holm": 1.0,
+     "assessment": "not_distinguished_from_null"
+    },
+    {
+     "feature": "cat0",
+     "kind": "value",
+     "n": 400,
+     "mi_bits": 0.00043289512479525473,
+     "null_median_bits": 0.004480252409293134,
+     "p_value": 0.982,
+     "p_holm": 1.0,
+     "assessment": "not_distinguished_from_null"
+    },
+    {
+     "feature": "cat1",
+     "kind": "value",
+     "n": 400,
+     "mi_bits": 0.0021657487160066527,
+     "null_median_bits": 0.004190005008495937,
+     "p_value": 0.7625,
+     "p_holm": 1.0,
+     "assessment": "not_distinguished_from_null"
+    },
+    {
+     "feature": "cat2",
+     "kind": "value",
+     "n": 400,
+     "mi_bits": 0.006947306831474447,
+     "null_median_bits": 0.004047125990630058,
+     "p_value": 0.28,
+     "p_holm": 1.0,
+     "assessment": "not_distinguished_from_null"
+    },
+    {
+     "feature": "cat3",
+     "kind": "value",
+     "n": 400,
+     "mi_bits": 0.0018771327148067796,
+     "null_median_bits": 0.004190005008495937,
+     "p_value": 0.7955,
+     "p_holm": 1.0,
+     "assessment": "not_distinguished_from_null"
+    },
+    {
+     "feature": "cat4",
+     "kind": "value",
+     "n": 400,
+     "mi_bits": 0.0010103584210628218,
+     "null_median_bits": 0.004190005008495937,
+     "p_value": 0.921,
+     "p_holm": 1.0,
+     "assessment": "not_distinguished_from_null"
+    },
+    {
+     "feature": "cat5",
+     "kind": "value",
+     "n": 400,
+     "mi_bits": 0.0024557580672455322,
+     "null_median_bits": 0.004481645759332139,
+     "p_value": 0.723,
+     "p_holm": 1.0,
+     "assessment": "not_distinguished_from_null"
+    }
+   ],
+   "x_pearson_r": 1.9157800024862777e-18,
+   "x_mi_bits": 0.9902640626779594,
+   "x_p_holm": 0.0045000000000000005,
+   "x_above_null": true,
+   "id_value_status": "high_cardinality",
+   "duplicate_pair_reported": true,
+   "source_hash": "123567ac9dda8b511a7ef9fbe026193464980ef0d353f46b6ccc0ce92ef6e172",
+   "config_hash": "a0dafce07b03d8cf47bbe190191a65562759e80069bd3eca561f900ba929ff5c"
+  },
+  {
+   "case": "nonlinear",
+   "seed": 6015,
+   "partition": "development",
+   "elapsed_s": 61.963512458023615,
+   "n_tests": 9,
+   "n_rejections": 2,
+   "any_rejection": true,
+   "rejected": [
+    [
+     "x",
+     "value"
+    ],
+    [
+     "x_copy",
+     "value"
+    ]
+   ],
+   "value_status": {
+    "x": "eligible",
+    "x_copy": "eligible",
+    "noise": "eligible",
+    "cat0": "eligible",
+    "cat1": "eligible",
+    "cat2": "eligible",
+    "cat3": "eligible",
+    "cat4": "eligible",
+    "cat5": "eligible",
+    "id": "high_cardinality"
+   },
+   "duplicates": [
+    [
+     "x",
+     "x_copy"
+    ]
+   ],
+   "tests": [
+    {
+     "feature": "x",
+     "kind": "value",
+     "n": 400,
+     "mi_bits": 0.9864168759022554,
+     "null_median_bits": 0.0,
+     "p_value": 0.0005,
+     "p_holm": 0.0045000000000000005,
+     "assessment": "above_permutation_null"
+    },
+    {
+     "feature": "x_copy",
+     "kind": "value",
+     "n": 400,
+     "mi_bits": 0.9864168759022554,
+     "null_median_bits": 0.0,
+     "p_value": 0.0005,
+     "p_holm": 0.0045000000000000005,
+     "assessment": "above_permutation_null"
+    },
+    {
+     "feature": "noise",
+     "kind": "value",
+     "n": 400,
+     "mi_bits": 0.0,
+     "null_median_bits": 0.0,
+     "p_value": 1.0,
+     "p_holm": 1.0,
+     "assessment": "not_distinguished_from_null"
+    },
+    {
+     "feature": "cat0",
+     "kind": "value",
+     "n": 400,
+     "mi_bits": 0.021066008254183588,
+     "null_median_bits": 0.004190005008495937,
+     "p_value": 0.0075,
+     "p_holm": 0.0525,
+     "assessment": "not_distinguished_from_null"
+    },
+    {
+     "feature": "cat1",
+     "kind": "value",
+     "n": 400,
+     "mi_bits": 0.006505445105103223,
+     "null_median_bits": 0.004047125990630058,
+     "p_value": 0.298,
+     "p_holm": 1.0,
+     "assessment": "not_distinguished_from_null"
+    },
+    {
+     "feature": "cat2",
+     "kind": "value",
+     "n": 400,
+     "mi_bits": 0.0024550597134830434,
+     "null_median_bits": 0.004480252409293134,
+     "p_value": 0.732,
+     "p_holm": 1.0,
+     "assessment": "not_distinguished_from_null"
+    },
+    {
+     "feature": "cat3",
+     "kind": "value",
+     "n": 400,
+     "mi_bits": 0.004047125990630058,
+     "null_median_bits": 0.004481645759332139,
+     "p_value": 0.539,
+     "p_holm": 1.0,
+     "assessment": "not_distinguished_from_null"
+    },
+    {
+     "feature": "cat4",
+     "kind": "value",
+     "n": 400,
+     "mi_bits": 0.005351233858279316,
+     "null_median_bits": 0.004480252409293134,
+     "p_value": 0.3865,
+     "p_holm": 1.0,
+     "assessment": "not_distinguished_from_null"
+    },
+    {
+     "feature": "cat5",
+     "kind": "value",
+     "n": 400,
+     "mi_bits": 0.00043289512479525473,
+     "null_median_bits": 0.004047125990630058,
+     "p_value": 0.98,
+     "p_holm": 1.0,
+     "assessment": "not_distinguished_from_null"
+    }
+   ],
+   "x_pearson_r": 9.578900012431387e-18,
+   "x_mi_bits": 0.9864168759022554,
+   "x_p_holm": 0.0045000000000000005,
+   "x_above_null": true,
+   "id_value_status": "high_cardinality",
+   "duplicate_pair_reported": true,
+   "source_hash": "123567ac9dda8b511a7ef9fbe026193464980ef0d353f46b6ccc0ce92ef6e172",
+   "config_hash": "a0dafce07b03d8cf47bbe190191a65562759e80069bd3eca561f900ba929ff5c"
+  },
+  {
+   "case": "nonlinear",
+   "seed": 6016,
+   "partition": "development",
+   "elapsed_s": 51.02262091706507,
+   "n_tests": 9,
+   "n_rejections": 2,
+   "any_rejection": true,
+   "rejected": [
+    [
+     "x",
+     "value"
+    ],
+    [
+     "x_copy",
+     "value"
+    ]
+   ],
+   "value_status": {
+    "x": "eligible",
+    "x_copy": "eligible",
+    "noise": "eligible",
+    "cat0": "eligible",
+    "cat1": "eligible",
+    "cat2": "eligible",
+    "cat3": "eligible",
+    "cat4": "eligible",
+    "cat5": "eligible",
+    "id": "high_cardinality"
+   },
+   "duplicates": [
+    [
+     "x",
+     "x_copy"
+    ]
+   ],
+   "tests": [
+    {
+     "feature": "x",
+     "kind": "value",
+     "n": 400,
+     "mi_bits": 0.9895427151575149,
+     "null_median_bits": 0.0,
+     "p_value": 0.0005,
+     "p_holm": 0.0045000000000000005,
+     "assessment": "above_permutation_null"
+    },
+    {
+     "feature": "x_copy",
+     "kind": "value",
+     "n": 400,
+     "mi_bits": 0.9890618168105522,
+     "null_median_bits": 0.0,
+     "p_value": 0.0005,
+     "p_holm": 0.0045000000000000005,
+     "assessment": "above_permutation_null"
+    },
+    {
+     "feature": "noise",
+     "kind": "value",
+     "n": 400,
+     "mi_bits": 0.06923760445318732,
+     "null_median_bits": 0.0007766898535847724,
+     "p_value": 0.03,
+     "p_holm": 0.21,
+     "assessment": "not_distinguished_from_null"
+    },
+    {
+     "feature": "cat0",
+     "kind": "value",
+     "n": 400,
+     "mi_bits": 0.0030339163597896167,
+     "null_median_bits": 0.004190005008495937,
+     "p_value": 0.647,
+     "p_holm": 1.0,
+     "assessment": "not_distinguished_from_null"
+    },
+    {
+     "feature": "cat1",
+     "kind": "value",
+     "n": 400,
+     "mi_bits": 0.0014434848397258972,
+     "null_median_bits": 0.004190005008495937,
+     "p_value": 0.86,
+     "p_holm": 1.0,
+     "assessment": "not_distinguished_from_null"
+    },
+    {
+     "feature": "cat2",
+     "kind": "value",
+     "n": 400,
+     "mi_bits": 0.0068036683076324435,
+     "null_median_bits": 0.004480252409293134,
+     "p_value": 0.3015,
+     "p_holm": 1.0,
+     "assessment": "not_distinguished_from_null"
+    },
+    {
+     "feature": "cat3",
+     "kind": "value",
+     "n": 400,
+     "mi_bits": 0.00014427912359538144,
+     "null_median_bits": 0.004480252409293134,
+     "p_value": 0.9985,
+     "p_holm": 1.0,
+     "assessment": "not_distinguished_from_null"
+    },
+    {
+     "feature": "cat4",
+     "kind": "value",
+     "n": 400,
+     "mi_bits": 0.01014286593567739,
+     "null_median_bits": 0.004047125990630058,
+     "p_value": 0.1265,
+     "p_holm": 0.759,
+     "assessment": "not_distinguished_from_null"
+    },
+    {
+     "feature": "cat5",
+     "kind": "value",
+     "n": 400,
+     "mi_bits": 0.0030339163597896167,
+     "null_median_bits": 0.004047125990630058,
+     "p_value": 0.6405,
+     "p_holm": 1.0,
+     "assessment": "not_distinguished_from_null"
+    }
+   ],
+   "x_pearson_r": 1.915780002486278e-18,
+   "x_mi_bits": 0.9895427151575149,
+   "x_p_holm": 0.0045000000000000005,
+   "x_above_null": true,
+   "id_value_status": "high_cardinality",
+   "duplicate_pair_reported": true,
+   "source_hash": "123567ac9dda8b511a7ef9fbe026193464980ef0d353f46b6ccc0ce92ef6e172",
+   "config_hash": "a0dafce07b03d8cf47bbe190191a65562759e80069bd3eca561f900ba929ff5c"
+  },
+  {
+   "case": "nonlinear",
+   "seed": 6017,
+   "partition": "development",
+   "elapsed_s": 50.50921095791273,
+   "n_tests": 9,
+   "n_rejections": 2,
+   "any_rejection": true,
+   "rejected": [
+    [
+     "x",
+     "value"
+    ],
+    [
+     "x_copy",
+     "value"
+    ]
+   ],
+   "value_status": {
+    "x": "eligible",
+    "x_copy": "eligible",
+    "noise": "eligible",
+    "cat0": "eligible",
+    "cat1": "eligible",
+    "cat2": "eligible",
+    "cat3": "eligible",
+    "cat4": "eligible",
+    "cat5": "eligible",
+    "id": "high_cardinality"
+   },
+   "duplicates": [
+    [
+     "x",
+     "x_copy"
+    ]
+   ],
+   "tests": [
+    {
+     "feature": "x",
+     "kind": "value",
+     "n": 400,
+     "mi_bits": 0.9881000201166259,
+     "null_median_bits": 0.0,
+     "p_value": 0.0005,
+     "p_holm": 0.0045000000000000005,
+     "assessment": "above_permutation_null"
+    },
+    {
+     "feature": "x_copy",
+     "kind": "value",
+     "n": 400,
+     "mi_bits": 0.9902640626779594,
+     "null_median_bits": 0.0,
+     "p_value": 0.0005,
+     "p_holm": 0.0045000000000000005,
+     "assessment": "above_permutation_null"
+    },
+    {
+     "feature": "noise",
+     "kind": "value",
+     "n": 400,
+     "mi_bits": 0.0,
+     "null_median_bits": 0.0,
+     "p_value": 1.0,
+     "p_holm": 1.0,
+     "assessment": "not_distinguished_from_null"
+    },
+    {
+     "feature": "cat0",
+     "kind": "value",
+     "n": 400,
+     "mi_bits": 0.0010103584210628218,
+     "null_median_bits": 0.004047125990630058,
+     "p_value": 0.924,
+     "p_holm": 1.0,
+     "assessment": "not_distinguished_from_null"
+    },
+    {
+     "feature": "cat1",
+     "kind": "value",
+     "n": 400,
+     "mi_bits": 0.006510115962754145,
+     "null_median_bits": 0.004047125990630058,
+     "p_value": 0.3035,
+     "p_holm": 1.0,
+     "assessment": "not_distinguished_from_null"
+    },
+    {
+     "feature": "cat2",
+     "kind": "value",
+     "n": 400,
+     "mi_bits": 0.016956005010061136,
+     "null_median_bits": 0.004480252409293134,
+     "p_value": 0.031,
+     "p_holm": 0.217,
+     "assessment": "not_distinguished_from_null"
+    },
+    {
+     "feature": "cat3",
+     "kind": "value",
+     "n": 400,
+     "mi_bits": 0.004481645759332139,
+     "null_median_bits": 0.004480252409293134,
+     "p_value": 0.498,
+     "p_holm": 1.0,
+     "assessment": "not_distinguished_from_null"
+    },
+    {
+     "feature": "cat4",
+     "kind": "value",
+     "n": 400,
+     "mi_bits": 0.004621561179775324,
+     "null_median_bits": 0.004480252409293134,
+     "p_value": 0.4765,
+     "p_holm": 1.0,
+     "assessment": "not_distinguished_from_null"
+    },
+    {
+     "feature": "cat5",
+     "kind": "value",
+     "n": 400,
+     "mi_bits": 0.0015882854197390858,
+     "null_median_bits": 0.004480252409293134,
+     "p_value": 0.8455,
+     "p_holm": 1.0,
+     "assessment": "not_distinguished_from_null"
+    }
+   ],
+   "x_pearson_r": 3.831560004972556e-18,
+   "x_mi_bits": 0.9881000201166259,
+   "x_p_holm": 0.0045000000000000005,
+   "x_above_null": true,
+   "id_value_status": "high_cardinality",
+   "duplicate_pair_reported": true,
+   "source_hash": "123567ac9dda8b511a7ef9fbe026193464980ef0d353f46b6ccc0ce92ef6e172",
+   "config_hash": "a0dafce07b03d8cf47bbe190191a65562759e80069bd3eca561f900ba929ff5c"
+  },
+  {
+   "case": "nonlinear",
+   "seed": 6018,
+   "partition": "development",
+   "elapsed_s": 50.55882779194508,
+   "n_tests": 9,
+   "n_rejections": 2,
+   "any_rejection": true,
+   "rejected": [
+    [
+     "x",
+     "value"
+    ],
+    [
+     "x_copy",
+     "value"
+    ]
+   ],
+   "value_status": {
+    "x": "eligible",
+    "x_copy": "eligible",
+    "noise": "eligible",
+    "cat0": "eligible",
+    "cat1": "eligible",
+    "cat2": "eligible",
+    "cat3": "eligible",
+    "cat4": "eligible",
+    "cat5": "eligible",
+    "id": "high_cardinality"
+   },
+   "duplicates": [
+    [
+     "x",
+     "x_copy"
+    ]
+   ],
+   "tests": [
+    {
+     "feature": "x",
+     "kind": "value",
+     "n": 400,
+     "mi_bits": 0.9888213676370703,
+     "null_median_bits": 0.0,
+     "p_value": 0.0005,
+     "p_holm": 0.0045000000000000005,
+     "assessment": "above_permutation_null"
+    },
+    {
+     "feature": "x_copy",
+     "kind": "value",
+     "n": 400,
+     "mi_bits": 0.9902640626779594,
+     "null_median_bits": 0.00012855139127060955,
+     "p_value": 0.0005,
+     "p_holm": 0.0045000000000000005,
+     "assessment": "above_permutation_null"
+    },
+    {
+     "feature": "noise",
+     "kind": "value",
+     "n": 400,
+     "mi_bits": 0.0008420967528809933,
+     "null_median_bits": 0.0,
+     "p_value": 0.4805,
+     "p_holm": 1.0,
+     "assessment": "not_distinguished_from_null"
+    },
+    {
+     "feature": "cat0",
+     "kind": "value",
+     "n": 400,
+     "mi_bits": 0.01055886659729103,
+     "null_median_bits": 0.004190005008495937,
+     "p_value": 0.136,
+     "p_holm": 0.9520000000000001,
+     "assessment": "not_distinguished_from_null"
+    },
+    {
+     "feature": "cat1",
+     "kind": "value",
+     "n": 400,
+     "mi_bits": 0.0028880125922874085,
+     "null_median_bits": 0.004047125990630058,
+     "p_value": 0.645,
+     "p_holm": 1.0,
+     "assessment": "not_distinguished_from_null"
+    },
+    {
+     "feature": "cat2",
+     "kind": "value",
+     "n": 400,
+     "mi_bits": 0.0015882854197390858,
+     "null_median_bits": 0.004481645759332139,
+     "p_value": 0.8485,
+     "p_holm": 1.0,
+     "assessment": "not_distinguished_from_null"
+    },
+    {
+     "feature": "cat3",
+     "kind": "value",
+     "n": 400,
+     "mi_bits": 0.0024550597134830434,
+     "null_median_bits": 0.004047125990630058,
+     "p_value": 0.7265,
+     "p_holm": 1.0,
+     "assessment": "not_distinguished_from_null"
+    },
+    {
+     "feature": "cat4",
+     "kind": "value",
+     "n": 400,
+     "mi_bits": 0.00332253236098949,
+     "null_median_bits": 0.004480252409293134,
+     "p_value": 0.621,
+     "p_holm": 1.0,
+     "assessment": "not_distinguished_from_null"
+    },
+    {
+     "feature": "cat5",
+     "kind": "value",
+     "n": 400,
+     "mi_bits": 0.004770261760532013,
+     "null_median_bits": 0.004480252409293134,
+     "p_value": 0.459,
+     "p_holm": 1.0,
+     "assessment": "not_distinguished_from_null"
+    }
+   ],
+   "x_pearson_r": -1.4368350018647083e-18,
+   "x_mi_bits": 0.9888213676370703,
+   "x_p_holm": 0.0045000000000000005,
+   "x_above_null": true,
+   "id_value_status": "high_cardinality",
+   "duplicate_pair_reported": true,
+   "source_hash": "123567ac9dda8b511a7ef9fbe026193464980ef0d353f46b6ccc0ce92ef6e172",
+   "config_hash": "a0dafce07b03d8cf47bbe190191a65562759e80069bd3eca561f900ba929ff5c"
+  },
+  {
+   "case": "nonlinear",
+   "seed": 6019,
+   "partition": "development",
+   "elapsed_s": 49.304762667045,
+   "n_tests": 9,
+   "n_rejections": 2,
+   "any_rejection": true,
+   "rejected": [
+    [
+     "x",
+     "value"
+    ],
+    [
+     "x_copy",
+     "value"
+    ]
+   ],
+   "value_status": {
+    "x": "eligible",
+    "x_copy": "eligible",
+    "noise": "eligible",
+    "cat0": "eligible",
+    "cat1": "eligible",
+    "cat2": "eligible",
+    "cat3": "eligible",
+    "cat4": "eligible",
+    "cat5": "eligible",
+    "id": "high_cardinality"
+   },
+   "duplicates": [
+    [
+     "x",
+     "x_copy"
+    ]
+   ],
+   "tests": [
+    {
+     "feature": "x",
+     "kind": "value",
+     "n": 400,
+     "mi_bits": 0.9883404692901078,
+     "null_median_bits": 0.0,
+     "p_value": 0.0005,
+     "p_holm": 0.0045000000000000005,
+     "assessment": "above_permutation_null"
+    },
+    {
+     "feature": "x_copy",
+     "kind": "value",
+     "n": 400,
+     "mi_bits": 0.9907449610249224,
+     "null_median_bits": 0.0,
+     "p_value": 0.0005,
+     "p_holm": 0.0045000000000000005,
+     "assessment": "above_permutation_null"
+    },
+    {
+     "feature": "noise",
+     "kind": "value",
+     "n": 400,
+     "mi_bits": 0.017733951451161807,
+     "null_median_bits": 0.00020489243096578712,
+     "p_value": 0.3085,
+     "p_holm": 1.0,
+     "assessment": "not_distinguished_from_null"
+    },
+    {
+     "feature": "cat0",
+     "kind": "value",
+     "n": 400,
+     "mi_bits": 0.004047125990630058,
+     "null_median_bits": 0.004190005008495937,
+     "p_value": 0.523,
+     "p_holm": 1.0,
+     "assessment": "not_distinguished_from_null"
+    },
+    {
+     "feature": "cat1",
+     "kind": "value",
+     "n": 400,
+     "mi_bits": 0.010296267746122618,
+     "null_median_bits": 0.004190005008495937,
+     "p_value": 0.121,
+     "p_holm": 0.726,
+     "assessment": "not_distinguished_from_null"
+    },
+    {
+     "feature": "cat2",
+     "kind": "value",
+     "n": 400,
+     "mi_bits": 0.004917585983198434,
+     "null_median_bits": 0.004047125990630058,
+     "p_value": 0.4175,
+     "p_holm": 1.0,
+     "assessment": "not_distinguished_from_null"
+    },
+    {
+     "feature": "cat3",
+     "kind": "value",
+     "n": 400,
+     "mi_bits": 0.004917585983198434,
+     "null_median_bits": 0.004047125990630058,
+     "p_value": 0.4265,
+     "p_holm": 1.0,
+     "assessment": "not_distinguished_from_null"
+    },
+    {
+     "feature": "cat4",
+     "kind": "value",
+     "n": 400,
+     "mi_bits": 0.012903594595851197,
+     "null_median_bits": 0.004190005008495937,
+     "p_value": 0.07,
+     "p_holm": 0.49000000000000005,
+     "assessment": "not_distinguished_from_null"
+    },
+    {
+     "feature": "cat5",
+     "kind": "value",
+     "n": 400,
+     "mi_bits": 0.0036134781155491755,
+     "null_median_bits": 0.004480252409293134,
+     "p_value": 0.5915,
+     "p_holm": 1.0,
+     "assessment": "not_distinguished_from_null"
+    }
+   ],
+   "x_pearson_r": -3.8315600049725554e-18,
+   "x_mi_bits": 0.9883404692901078,
+   "x_p_holm": 0.0045000000000000005,
+   "x_above_null": true,
+   "id_value_status": "high_cardinality",
+   "duplicate_pair_reported": true,
+   "source_hash": "123567ac9dda8b511a7ef9fbe026193464980ef0d353f46b6ccc0ce92ef6e172",
+   "config_hash": "a0dafce07b03d8cf47bbe190191a65562759e80069bd3eca561f900ba929ff5c"
+  },
+  {
+   "case": "null",
+   "seed": 6000,
+   "partition": "development",
+   "elapsed_s": 102.0902541250689,
+   "n_tests": 10,
+   "n_rejections": 0,
+   "any_rejection": false,
+   "rejected": [],
+   "value_status": {
+    "c0": "eligible",
+    "c1": "eligible",
+    "c2": "eligible",
+    "c3": "eligible",
+    "c4": "eligible",
+    "k0": "eligible",
+    "k1": "eligible",
+    "k2": "eligible",
+    "k3": "eligible",
+    "k4": "eligible"
+   },
+   "duplicates": [],
+   "tests": [
+    {
+     "feature": "c0",
+     "kind": "value",
+     "n": 400,
+     "mi_bits": 0.0,
+     "null_median_bits": 0.0,
+     "p_value": 1.0,
+     "p_holm": 1.0,
+     "assessment": "not_distinguished_from_null"
+    },
+    {
+     "feature": "c1",
+     "kind": "value",
+     "n": 400,
+     "mi_bits": 0.0,
+     "null_median_bits": 0.0,
+     "p_value": 1.0,
+     "p_holm": 1.0,
+     "assessment": "not_distinguished_from_null"
+    },
+    {
+     "feature": "c2",
+     "kind": "value",
+     "n": 400,
+     "mi_bits": 0.01231268887216964,
+     "null_median_bits": 0.0,
+     "p_value": 0.3475,
+     "p_holm": 1.0,
+     "assessment": "not_distinguished_from_null"
+    },
+    {
+     "feature": "c3",
+     "kind": "value",
+     "n": 400,
+     "mi_bits": 0.022341918580450076,
+     "null_median_bits": 0.0,
+     "p_value": 0.257,
+     "p_holm": 1.0,
+     "assessment": "not_distinguished_from_null"
+    },
+    {
+     "feature": "c4",
+     "kind": "value",
+     "n": 400,
+     "mi_bits": 0.05542991422669051,
+     "null_median_bits": 0.0,
+     "p_value": 0.0695,
+     "p_holm": 0.6950000000000001,
+     "assessment": "not_distinguished_from_null"
+    },
+    {
+     "feature": "k0",
+     "kind": "value",
+     "n": 400,
+     "mi_bits": 0.0059291608569555804,
+     "null_median_bits": 0.004047125990630058,
+     "p_value": 0.355,
+     "p_holm": 1.0,
+     "assessment": "not_distinguished_from_null"
+    },
+    {
+     "feature": "k1",
+     "kind": "value",
+     "n": 400,
+     "mi_bits": 0.010006956748646227,
+     "null_median_bits": 0.004047125990630058,
+     "p_value": 0.118,
+     "p_holm": 1.0,
+     "assessment": "not_distinguished_from_null"
+    },
+    {
+     "feature": "k2",
+     "kind": "value",
+     "n": 400,
+     "mi_bits": 0.002310780589887662,
+     "null_median_bits": 0.004480252409293134,
+     "p_value": 0.735,
+     "p_holm": 1.0,
+     "assessment": "not_distinguished_from_null"
+    },
+    {
+     "feature": "k3",
+     "kind": "value",
+     "n": 400,
+     "mi_bits": 0.0021657487160066527,
+     "null_median_bits": 0.004481645759332139,
+     "p_value": 0.7735,
+     "p_holm": 1.0,
+     "assessment": "not_distinguished_from_null"
+    },
+    {
+     "feature": "k4",
+     "kind": "value",
+     "n": 400,
+     "mi_bits": 0.0018771327148067796,
+     "null_median_bits": 0.004047125990630058,
+     "p_value": 0.788,
+     "p_holm": 1.0,
+     "assessment": "not_distinguished_from_null"
+    }
+   ],
+   "source_hash": "123567ac9dda8b511a7ef9fbe026193464980ef0d353f46b6ccc0ce92ef6e172",
+   "config_hash": "a0dafce07b03d8cf47bbe190191a65562759e80069bd3eca561f900ba929ff5c"
+  },
+  {
+   "case": "null",
+   "seed": 6001,
+   "partition": "development",
+   "elapsed_s": 103.48839329194743,
+   "n_tests": 10,
+   "n_rejections": 0,
+   "any_rejection": false,
+   "rejected": [],
+   "value_status": {
+    "c0": "eligible",
+    "c1": "eligible",
+    "c2": "eligible",
+    "c3": "eligible",
+    "c4": "eligible",
+    "k0": "eligible",
+    "k1": "eligible",
+    "k2": "eligible",
+    "k3": "eligible",
+    "k4": "eligible"
+   },
+   "duplicates": [],
+   "tests": [
+    {
+     "feature": "c0",
+     "kind": "value",
+     "n": 400,
+     "mi_bits": 0.0,
+     "null_median_bits": 0.0,
+     "p_value": 1.0,
+     "p_holm": 1.0,
+     "assessment": "not_distinguished_from_null"
+    },
+    {
+     "feature": "c1",
+     "kind": "value",
+     "n": 400,
+     "mi_bits": 0.0,
+     "null_median_bits": 0.0,
+     "p_value": 1.0,
+     "p_holm": 1.0,
+     "assessment": "not_distinguished_from_null"
+    },
+    {
+     "feature": "c2",
+     "kind": "value",
+     "n": 400,
+     "mi_bits": 0.0,
+     "null_median_bits": 0.0,
+     "p_value": 1.0,
+     "p_holm": 1.0,
+     "assessment": "not_distinguished_from_null"
+    },
+    {
+     "feature": "c3",
+     "kind": "value",
+     "n": 400,
+     "mi_bits": 0.0,
+     "null_median_bits": 0.0,
+     "p_value": 1.0,
+     "p_holm": 1.0,
+     "assessment": "not_distinguished_from_null"
+    },
+    {
+     "feature": "c4",
+     "kind": "value",
+     "n": 400,
+     "mi_bits": 0.0,
+     "null_median_bits": 0.0,
+     "p_value": 1.0,
+     "p_holm": 1.0,
+     "assessment": "not_distinguished_from_null"
+    },
+    {
+     "feature": "k0",
+     "kind": "value",
+     "n": 400,
+     "mi_bits": 0.0068036683076324435,
+     "null_median_bits": 0.004190005008495937,
+     "p_value": 0.282,
+     "p_holm": 1.0,
+     "assessment": "not_distinguished_from_null"
+    },
+    {
+     "feature": "k1",
+     "kind": "value",
+     "n": 400,
+     "mi_bits": 0.0018764377185302623,
+     "null_median_bits": 0.004480252409293134,
+     "p_value": 0.813,
+     "p_holm": 1.0,
+     "assessment": "not_distinguished_from_null"
+    },
+    {
+     "feature": "k2",
+     "kind": "value",
+     "n": 400,
+     "mi_bits": 0.006214499350543538,
+     "null_median_bits": 0.004047125990630058,
+     "p_value": 0.326,
+     "p_holm": 1.0,
+     "assessment": "not_distinguished_from_null"
+    },
+    {
+     "feature": "k3",
+     "kind": "value",
+     "n": 400,
+     "mi_bits": 0.0036134781155491755,
+     "null_median_bits": 0.004481645759332139,
+     "p_value": 0.5995,
+     "p_holm": 1.0,
+     "assessment": "not_distinguished_from_null"
+    },
+    {
+     "feature": "k4",
+     "kind": "value",
+     "n": 400,
+     "mi_bits": 0.0057834713913724545,
+     "null_median_bits": 0.004480252409293134,
+     "p_value": 0.371,
+     "p_holm": 1.0,
+     "assessment": "not_distinguished_from_null"
+    }
+   ],
+   "source_hash": "123567ac9dda8b511a7ef9fbe026193464980ef0d353f46b6ccc0ce92ef6e172",
+   "config_hash": "a0dafce07b03d8cf47bbe190191a65562759e80069bd3eca561f900ba929ff5c"
+  },
+  {
+   "case": "null",
+   "seed": 6002,
+   "partition": "development",
+   "elapsed_s": 103.31867666705512,
+   "n_tests": 10,
+   "n_rejections": 0,
+   "any_rejection": false,
+   "rejected": [],
+   "value_status": {
+    "c0": "eligible",
+    "c1": "eligible",
+    "c2": "eligible",
+    "c3": "eligible",
+    "c4": "eligible",
+    "k0": "eligible",
+    "k1": "eligible",
+    "k2": "eligible",
+    "k3": "eligible",
+    "k4": "eligible"
+   },
+   "duplicates": [],
+   "tests": [
+    {
+     "feature": "c0",
+     "kind": "value",
+     "n": 400,
+     "mi_bits": 0.005388970735527215,
+     "null_median_bits": 0.0,
+     "p_value": 0.4205,
+     "p_holm": 1.0,
+     "assessment": "not_distinguished_from_null"
+    },
+    {
+     "feature": "c1",
+     "kind": "value",
+     "n": 400,
+     "mi_bits": 0.0,
+     "null_median_bits": 0.0,
+     "p_value": 1.0,
+     "p_holm": 1.0,
+     "assessment": "not_distinguished_from_null"
+    },
+    {
+     "feature": "c2",
+     "kind": "value",
+     "n": 400,
+     "mi_bits": 0.06315689614503134,
+     "null_median_bits": 0.0,
+     "p_value": 0.0505,
+     "p_holm": 0.505,
+     "assessment": "not_distinguished_from_null"
+    },
+    {
+     "feature": "c3",
+     "kind": "value",
+     "n": 400,
+     "mi_bits": 0.017487159933672006,
+     "null_median_bits": 0.0,
+     "p_value": 0.291,
+     "p_holm": 1.0,
+     "assessment": "not_distinguished_from_null"
+    },
+    {
+     "feature": "c4",
+     "kind": "value",
+     "n": 400,
+     "mi_bits": 0.019099969788835682,
+     "null_median_bits": 0.0,
+     "p_value": 0.2815,
+     "p_holm": 1.0,
+     "assessment": "not_distinguished_from_null"
+    },
+    {
+     "feature": "k0",
+     "kind": "value",
+     "n": 400,
+     "mi_bits": 0.0068036683076324435,
+     "null_median_bits": 0.004047125990630058,
+     "p_value": 0.281,
+     "p_holm": 1.0,
+     "assessment": "not_distinguished_from_null"
+    },
+    {
+     "feature": "k1",
+     "kind": "value",
+     "n": 400,
+     "mi_bits": 0.0021657487160066527,
+     "null_median_bits": 0.004481645759332139,
+     "p_value": 0.7745,
+     "p_holm": 1.0,
+     "assessment": "not_distinguished_from_null"
+    },
+    {
+     "feature": "k2",
+     "kind": "value",
+     "n": 400,
+     "mi_bits": 0.0038999956572570572,
+     "null_median_bits": 0.004047125990630058,
+     "p_value": 0.545,
+     "p_holm": 1.0,
+     "assessment": "not_distinguished_from_null"
+    },
+    {
+     "feature": "k3",
+     "kind": "value",
+     "n": 400,
+     "mi_bits": 0.003757052129691571,
+     "null_median_bits": 0.004480252409293134,
+     "p_value": 0.5665,
+     "p_holm": 1.0,
+     "assessment": "not_distinguished_from_null"
+    },
+    {
+     "feature": "k4",
+     "kind": "value",
+     "n": 400,
+     "mi_bits": 0.005062386563211623,
+     "null_median_bits": 0.004047125990630058,
+     "p_value": 0.426,
+     "p_holm": 1.0,
+     "assessment": "not_distinguished_from_null"
+    }
+   ],
+   "source_hash": "123567ac9dda8b511a7ef9fbe026193464980ef0d353f46b6ccc0ce92ef6e172",
+   "config_hash": "a0dafce07b03d8cf47bbe190191a65562759e80069bd3eca561f900ba929ff5c"
+  },
+  {
+   "case": "null",
+   "seed": 6003,
+   "partition": "development",
+   "elapsed_s": 103.54868220805656,
+   "n_tests": 10,
+   "n_rejections": 0,
+   "any_rejection": false,
+   "rejected": [],
+   "value_status": {
+    "c0": "eligible",
+    "c1": "eligible",
+    "c2": "eligible",
+    "c3": "eligible",
+    "c4": "eligible",
+    "k0": "eligible",
+    "k1": "eligible",
+    "k2": "eligible",
+    "k3": "eligible",
+    "k4": "eligible"
+   },
+   "duplicates": [],
+   "tests": [
+    {
+     "feature": "c0",
+     "kind": "value",
+     "n": 400,
+     "mi_bits": 0.07408124954652391,
+     "null_median_bits": 0.0,
+     "p_value": 0.019,
+     "p_holm": 0.17099999999999999,
+     "assessment": "not_distinguished_from_null"
+    },
+    {
+     "feature": "c1",
+     "kind": "value",
+     "n": 400,
+     "mi_bits": 0.0,
+     "null_median_bits": 0.0,
+     "p_value": 1.0,
+     "p_holm": 1.0,
+     "assessment": "not_distinguished_from_null"
+    },
+    {
+     "feature": "c2",
+     "kind": "value",
+     "n": 400,
+     "mi_bits": 0.0,
+     "null_median_bits": 0.0,
+     "p_value": 1.0,
+     "p_holm": 1.0,
+     "assessment": "not_distinguished_from_null"
+    },
+    {
+     "feature": "c3",
+     "kind": "value",
+     "n": 400,
+     "mi_bits": 0.03150438316636232,
+     "null_median_bits": 0.0,
+     "p_value": 0.191,
+     "p_holm": 1.0,
+     "assessment": "not_distinguished_from_null"
+    },
+    {
+     "feature": "c4",
+     "kind": "value",
+     "n": 400,
+     "mi_bits": 0.033462259318929904,
+     "null_median_bits": 0.0,
+     "p_value": 0.1785,
+     "p_holm": 1.0,
+     "assessment": "not_distinguished_from_null"
+    },
+    {
+     "feature": "k0",
+     "kind": "value",
+     "n": 400,
+     "mi_bits": 0.008838758068028132,
+     "null_median_bits": 0.004047125990630058,
+     "p_value": 0.1655,
+     "p_holm": 1.0,
+     "assessment": "not_distinguished_from_null"
+    },
+    {
+     "feature": "k1",
+     "kind": "value",
+     "n": 400,
+     "mi_bits": 0.004480252409293134,
+     "null_median_bits": 0.004480252409293134,
+     "p_value": 0.505,
+     "p_holm": 1.0,
+     "assessment": "not_distinguished_from_null"
+    },
+    {
+     "feature": "k2",
+     "kind": "value",
+     "n": 400,
+     "mi_bits": 0.0010103584210628218,
+     "null_median_bits": 0.004480252409293134,
+     "p_value": 0.9225,
+     "p_holm": 1.0,
+     "assessment": "not_distinguished_from_null"
+    },
+    {
+     "feature": "k3",
+     "kind": "value",
+     "n": 400,
+     "mi_bits": 0.019138523563992926,
+     "null_median_bits": 0.004480252409293134,
+     "p_value": 0.0155,
+     "p_holm": 0.155,
+     "assessment": "not_distinguished_from_null"
+    },
+    {
+     "feature": "k4",
+     "kind": "value",
+     "n": 400,
+     "mi_bits": 0.0038999956572570572,
+     "null_median_bits": 0.004190005008495937,
+     "p_value": 0.5655,
+     "p_holm": 1.0,
+     "assessment": "not_distinguished_from_null"
+    }
+   ],
+   "source_hash": "123567ac9dda8b511a7ef9fbe026193464980ef0d353f46b6ccc0ce92ef6e172",
+   "config_hash": "a0dafce07b03d8cf47bbe190191a65562759e80069bd3eca561f900ba929ff5c"
+  },
+  {
+   "case": "null",
+   "seed": 6004,
+   "partition": "development",
+   "elapsed_s": 105.04273354203906,
+   "n_tests": 10,
+   "n_rejections": 0,
+   "any_rejection": false,
+   "rejected": [],
+   "value_status": {
+    "c0": "eligible",
+    "c1": "eligible",
+    "c2": "eligible",
+    "c3": "eligible",
+    "c4": "eligible",
+    "k0": "eligible",
+    "k1": "eligible",
+    "k2": "eligible",
+    "k3": "eligible",
+    "k4": "eligible"
+   },
+   "duplicates": [],
+   "tests": [
+    {
+     "feature": "c0",
+     "kind": "value",
+     "n": 400,
+     "mi_bits": 0.0,
+     "null_median_bits": 0.0,
+     "p_value": 1.0,
+     "p_holm": 1.0,
+     "assessment": "not_distinguished_from_null"
+    },
+    {
+     "feature": "c1",
+     "kind": "value",
+     "n": 400,
+     "mi_bits": 0.002918445085368377,
+     "null_median_bits": 0.0,
+     "p_value": 0.4655,
+     "p_holm": 1.0,
+     "assessment": "not_distinguished_from_null"
+    },
+    {
+     "feature": "c2",
+     "kind": "value",
+     "n": 400,
+     "mi_bits": 0.029286056322785307,
+     "null_median_bits": 0.0,
+     "p_value": 0.2055,
+     "p_holm": 1.0,
+     "assessment": "not_distinguished_from_null"
+    },
+    {
+     "feature": "c3",
+     "kind": "value",
+     "n": 400,
+     "mi_bits": 0.05920647309060418,
+     "null_median_bits": 0.0,
+     "p_value": 0.051,
+     "p_holm": 0.45899999999999996,
+     "assessment": "not_distinguished_from_null"
+    },
+    {
+     "feature": "c4",
+     "kind": "value",
+     "n": 400,
+     "mi_bits": 0.0,
+     "null_median_bits": 0.0,
+     "p_value": 1.0,
+     "p_holm": 1.0,
+     "assessment": "not_distinguished_from_null"
+    },
+    {
+     "feature": "k0",
+     "kind": "value",
+     "n": 400,
+     "mi_bits": 0.0017326222973435776,
+     "null_median_bits": 0.004190005008495937,
+     "p_value": 0.8265,
+     "p_holm": 1.0,
+     "assessment": "not_distinguished_from_null"
+    },
+    {
+     "feature": "k1",
+     "kind": "value",
+     "n": 400,
+     "mi_bits": 0.005062386563211623,
+     "null_median_bits": 0.004047125990630058,
+     "p_value": 0.422,
+     "p_holm": 1.0,
+     "assessment": "not_distinguished_from_null"
+    },
+    {
+     "feature": "k2",
+     "kind": "value",
+     "n": 400,
+     "mi_bits": 0.01584776310487505,
+     "null_median_bits": 0.004190005008495937,
+     "p_value": 0.034,
+     "p_holm": 0.34,
+     "assessment": "not_distinguished_from_null"
+    },
+    {
+     "feature": "k3",
+     "kind": "value",
+     "n": 400,
+     "mi_bits": 0.00043289512479525473,
+     "null_median_bits": 0.004047125990630058,
+     "p_value": 0.9755,
+     "p_holm": 1.0,
+     "assessment": "not_distinguished_from_null"
+    },
+    {
+     "feature": "k4",
+     "kind": "value",
+     "n": 400,
+     "mi_bits": 0.0039023254106168694,
+     "null_median_bits": 0.004190005008495937,
+     "p_value": 0.5485,
+     "p_holm": 1.0,
+     "assessment": "not_distinguished_from_null"
+    }
+   ],
+   "source_hash": "123567ac9dda8b511a7ef9fbe026193464980ef0d353f46b6ccc0ce92ef6e172",
+   "config_hash": "a0dafce07b03d8cf47bbe190191a65562759e80069bd3eca561f900ba929ff5c"
+  },
+  {
+   "case": "null",
+   "seed": 6005,
+   "partition": "development",
+   "elapsed_s": 102.88532508304343,
+   "n_tests": 10,
+   "n_rejections": 0,
+   "any_rejection": false,
+   "rejected": [],
+   "value_status": {
+    "c0": "eligible",
+    "c1": "eligible",
+    "c2": "eligible",
+    "c3": "eligible",
+    "c4": "eligible",
+    "k0": "eligible",
+    "k1": "eligible",
+    "k2": "eligible",
+    "k3": "eligible",
+    "k4": "eligible"
+   },
+   "duplicates": [],
+   "tests": [
+    {
+     "feature": "c0",
+     "kind": "value",
+     "n": 400,
+     "mi_bits": 0.021365510646384412,
+     "null_median_bits": 0.0,
+     "p_value": 0.254,
+     "p_holm": 1.0,
+     "assessment": "not_distinguished_from_null"
+    },
+    {
+     "feature": "c1",
+     "kind": "value",
+     "n": 400,
+     "mi_bits": 0.043306257517606375,
+     "null_median_bits": 0.0,
+     "p_value": 0.122,
+     "p_holm": 1.0,
+     "assessment": "not_distinguished_from_null"
+    },
+    {
+     "feature": "c2",
+     "kind": "value",
+     "n": 400,
+     "mi_bits": 0.03618971516718212,
+     "null_median_bits": 0.000628741148856013,
+     "p_value": 0.155,
+     "p_holm": 1.0,
+     "assessment": "not_distinguished_from_null"
+    },
+    {
+     "feature": "c3",
+     "kind": "value",
+     "n": 400,
+     "mi_bits": 0.0032257188620352126,
+     "null_median_bits": 0.0,
+     "p_value": 0.4545,
+     "p_holm": 1.0,
+     "assessment": "not_distinguished_from_null"
+    },
+    {
+     "feature": "c4",
+     "kind": "value",
+     "n": 400,
+     "mi_bits": 0.0,
+     "null_median_bits": 0.0,
+     "p_value": 1.0,
+     "p_holm": 1.0,
+     "assessment": "not_distinguished_from_null"
+    },
+    {
+     "feature": "k0",
+     "kind": "value",
+     "n": 400,
+     "mi_bits": 0.0018771327148067796,
+     "null_median_bits": 0.004047125990630058,
+     "p_value": 0.781,
+     "p_holm": 1.0,
+     "assessment": "not_distinguished_from_null"
+    },
+    {
+     "feature": "k1",
+     "kind": "value",
+     "n": 400,
+     "mi_bits": 0.007968491964753176,
+     "null_median_bits": 0.004190005008495937,
+     "p_value": 0.227,
+     "p_holm": 1.0,
+     "assessment": "not_distinguished_from_null"
+    },
+    {
+     "feature": "k2",
+     "kind": "value",
+     "n": 400,
+     "mi_bits": 0.0021657487160066527,
+     "null_median_bits": 0.004480252409293134,
+     "p_value": 0.767,
+     "p_holm": 1.0,
+     "assessment": "not_distinguished_from_null"
+    },
+    {
+     "feature": "k3",
+     "kind": "value",
+     "n": 400,
+     "mi_bits": 0.014963611685472429,
+     "null_median_bits": 0.004480252409293134,
+     "p_value": 0.047,
+     "p_holm": 0.47,
+     "assessment": "not_distinguished_from_null"
+    },
+    {
+     "feature": "k4",
+     "kind": "value",
+     "n": 400,
+     "mi_bits": 0.009111137197748507,
+     "null_median_bits": 0.004480252409293134,
+     "p_value": 0.175,
+     "p_holm": 1.0,
+     "assessment": "not_distinguished_from_null"
+    }
+   ],
+   "source_hash": "123567ac9dda8b511a7ef9fbe026193464980ef0d353f46b6ccc0ce92ef6e172",
+   "config_hash": "a0dafce07b03d8cf47bbe190191a65562759e80069bd3eca561f900ba929ff5c"
+  },
+  {
+   "case": "null",
+   "seed": 6006,
+   "partition": "development",
+   "elapsed_s": 103.60037683299743,
+   "n_tests": 10,
+   "n_rejections": 0,
+   "any_rejection": false,
+   "rejected": [],
+   "value_status": {
+    "c0": "eligible",
+    "c1": "eligible",
+    "c2": "eligible",
+    "c3": "eligible",
+    "c4": "eligible",
+    "k0": "eligible",
+    "k1": "eligible",
+    "k2": "eligible",
+    "k3": "eligible",
+    "k4": "eligible"
+   },
+   "duplicates": [],
+   "tests": [
+    {
+     "feature": "c0",
+     "kind": "value",
+     "n": 400,
+     "mi_bits": 0.00014557435792158157,
+     "null_median_bits": 0.00024319575209983798,
+     "p_value": 0.5035,
+     "p_holm": 1.0,
+     "assessment": "not_distinguished_from_null"
+    },
+    {
+     "feature": "c1",
+     "kind": "value",
+     "n": 400,
+     "mi_bits": 0.0,
+     "null_median_bits": 0.0,
+     "p_value": 1.0,
+     "p_holm": 1.0,
+     "assessment": "not_distinguished_from_null"
+    },
+    {
+     "feature": "c2",
+     "kind": "value",
+     "n": 400,
+     "mi_bits": 0.041186543518933055,
+     "null_median_bits": 0.0,
+     "p_value": 0.111,
+     "p_holm": 0.888,
+     "assessment": "not_distinguished_from_null"
+    },
+    {
+     "feature": "c3",
+     "kind": "value",
+     "n": 400,
+     "mi_bits": 0.0,
+     "null_median_bits": 0.0,
+     "p_value": 1.0,
+     "p_holm": 1.0,
+     "assessment": "not_distinguished_from_null"
+    },
+    {
+     "feature": "c4",
+     "kind": "value",
+     "n": 400,
+     "mi_bits": 0.02010411685394966,
+     "null_median_bits": 0.0,
+     "p_value": 0.294,
+     "p_holm": 1.0,
+     "assessment": "not_distinguished_from_null"
+    },
+    {
+     "feature": "k0",
+     "kind": "value",
+     "n": 400,
+     "mi_bits": 0.015823908488796518,
+     "null_median_bits": 0.004480252409293134,
+     "p_value": 0.029,
+     "p_holm": 0.29000000000000004,
+     "assessment": "not_distinguished_from_null"
+    },
+    {
+     "feature": "k1",
+     "kind": "value",
+     "n": 400,
+     "mi_bits": 0.005496906331913704,
+     "null_median_bits": 0.004190005008495937,
+     "p_value": 0.388,
+     "p_holm": 1.0,
+     "assessment": "not_distinguished_from_null"
+    },
+    {
+     "feature": "k2",
+     "kind": "value",
+     "n": 400,
+     "mi_bits": 0.0038999956572570572,
+     "null_median_bits": 0.003902789113025566,
+     "p_value": 0.5355,
+     "p_holm": 1.0,
+     "assessment": "not_distinguished_from_null"
+    },
+    {
+     "feature": "k3",
+     "kind": "value",
+     "n": 400,
+     "mi_bits": 0.0068036683076324435,
+     "null_median_bits": 0.004480252409293134,
+     "p_value": 0.3035,
+     "p_holm": 1.0,
+     "assessment": "not_distinguished_from_null"
+    },
+    {
+     "feature": "k4",
+     "kind": "value",
+     "n": 400,
+     "mi_bits": 0.01334288392406349,
+     "null_median_bits": 0.004190005008495937,
+     "p_value": 0.0455,
+     "p_holm": 0.4095,
+     "assessment": "not_distinguished_from_null"
+    }
+   ],
+   "source_hash": "123567ac9dda8b511a7ef9fbe026193464980ef0d353f46b6ccc0ce92ef6e172",
+   "config_hash": "a0dafce07b03d8cf47bbe190191a65562759e80069bd3eca561f900ba929ff5c"
+  },
+  {
+   "case": "null",
+   "seed": 6007,
+   "partition": "development",
+   "elapsed_s": 103.61626762489323,
+   "n_tests": 10,
+   "n_rejections": 0,
+   "any_rejection": false,
+   "rejected": [],
+   "value_status": {
+    "c0": "eligible",
+    "c1": "eligible",
+    "c2": "eligible",
+    "c3": "eligible",
+    "c4": "eligible",
+    "k0": "eligible",
+    "k1": "eligible",
+    "k2": "eligible",
+    "k3": "eligible",
+    "k4": "eligible"
+   },
+   "duplicates": [],
+   "tests": [
+    {
+     "feature": "c0",
+     "kind": "value",
+     "n": 400,
+     "mi_bits": 0.015165802718050014,
+     "null_median_bits": 0.0001459011127638013,
+     "p_value": 0.325,
+     "p_holm": 1.0,
+     "assessment": "not_distinguished_from_null"
+    },
+    {
+     "feature": "c1",
+     "kind": "value",
+     "n": 400,
+     "mi_bits": 0.002280808328441922,
+     "null_median_bits": 0.0,
+     "p_value": 0.475,
+     "p_holm": 1.0,
+     "assessment": "not_distinguished_from_null"
+    },
+    {
+     "feature": "c2",
+     "kind": "value",
+     "n": 400,
+     "mi_bits": 0.09733999798428326,
+     "null_median_bits": 0.0,
+     "p_value": 0.006,
+     "p_holm": 0.06,
+     "assessment": "not_distinguished_from_null"
+    },
+    {
+     "feature": "c3",
+     "kind": "value",
+     "n": 400,
+     "mi_bits": 0.03760159487153383,
+     "null_median_bits": 0.0,
+     "p_value": 0.1465,
+     "p_holm": 1.0,
+     "assessment": "not_distinguished_from_null"
+    },
+    {
+     "feature": "c4",
+     "kind": "value",
+     "n": 400,
+     "mi_bits": 0.0,
+     "null_median_bits": 0.0,
+     "p_value": 1.0,
+     "p_holm": 1.0,
+     "assessment": "not_distinguished_from_null"
+    },
+    {
+     "feature": "k0",
+     "kind": "value",
+     "n": 400,
+     "mi_bits": 0.006369148538930362,
+     "null_median_bits": 0.004480252409293134,
+     "p_value": 0.3305,
+     "p_holm": 1.0,
+     "assessment": "not_distinguished_from_null"
+    },
+    {
+     "feature": "k1",
+     "kind": "value",
+     "n": 400,
+     "mi_bits": 0.004766769951001015,
+     "null_median_bits": 0.004480252409293134,
+     "p_value": 0.477,
+     "p_holm": 1.0,
+     "assessment": "not_distinguished_from_null"
+    },
+    {
+     "feature": "k2",
+     "kind": "value",
+     "n": 400,
+     "mi_bits": 0.0015882854197390858,
+     "null_median_bits": 0.004047125990630058,
+     "p_value": 0.844,
+     "p_holm": 1.0,
+     "assessment": "not_distinguished_from_null"
+    },
+    {
+     "feature": "k3",
+     "kind": "value",
+     "n": 400,
+     "mi_bits": 0.0024557580672455322,
+     "null_median_bits": 0.004047125990630058,
+     "p_value": 0.718,
+     "p_holm": 1.0,
+     "assessment": "not_distinguished_from_null"
+    },
+    {
+     "feature": "k4",
+     "kind": "value",
+     "n": 400,
+     "mi_bits": 0.00332253236098949,
+     "null_median_bits": 0.004190005008495937,
+     "p_value": 0.6045,
+     "p_holm": 1.0,
+     "assessment": "not_distinguished_from_null"
+    }
+   ],
+   "source_hash": "123567ac9dda8b511a7ef9fbe026193464980ef0d353f46b6ccc0ce92ef6e172",
+   "config_hash": "a0dafce07b03d8cf47bbe190191a65562759e80069bd3eca561f900ba929ff5c"
+  },
+  {
+   "case": "null",
+   "seed": 6008,
+   "partition": "development",
+   "elapsed_s": 102.14012333308347,
+   "n_tests": 10,
+   "n_rejections": 0,
+   "any_rejection": false,
+   "rejected": [],
+   "value_status": {
+    "c0": "eligible",
+    "c1": "eligible",
+    "c2": "eligible",
+    "c3": "eligible",
+    "c4": "eligible",
+    "k0": "eligible",
+    "k1": "eligible",
+    "k2": "eligible",
+    "k3": "eligible",
+    "k4": "eligible"
+   },
+   "duplicates": [],
+   "tests": [
+    {
+     "feature": "c0",
+     "kind": "value",
+     "n": 400,
+     "mi_bits": 0.0,
+     "null_median_bits": 0.0,
+     "p_value": 1.0,
+     "p_holm": 1.0,
+     "assessment": "not_distinguished_from_null"
+    },
+    {
+     "feature": "c1",
+     "kind": "value",
+     "n": 400,
+     "mi_bits": 0.010578156424321871,
+     "null_median_bits": 0.00039833070835010835,
+     "p_value": 0.379,
+     "p_holm": 1.0,
+     "assessment": "not_distinguished_from_null"
+    },
+    {
+     "feature": "c2",
+     "kind": "value",
+     "n": 400,
+     "mi_bits": 0.04164259024677546,
+     "null_median_bits": 0.0,
+     "p_value": 0.1135,
+     "p_holm": 1.0,
+     "assessment": "not_distinguished_from_null"
+    },
+    {
+     "feature": "c3",
+     "kind": "value",
+     "n": 400,
+     "mi_bits": 0.035227709762280686,
+     "null_median_bits": 0.0,
+     "p_value": 0.159,
+     "p_holm": 1.0,
+     "assessment": "not_distinguished_from_null"
+    },
+    {
+     "feature": "c4",
+     "kind": "value",
+     "n": 400,
+     "mi_bits": 0.0,
+     "null_median_bits": 0.0,
+     "p_value": 1.0,
+     "p_holm": 1.0,
+     "assessment": "not_distinguished_from_null"
+    },
+    {
+     "feature": "k0",
+     "kind": "value",
+     "n": 400,
+     "mi_bits": 0.011877112876927795,
+     "null_median_bits": 0.004190005008495937,
+     "p_value": 0.093,
+     "p_holm": 0.9299999999999999,
+     "assessment": "not_distinguished_from_null"
+    },
+    {
+     "feature": "k1",
+     "kind": "value",
+     "n": 400,
+     "mi_bits": 0.004481645759332139,
+     "null_median_bits": 0.004047125990630058,
+     "p_value": 0.464,
+     "p_holm": 1.0,
+     "assessment": "not_distinguished_from_null"
+    },
+    {
+     "feature": "k2",
+     "kind": "value",
+     "n": 400,
+     "mi_bits": 0.005641243209518196,
+     "null_median_bits": 0.004047125990630058,
+     "p_value": 0.3765,
+     "p_holm": 1.0,
+     "assessment": "not_distinguished_from_null"
+    },
+    {
+     "feature": "k3",
+     "kind": "value",
+     "n": 400,
+     "mi_bits": 0.0010103584210628218,
+     "null_median_bits": 0.004047125990630058,
+     "p_value": 0.9295,
+     "p_holm": 1.0,
+     "assessment": "not_distinguished_from_null"
+    },
+    {
+     "feature": "k4",
+     "kind": "value",
+     "n": 400,
+     "mi_bits": 0.0010103584210628218,
+     "null_median_bits": 0.004480252409293134,
+     "p_value": 0.92,
+     "p_holm": 1.0,
+     "assessment": "not_distinguished_from_null"
+    }
+   ],
+   "source_hash": "123567ac9dda8b511a7ef9fbe026193464980ef0d353f46b6ccc0ce92ef6e172",
+   "config_hash": "a0dafce07b03d8cf47bbe190191a65562759e80069bd3eca561f900ba929ff5c"
+  },
+  {
+   "case": "null",
+   "seed": 6009,
+   "partition": "development",
+   "elapsed_s": 101.46158579096664,
+   "n_tests": 10,
+   "n_rejections": 0,
+   "any_rejection": false,
+   "rejected": [],
+   "value_status": {
+    "c0": "eligible",
+    "c1": "eligible",
+    "c2": "eligible",
+    "c3": "eligible",
+    "c4": "eligible",
+    "k0": "eligible",
+    "k1": "eligible",
+    "k2": "eligible",
+    "k3": "eligible",
+    "k4": "eligible"
+   },
+   "duplicates": [],
+   "tests": [
+    {
+     "feature": "c0",
+     "kind": "value",
+     "n": 400,
+     "mi_bits": 0.056507079812664035,
+     "null_median_bits": 3.552509356743129e-05,
+     "p_value": 0.0575,
+     "p_holm": 0.5750000000000001,
+     "assessment": "not_distinguished_from_null"
+    },
+    {
+     "feature": "c1",
+     "kind": "value",
+     "n": 400,
+     "mi_bits": 0.0,
+     "null_median_bits": 0.0,
+     "p_value": 1.0,
+     "p_holm": 1.0,
+     "assessment": "not_distinguished_from_null"
+    },
+    {
+     "feature": "c2",
+     "kind": "value",
+     "n": 400,
+     "mi_bits": 0.005214300255364887,
+     "null_median_bits": 0.0,
+     "p_value": 0.438,
+     "p_holm": 1.0,
+     "assessment": "not_distinguished_from_null"
+    },
+    {
+     "feature": "c3",
+     "kind": "value",
+     "n": 400,
+     "mi_bits": 0.0,
+     "null_median_bits": 0.0,
+     "p_value": 1.0,
+     "p_holm": 1.0,
+     "assessment": "not_distinguished_from_null"
+    },
+    {
+     "feature": "c4",
+     "kind": "value",
+     "n": 400,
+     "mi_bits": 0.0,
+     "null_median_bits": 0.0,
+     "p_value": 1.0,
+     "p_holm": 1.0,
+     "assessment": "not_distinguished_from_null"
+    },
+    {
+     "feature": "k0",
+     "kind": "value",
+     "n": 400,
+     "mi_bits": 0.00941733160676895,
+     "null_median_bits": 0.004047125990630058,
+     "p_value": 0.1695,
+     "p_holm": 1.0,
+     "assessment": "not_distinguished_from_null"
+    },
+    {
+     "feature": "k1",
+     "kind": "value",
+     "n": 400,
+     "mi_bits": 0.008683652232216843,
+     "null_median_bits": 0.004047125990630058,
+     "p_value": 0.189,
+     "p_holm": 1.0,
+     "assessment": "not_distinguished_from_null"
+    },
+    {
+     "feature": "k2",
+     "kind": "value",
+     "n": 400,
+     "mi_bits": 0.00534772505679958,
+     "null_median_bits": 0.004481645759332139,
+     "p_value": 0.4145,
+     "p_holm": 1.0,
+     "assessment": "not_distinguished_from_null"
+    },
+    {
+     "feature": "k3",
+     "kind": "value",
+     "n": 400,
+     "mi_bits": 0.005062386563211623,
+     "null_median_bits": 0.004047125990630058,
+     "p_value": 0.4175,
+     "p_holm": 1.0,
+     "assessment": "not_distinguished_from_null"
+    },
+    {
+     "feature": "k4",
+     "kind": "value",
+     "n": 400,
+     "mi_bits": 0.0018764377185302623,
+     "null_median_bits": 0.004190005008495937,
+     "p_value": 0.8165,
+     "p_holm": 1.0,
+     "assessment": "not_distinguished_from_null"
+    }
+   ],
+   "source_hash": "123567ac9dda8b511a7ef9fbe026193464980ef0d353f46b6ccc0ce92ef6e172",
+   "config_hash": "a0dafce07b03d8cf47bbe190191a65562759e80069bd3eca561f900ba929ff5c"
+  },
+  {
+   "case": "null",
+   "seed": 6010,
+   "partition": "development",
+   "elapsed_s": 101.90558333310764,
+   "n_tests": 10,
+   "n_rejections": 0,
+   "any_rejection": false,
+   "rejected": [],
+   "value_status": {
+    "c0": "eligible",
+    "c1": "eligible",
+    "c2": "eligible",
+    "c3": "eligible",
+    "c4": "eligible",
+    "k0": "eligible",
+    "k1": "eligible",
+    "k2": "eligible",
+    "k3": "eligible",
+    "k4": "eligible"
+   },
+   "duplicates": [],
+   "tests": [
+    {
+     "feature": "c0",
+     "kind": "value",
+     "n": 400,
+     "mi_bits": 0.0,
+     "null_median_bits": 0.0,
+     "p_value": 1.0,
+     "p_holm": 1.0,
+     "assessment": "not_distinguished_from_null"
+    },
+    {
+     "feature": "c1",
+     "kind": "value",
+     "n": 400,
+     "mi_bits": 0.0,
+     "null_median_bits": 0.00024572501119670716,
+     "p_value": 1.0,
+     "p_holm": 1.0,
+     "assessment": "not_distinguished_from_null"
+    },
+    {
+     "feature": "c2",
+     "kind": "value",
+     "n": 400,
+     "mi_bits": 0.0,
+     "null_median_bits": 0.0,
+     "p_value": 1.0,
+     "p_holm": 1.0,
+     "assessment": "not_distinguished_from_null"
+    },
+    {
+     "feature": "c3",
+     "kind": "value",
+     "n": 400,
+     "mi_bits": 0.0,
+     "null_median_bits": 0.0014287120659990645,
+     "p_value": 1.0,
+     "p_holm": 1.0,
+     "assessment": "not_distinguished_from_null"
+    },
+    {
+     "feature": "c4",
+     "kind": "value",
+     "n": 400,
+     "mi_bits": 0.011780742959602762,
+     "null_median_bits": 0.0,
+     "p_value": 0.3635,
+     "p_holm": 1.0,
+     "assessment": "not_distinguished_from_null"
+    },
+    {
+     "feature": "k0",
+     "kind": "value",
+     "n": 400,
+     "mi_bits": 0.0021657487160066527,
+     "null_median_bits": 0.004480252409293134,
+     "p_value": 0.7715,
+     "p_holm": 1.0,
+     "assessment": "not_distinguished_from_null"
+    },
+    {
+     "feature": "k1",
+     "kind": "value",
+     "n": 400,
+     "mi_bits": 0.0005772320023997466,
+     "null_median_bits": 0.004481645759332139,
+     "p_value": 0.962,
+     "p_holm": 1.0,
+     "assessment": "not_distinguished_from_null"
+    },
+    {
+     "feature": "k2",
+     "kind": "value",
+     "n": 400,
+     "mi_bits": 0.0024557580672455322,
+     "null_median_bits": 0.004047125990630058,
+     "p_value": 0.712,
+     "p_holm": 1.0,
+     "assessment": "not_distinguished_from_null"
+    },
+    {
+     "feature": "k3",
+     "kind": "value",
+     "n": 400,
+     "mi_bits": 0.002744605362313226,
+     "null_median_bits": 0.004047125990630058,
+     "p_value": 0.6825,
+     "p_holm": 1.0,
+     "assessment": "not_distinguished_from_null"
+    },
+    {
+     "feature": "k4",
+     "kind": "value",
+     "n": 400,
+     "mi_bits": 0.012592273144391462,
+     "null_median_bits": 0.004480252409293134,
+     "p_value": 0.073,
+     "p_holm": 0.73,
+     "assessment": "not_distinguished_from_null"
+    }
+   ],
+   "source_hash": "123567ac9dda8b511a7ef9fbe026193464980ef0d353f46b6ccc0ce92ef6e172",
+   "config_hash": "a0dafce07b03d8cf47bbe190191a65562759e80069bd3eca561f900ba929ff5c"
+  },
+  {
+   "case": "null",
+   "seed": 6011,
+   "partition": "development",
+   "elapsed_s": 101.82519008405507,
+   "n_tests": 10,
+   "n_rejections": 0,
+   "any_rejection": false,
+   "rejected": [],
+   "value_status": {
+    "c0": "eligible",
+    "c1": "eligible",
+    "c2": "eligible",
+    "c3": "eligible",
+    "c4": "eligible",
+    "k0": "eligible",
+    "k1": "eligible",
+    "k2": "eligible",
+    "k3": "eligible",
+    "k4": "eligible"
+   },
+   "duplicates": [],
+   "tests": [
+    {
+     "feature": "c0",
+     "kind": "value",
+     "n": 400,
+     "mi_bits": 0.0,
+     "null_median_bits": 0.0,
+     "p_value": 1.0,
+     "p_holm": 1.0,
+     "assessment": "not_distinguished_from_null"
+    },
+    {
+     "feature": "c1",
+     "kind": "value",
+     "n": 400,
+     "mi_bits": 0.0,
+     "null_median_bits": 0.0,
+     "p_value": 1.0,
+     "p_holm": 1.0,
+     "assessment": "not_distinguished_from_null"
+    },
+    {
+     "feature": "c2",
+     "kind": "value",
+     "n": 400,
+     "mi_bits": 0.02350404955078334,
+     "null_median_bits": 0.0,
+     "p_value": 0.2435,
+     "p_holm": 1.0,
+     "assessment": "not_distinguished_from_null"
+    },
+    {
+     "feature": "c3",
+     "kind": "value",
+     "n": 400,
+     "mi_bits": 0.0,
+     "null_median_bits": 0.0,
+     "p_value": 1.0,
+     "p_holm": 1.0,
+     "assessment": "not_distinguished_from_null"
+    },
+    {
+     "feature": "c4",
+     "kind": "value",
+     "n": 400,
+     "mi_bits": 0.0,
+     "null_median_bits": 0.0,
+     "p_value": 1.0,
+     "p_holm": 1.0,
+     "assessment": "not_distinguished_from_null"
+    },
+    {
+     "feature": "k0",
+     "kind": "value",
+     "n": 400,
+     "mi_bits": 0.015362538627184617,
+     "null_median_bits": 0.004190005008495937,
+     "p_value": 0.042,
+     "p_holm": 0.42000000000000004,
+     "assessment": "not_distinguished_from_null"
+    },
+    {
+     "feature": "k1",
+     "kind": "value",
+     "n": 400,
+     "mi_bits": 0.0049119787222267055,
+     "null_median_bits": 0.004481645759332139,
+     "p_value": 0.4625,
+     "p_holm": 1.0,
+     "assessment": "not_distinguished_from_null"
+    },
+    {
+     "feature": "k2",
+     "kind": "value",
+     "n": 400,
+     "mi_bits": 0.00274321201227422,
+     "null_median_bits": 0.004480252409293134,
+     "p_value": 0.6895,
+     "p_holm": 1.0,
+     "assessment": "not_distinguished_from_null"
+    },
+    {
+     "feature": "k3",
+     "kind": "value",
+     "n": 400,
+     "mi_bits": 0.008683652232216843,
+     "null_median_bits": 0.004480252409293134,
+     "p_value": 0.2145,
+     "p_holm": 1.0,
+     "assessment": "not_distinguished_from_null"
+    },
+    {
+     "feature": "k4",
+     "kind": "value",
+     "n": 400,
+     "mi_bits": 0.009695635297186492,
+     "null_median_bits": 0.004047125990630058,
+     "p_value": 0.1495,
+     "p_holm": 1.0,
+     "assessment": "not_distinguished_from_null"
+    }
+   ],
+   "source_hash": "123567ac9dda8b511a7ef9fbe026193464980ef0d353f46b6ccc0ce92ef6e172",
+   "config_hash": "a0dafce07b03d8cf47bbe190191a65562759e80069bd3eca561f900ba929ff5c"
+  },
+  {
+   "case": "null",
+   "seed": 6012,
+   "partition": "development",
+   "elapsed_s": 101.5204712919658,
+   "n_tests": 10,
+   "n_rejections": 0,
+   "any_rejection": false,
+   "rejected": [],
+   "value_status": {
+    "c0": "eligible",
+    "c1": "eligible",
+    "c2": "eligible",
+    "c3": "eligible",
+    "c4": "eligible",
+    "k0": "eligible",
+    "k1": "eligible",
+    "k2": "eligible",
+    "k3": "eligible",
+    "k4": "eligible"
+   },
+   "duplicates": [],
+   "tests": [
+    {
+     "feature": "c0",
+     "kind": "value",
+     "n": 400,
+     "mi_bits": 0.0,
+     "null_median_bits": 6.6767272015102e-05,
+     "p_value": 1.0,
+     "p_holm": 1.0,
+     "assessment": "not_distinguished_from_null"
+    },
+    {
+     "feature": "c1",
+     "kind": "value",
+     "n": 400,
+     "mi_bits": 0.014040958813264852,
+     "null_median_bits": 0.0,
+     "p_value": 0.3295,
+     "p_holm": 1.0,
+     "assessment": "not_distinguished_from_null"
+    },
+    {
+     "feature": "c2",
+     "kind": "value",
+     "n": 400,
+     "mi_bits": 0.016452811951970667,
+     "null_median_bits": 0.0010758336165478596,
+     "p_value": 0.3225,
+     "p_holm": 1.0,
+     "assessment": "not_distinguished_from_null"
+    },
+    {
+     "feature": "c3",
+     "kind": "value",
+     "n": 400,
+     "mi_bits": 0.0,
+     "null_median_bits": 0.0,
+     "p_value": 1.0,
+     "p_holm": 1.0,
+     "assessment": "not_distinguished_from_null"
+    },
+    {
+     "feature": "c4",
+     "kind": "value",
+     "n": 400,
+     "mi_bits": 0.0,
+     "null_median_bits": 0.0008915297560375347,
+     "p_value": 1.0,
+     "p_holm": 1.0,
+     "assessment": "not_distinguished_from_null"
+    },
+    {
+     "feature": "k0",
+     "kind": "value",
+     "n": 400,
+     "mi_bits": 0.005350518512568089,
+     "null_median_bits": 0.004766769951001015,
+     "p_value": 0.427,
+     "p_holm": 1.0,
+     "assessment": "not_distinguished_from_null"
+    },
+    {
+     "feature": "k1",
+     "kind": "value",
+     "n": 400,
+     "mi_bits": 0.01158383307306123,
+     "null_median_bits": 0.004047125990630058,
+     "p_value": 0.0955,
+     "p_holm": 0.8595,
+     "assessment": "not_distinguished_from_null"
+    },
+    {
+     "feature": "k2",
+     "kind": "value",
+     "n": 400,
+     "mi_bits": 0.013473185850122924,
+     "null_median_bits": 0.004047125990630058,
+     "p_value": 0.0635,
+     "p_holm": 0.635,
+     "assessment": "not_distinguished_from_null"
+    },
+    {
+     "feature": "k3",
+     "kind": "value",
+     "n": 400,
+     "mi_bits": 0.0017326222973435776,
+     "null_median_bits": 0.004047125990630058,
+     "p_value": 0.831,
+     "p_holm": 1.0,
+     "assessment": "not_distinguished_from_null"
+    },
+    {
+     "feature": "k4",
+     "kind": "value",
+     "n": 400,
+     "mi_bits": 0.011449627911396129,
+     "null_median_bits": 0.004047125990630058,
+     "p_value": 0.102,
+     "p_holm": 0.8595,
+     "assessment": "not_distinguished_from_null"
+    }
+   ],
+   "source_hash": "123567ac9dda8b511a7ef9fbe026193464980ef0d353f46b6ccc0ce92ef6e172",
+   "config_hash": "a0dafce07b03d8cf47bbe190191a65562759e80069bd3eca561f900ba929ff5c"
+  },
+  {
+   "case": "null",
+   "seed": 6013,
+   "partition": "development",
+   "elapsed_s": 102.06210308300797,
+   "n_tests": 10,
+   "n_rejections": 0,
+   "any_rejection": false,
+   "rejected": [],
+   "value_status": {
+    "c0": "eligible",
+    "c1": "eligible",
+    "c2": "eligible",
+    "c3": "eligible",
+    "c4": "eligible",
+    "k0": "eligible",
+    "k1": "eligible",
+    "k2": "eligible",
+    "k3": "eligible",
+    "k4": "eligible"
+   },
+   "duplicates": [],
+   "tests": [
+    {
+     "feature": "c0",
+     "kind": "value",
+     "n": 400,
+     "mi_bits": 0.0,
+     "null_median_bits": 0.0,
+     "p_value": 1.0,
+     "p_holm": 1.0,
+     "assessment": "not_distinguished_from_null"
+    },
+    {
+     "feature": "c1",
+     "kind": "value",
+     "n": 400,
+     "mi_bits": 0.025458741462701495,
+     "null_median_bits": 0.0,
+     "p_value": 0.229,
+     "p_holm": 1.0,
+     "assessment": "not_distinguished_from_null"
+    },
+    {
+     "feature": "c2",
+     "kind": "value",
+     "n": 400,
+     "mi_bits": 0.05916550392096272,
+     "null_median_bits": 0.000876496678341601,
+     "p_value": 0.0515,
+     "p_holm": 0.46349999999999997,
+     "assessment": "not_distinguished_from_null"
+    },
+    {
+     "feature": "c3",
+     "kind": "value",
+     "n": 400,
+     "mi_bits": 0.0,
+     "null_median_bits": 0.0,
+     "p_value": 1.0,
+     "p_holm": 1.0,
+     "assessment": "not_distinguished_from_null"
+    },
+    {
+     "feature": "c4",
+     "kind": "value",
+     "n": 400,
+     "mi_bits": 0.0,
+     "null_median_bits": 0.0002577154420088314,
+     "p_value": 1.0,
+     "p_holm": 1.0,
+     "assessment": "not_distinguished_from_null"
+    },
+    {
+     "feature": "k0",
+     "kind": "value",
+     "n": 400,
+     "mi_bits": 0.000721511125995128,
+     "null_median_bits": 0.004480252409293134,
+     "p_value": 0.94,
+     "p_holm": 1.0,
+     "assessment": "not_distinguished_from_null"
+    },
+    {
+     "feature": "k1",
+     "kind": "value",
+     "n": 400,
+     "mi_bits": 0.005350518512568089,
+     "null_median_bits": 0.004481645759332139,
+     "p_value": 0.413,
+     "p_holm": 1.0,
+     "assessment": "not_distinguished_from_null"
+    },
+    {
+     "feature": "k2",
+     "kind": "value",
+     "n": 400,
+     "mi_bits": 0.0015882854197390858,
+     "null_median_bits": 0.004481645759332139,
+     "p_value": 0.84,
+     "p_holm": 1.0,
+     "assessment": "not_distinguished_from_null"
+    },
+    {
+     "feature": "k3",
+     "kind": "value",
+     "n": 400,
+     "mi_bits": 0.0030339163597896167,
+     "null_median_bits": 0.004190005008495937,
+     "p_value": 0.6475,
+     "p_holm": 1.0,
+     "assessment": "not_distinguished_from_null"
+    },
+    {
+     "feature": "k4",
+     "kind": "value",
+     "n": 400,
+     "mi_bits": 0.017610355779004064,
+     "null_median_bits": 0.004190005008495937,
+     "p_value": 0.0285,
+     "p_holm": 0.28500000000000003,
+     "assessment": "not_distinguished_from_null"
+    }
+   ],
+   "source_hash": "123567ac9dda8b511a7ef9fbe026193464980ef0d353f46b6ccc0ce92ef6e172",
+   "config_hash": "a0dafce07b03d8cf47bbe190191a65562759e80069bd3eca561f900ba929ff5c"
+  },
+  {
+   "case": "null",
+   "seed": 6014,
+   "partition": "development",
+   "elapsed_s": 101.78915995801799,
+   "n_tests": 10,
+   "n_rejections": 0,
+   "any_rejection": false,
+   "rejected": [],
+   "value_status": {
+    "c0": "eligible",
+    "c1": "eligible",
+    "c2": "eligible",
+    "c3": "eligible",
+    "c4": "eligible",
+    "k0": "eligible",
+    "k1": "eligible",
+    "k2": "eligible",
+    "k3": "eligible",
+    "k4": "eligible"
+   },
+   "duplicates": [],
+   "tests": [
+    {
+     "feature": "c0",
+     "kind": "value",
+     "n": 400,
+     "mi_bits": 0.0,
+     "null_median_bits": 0.0,
+     "p_value": 1.0,
+     "p_holm": 1.0,
+     "assessment": "not_distinguished_from_null"
+    },
+    {
+     "feature": "c1",
+     "kind": "value",
+     "n": 400,
+     "mi_bits": 0.0,
+     "null_median_bits": 0.0,
+     "p_value": 1.0,
+     "p_holm": 1.0,
+     "assessment": "not_distinguished_from_null"
+    },
+    {
+     "feature": "c2",
+     "kind": "value",
+     "n": 400,
+     "mi_bits": 0.004082605762577323,
+     "null_median_bits": 0.0,
+     "p_value": 0.4475,
+     "p_holm": 1.0,
+     "assessment": "not_distinguished_from_null"
+    },
+    {
+     "feature": "c3",
+     "kind": "value",
+     "n": 400,
+     "mi_bits": 0.04824037984904288,
+     "null_median_bits": 0.0,
+     "p_value": 0.093,
+     "p_holm": 0.9299999999999999,
+     "assessment": "not_distinguished_from_null"
+    },
+    {
+     "feature": "c4",
+     "kind": "value",
+     "n": 400,
+     "mi_bits": 0.012944752303116213,
+     "null_median_bits": 0.0,
+     "p_value": 0.35,
+     "p_holm": 1.0,
+     "assessment": "not_distinguished_from_null"
+    },
+    {
+     "feature": "k0",
+     "kind": "value",
+     "n": 400,
+     "mi_bits": 0.0038999956572570572,
+     "null_median_bits": 0.004481645759332139,
+     "p_value": 0.5755,
+     "p_holm": 1.0,
+     "assessment": "not_distinguished_from_null"
+    },
+    {
+     "feature": "k1",
+     "kind": "value",
+     "n": 400,
+     "mi_bits": 0.007087579259021712,
+     "null_median_bits": 0.004047125990630058,
+     "p_value": 0.2715,
+     "p_holm": 1.0,
+     "assessment": "not_distinguished_from_null"
+    },
+    {
+     "feature": "k2",
+     "kind": "value",
+     "n": 400,
+     "mi_bits": 0.0024550597134830434,
+     "null_median_bits": 0.004047125990630058,
+     "p_value": 0.71,
+     "p_holm": 1.0,
+     "assessment": "not_distinguished_from_null"
+    },
+    {
+     "feature": "k3",
+     "kind": "value",
+     "n": 400,
+     "mi_bits": 0.003757052129691571,
+     "null_median_bits": 0.004047125990630058,
+     "p_value": 0.559,
+     "p_holm": 1.0,
+     "assessment": "not_distinguished_from_null"
+    },
+    {
+     "feature": "k4",
+     "kind": "value",
+     "n": 400,
+     "mi_bits": 0.005351233858279316,
+     "null_median_bits": 0.004480252409293134,
+     "p_value": 0.398,
+     "p_holm": 1.0,
+     "assessment": "not_distinguished_from_null"
+    }
+   ],
+   "source_hash": "123567ac9dda8b511a7ef9fbe026193464980ef0d353f46b6ccc0ce92ef6e172",
+   "config_hash": "a0dafce07b03d8cf47bbe190191a65562759e80069bd3eca561f900ba929ff5c"
+  },
+  {
+   "case": "null",
+   "seed": 6015,
+   "partition": "development",
+   "elapsed_s": 101.81904099998064,
+   "n_tests": 10,
+   "n_rejections": 0,
+   "any_rejection": false,
+   "rejected": [],
+   "value_status": {
+    "c0": "eligible",
+    "c1": "eligible",
+    "c2": "eligible",
+    "c3": "eligible",
+    "c4": "eligible",
+    "k0": "eligible",
+    "k1": "eligible",
+    "k2": "eligible",
+    "k3": "eligible",
+    "k4": "eligible"
+   },
+   "duplicates": [],
+   "tests": [
+    {
+     "feature": "c0",
+     "kind": "value",
+     "n": 400,
+     "mi_bits": 0.019632362932567364,
+     "null_median_bits": 0.0,
+     "p_value": 0.269,
+     "p_holm": 1.0,
+     "assessment": "not_distinguished_from_null"
+    },
+    {
+     "feature": "c1",
+     "kind": "value",
+     "n": 400,
+     "mi_bits": 0.036889605491998795,
+     "null_median_bits": 0.0,
+     "p_value": 0.154,
+     "p_holm": 1.0,
+     "assessment": "not_distinguished_from_null"
+    },
+    {
+     "feature": "c2",
+     "kind": "value",
+     "n": 400,
+     "mi_bits": 0.0,
+     "null_median_bits": 0.0,
+     "p_value": 1.0,
+     "p_holm": 1.0,
+     "assessment": "not_distinguished_from_null"
+    },
+    {
+     "feature": "c3",
+     "kind": "value",
+     "n": 400,
+     "mi_bits": 0.045591315369015374,
+     "null_median_bits": 0.0,
+     "p_value": 0.097,
+     "p_holm": 0.97,
+     "assessment": "not_distinguished_from_null"
+    },
+    {
+     "feature": "c4",
+     "kind": "value",
+     "n": 400,
+     "mi_bits": 0.0,
+     "null_median_bits": 0.0,
+     "p_value": 1.0,
+     "p_holm": 1.0,
+     "assessment": "not_distinguished_from_null"
+    },
+    {
+     "feature": "k0",
+     "kind": "value",
+     "n": 400,
+     "mi_bits": 0.0014434848397258972,
+     "null_median_bits": 0.004190005008495937,
+     "p_value": 0.8715,
+     "p_holm": 1.0,
+     "assessment": "not_distinguished_from_null"
+    },
+    {
+     "feature": "k1",
+     "kind": "value",
+     "n": 400,
+     "mi_bits": 0.0005772320023997466,
+     "null_median_bits": 0.004480252409293134,
+     "p_value": 0.9625,
+     "p_holm": 1.0,
+     "assessment": "not_distinguished_from_null"
+    },
+    {
+     "feature": "k2",
+     "kind": "value",
+     "n": 400,
+     "mi_bits": 0.0018771327148067796,
+     "null_median_bits": 0.004481645759332139,
+     "p_value": 0.8165,
+     "p_holm": 1.0,
+     "assessment": "not_distinguished_from_null"
+    },
+    {
+     "feature": "k3",
+     "kind": "value",
+     "n": 400,
+     "mi_bits": 0.0057834713913724545,
+     "null_median_bits": 0.004047125990630058,
+     "p_value": 0.363,
+     "p_holm": 1.0,
+     "assessment": "not_distinguished_from_null"
+    },
+    {
+     "feature": "k4",
+     "kind": "value",
+     "n": 400,
+     "mi_bits": 0.0031777317809763015,
+     "null_median_bits": 0.004047125990630058,
+     "p_value": 0.6275,
+     "p_holm": 1.0,
+     "assessment": "not_distinguished_from_null"
+    }
+   ],
+   "source_hash": "123567ac9dda8b511a7ef9fbe026193464980ef0d353f46b6ccc0ce92ef6e172",
+   "config_hash": "a0dafce07b03d8cf47bbe190191a65562759e80069bd3eca561f900ba929ff5c"
+  },
+  {
+   "case": "null",
+   "seed": 6016,
+   "partition": "development",
+   "elapsed_s": 73.03654020896647,
+   "n_tests": 10,
+   "n_rejections": 0,
+   "any_rejection": false,
+   "rejected": [],
+   "value_status": {
+    "c0": "eligible",
+    "c1": "eligible",
+    "c2": "eligible",
+    "c3": "eligible",
+    "c4": "eligible",
+    "k0": "eligible",
+    "k1": "eligible",
+    "k2": "eligible",
+    "k3": "eligible",
+    "k4": "eligible"
+   },
+   "duplicates": [],
+   "tests": [
+    {
+     "feature": "c0",
+     "kind": "value",
+     "n": 400,
+     "mi_bits": 0.05941201542706099,
+     "null_median_bits": 0.0006118603647168897,
+     "p_value": 0.048,
+     "p_holm": 0.48,
+     "assessment": "not_distinguished_from_null"
+    },
+    {
+     "feature": "c1",
+     "kind": "value",
+     "n": 400,
+     "mi_bits": 0.031966316113863774,
+     "null_median_bits": 0.0,
+     "p_value": 0.177,
+     "p_holm": 1.0,
+     "assessment": "not_distinguished_from_null"
+    },
+    {
+     "feature": "c2",
+     "kind": "value",
+     "n": 400,
+     "mi_bits": 0.03445843054470868,
+     "null_median_bits": 0.0,
+     "p_value": 0.169,
+     "p_holm": 1.0,
+     "assessment": "not_distinguished_from_null"
+    },
+    {
+     "feature": "c3",
+     "kind": "value",
+     "n": 400,
+     "mi_bits": 0.0,
+     "null_median_bits": 0.0,
+     "p_value": 1.0,
+     "p_holm": 1.0,
+     "assessment": "not_distinguished_from_null"
+    },
+    {
+     "feature": "c4",
+     "kind": "value",
+     "n": 400,
+     "mi_bits": 0.0,
+     "null_median_bits": 0.0,
+     "p_value": 1.0,
+     "p_holm": 1.0,
+     "assessment": "not_distinguished_from_null"
+    },
+    {
+     "feature": "k0",
+     "kind": "value",
+     "n": 400,
+     "mi_bits": 0.0026002684847087343,
+     "null_median_bits": 0.004190005008495937,
+     "p_value": 0.712,
+     "p_holm": 1.0,
+     "assessment": "not_distinguished_from_null"
+    },
+    {
+     "feature": "k1",
+     "kind": "value",
+     "n": 400,
+     "mi_bits": 0.0068036683076324435,
+     "null_median_bits": 0.004047125990630058,
+     "p_value": 0.27,
+     "p_holm": 1.0,
+     "assessment": "not_distinguished_from_null"
+    },
+    {
+     "feature": "k2",
+     "kind": "value",
+     "n": 400,
+     "mi_bits": 0.0002885582471907629,
+     "null_median_bits": 0.004047125990630058,
+     "p_value": 0.989,
+     "p_holm": 1.0,
+     "assessment": "not_distinguished_from_null"
+    },
+    {
+     "feature": "k3",
+     "kind": "value",
+     "n": 400,
+     "mi_bits": 0.005062386563211623,
+     "null_median_bits": 0.004047125990630058,
+     "p_value": 0.423,
+     "p_holm": 1.0,
+     "assessment": "not_distinguished_from_null"
+    },
+    {
+     "feature": "k4",
+     "kind": "value",
+     "n": 400,
+     "mi_bits": 0.00332253236098949,
+     "null_median_bits": 0.004047125990630058,
+     "p_value": 0.61,
+     "p_holm": 1.0,
+     "assessment": "not_distinguished_from_null"
+    }
+   ],
+   "source_hash": "123567ac9dda8b511a7ef9fbe026193464980ef0d353f46b6ccc0ce92ef6e172",
+   "config_hash": "a0dafce07b03d8cf47bbe190191a65562759e80069bd3eca561f900ba929ff5c"
+  },
+  {
+   "case": "null",
+   "seed": 6017,
+   "partition": "development",
+   "elapsed_s": 73.56024849996902,
+   "n_tests": 10,
+   "n_rejections": 0,
+   "any_rejection": false,
+   "rejected": [],
+   "value_status": {
+    "c0": "eligible",
+    "c1": "eligible",
+    "c2": "eligible",
+    "c3": "eligible",
+    "c4": "eligible",
+    "k0": "eligible",
+    "k1": "eligible",
+    "k2": "eligible",
+    "k3": "eligible",
+    "k4": "eligible"
+   },
+   "duplicates": [],
+   "tests": [
+    {
+     "feature": "c0",
+     "kind": "value",
+     "n": 400,
+     "mi_bits": 0.028205466287199374,
+     "null_median_bits": 0.0,
+     "p_value": 0.213,
+     "p_holm": 1.0,
+     "assessment": "not_distinguished_from_null"
+    },
+    {
+     "feature": "c1",
+     "kind": "value",
+     "n": 400,
+     "mi_bits": 0.014366147075173133,
+     "null_median_bits": 0.0,
+     "p_value": 0.338,
+     "p_holm": 1.0,
+     "assessment": "not_distinguished_from_null"
+    },
+    {
+     "feature": "c2",
+     "kind": "value",
+     "n": 400,
+     "mi_bits": 0.0038608428447933696,
+     "null_median_bits": 0.0,
+     "p_value": 0.4345,
+     "p_holm": 1.0,
+     "assessment": "not_distinguished_from_null"
+    },
+    {
+     "feature": "c3",
+     "kind": "value",
+     "n": 400,
+     "mi_bits": 0.0,
+     "null_median_bits": 0.0,
+     "p_value": 1.0,
+     "p_holm": 1.0,
+     "assessment": "not_distinguished_from_null"
+    },
+    {
+     "feature": "c4",
+     "kind": "value",
+     "n": 400,
+     "mi_bits": 0.01932043157472774,
+     "null_median_bits": 0.0005796684591466599,
+     "p_value": 0.3,
+     "p_holm": 1.0,
+     "assessment": "not_distinguished_from_null"
+    },
+    {
+     "feature": "k0",
+     "kind": "value",
+     "n": 400,
+     "mi_bits": 0.000721511125995128,
+     "null_median_bits": 0.004047125990630058,
+     "p_value": 0.946,
+     "p_holm": 1.0,
+     "assessment": "not_distinguished_from_null"
+    },
+    {
+     "feature": "k1",
+     "kind": "value",
+     "n": 400,
+     "mi_bits": 0.007808616569431675,
+     "null_median_bits": 0.004047125990630058,
+     "p_value": 0.237,
+     "p_holm": 1.0,
+     "assessment": "not_distinguished_from_null"
+    },
+    {
+     "feature": "k2",
+     "kind": "value",
+     "n": 400,
+     "mi_bits": 0.004481645759332139,
+     "null_median_bits": 0.004766769951001015,
+     "p_value": 0.5145,
+     "p_holm": 1.0,
+     "assessment": "not_distinguished_from_null"
+    },
+    {
+     "feature": "k3",
+     "kind": "value",
+     "n": 400,
+     "mi_bits": 0.013068095998861518,
+     "null_median_bits": 0.004190005008495937,
+     "p_value": 0.0585,
+     "p_holm": 0.5850000000000001,
+     "assessment": "not_distinguished_from_null"
+    },
+    {
+     "feature": "k4",
+     "kind": "value",
+     "n": 400,
+     "mi_bits": 0.005062386563211623,
+     "null_median_bits": 0.004047125990630058,
+     "p_value": 0.4175,
+     "p_holm": 1.0,
+     "assessment": "not_distinguished_from_null"
+    }
+   ],
+   "source_hash": "123567ac9dda8b511a7ef9fbe026193464980ef0d353f46b6ccc0ce92ef6e172",
+   "config_hash": "a0dafce07b03d8cf47bbe190191a65562759e80069bd3eca561f900ba929ff5c"
+  },
+  {
+   "case": "null",
+   "seed": 6018,
+   "partition": "development",
+   "elapsed_s": 73.07977687497623,
+   "n_tests": 10,
+   "n_rejections": 1,
+   "any_rejection": true,
+   "rejected": [
+    [
+     "c2",
+     "value"
+    ]
+   ],
+   "value_status": {
+    "c0": "eligible",
+    "c1": "eligible",
+    "c2": "eligible",
+    "c3": "eligible",
+    "c4": "eligible",
+    "k0": "eligible",
+    "k1": "eligible",
+    "k2": "eligible",
+    "k3": "eligible",
+    "k4": "eligible"
+   },
+   "duplicates": [],
+   "tests": [
+    {
+     "feature": "c0",
+     "kind": "value",
+     "n": 400,
+     "mi_bits": 0.0,
+     "null_median_bits": 0.0,
+     "p_value": 1.0,
+     "p_holm": 1.0,
+     "assessment": "not_distinguished_from_null"
+    },
+    {
+     "feature": "c1",
+     "kind": "value",
+     "n": 400,
+     "mi_bits": 0.0,
+     "null_median_bits": 0.0008095169402002092,
+     "p_value": 1.0,
+     "p_holm": 1.0,
+     "assessment": "not_distinguished_from_null"
+    },
+    {
+     "feature": "c2",
+     "kind": "value",
+     "n": 400,
+     "mi_bits": 0.0932373840052891,
+     "null_median_bits": 0.0008444688164058877,
+     "p_value": 0.0035,
+     "p_holm": 0.035,
+     "assessment": "above_permutation_null"
+    },
+    {
+     "feature": "c3",
+     "kind": "value",
+     "n": 400,
+     "mi_bits": 0.0,
+     "null_median_bits": 0.0,
+     "p_value": 1.0,
+     "p_holm": 1.0,
+     "assessment": "not_distinguished_from_null"
+    },
+    {
+     "feature": "c4",
+     "kind": "value",
+     "n": 400,
+     "mi_bits": 0.041155326362252796,
+     "null_median_bits": 0.0,
+     "p_value": 0.131,
+     "p_holm": 0.917,
+     "assessment": "not_distinguished_from_null"
+    },
+    {
+     "feature": "k0",
+     "kind": "value",
+     "n": 400,
+     "mi_bits": 0.010998155925503324,
+     "null_median_bits": 0.004047125990630058,
+     "p_value": 0.0935,
+     "p_holm": 0.748,
+     "assessment": "not_distinguished_from_null"
+    },
+    {
+     "feature": "k1",
+     "kind": "value",
+     "n": 400,
+     "mi_bits": 0.002744605362313226,
+     "null_median_bits": 0.004047125990630058,
+     "p_value": 0.69,
+     "p_holm": 1.0,
+     "assessment": "not_distinguished_from_null"
+    },
+    {
+     "feature": "k2",
+     "kind": "value",
+     "n": 400,
+     "mi_bits": 0.0036134781155491755,
+     "null_median_bits": 0.004481645759332139,
+     "p_value": 0.592,
+     "p_holm": 1.0,
+     "assessment": "not_distinguished_from_null"
+    },
+    {
+     "feature": "k3",
+     "kind": "value",
+     "n": 400,
+     "mi_bits": 0.010296267746122618,
+     "null_median_bits": 0.004480252409293134,
+     "p_value": 0.1375,
+     "p_holm": 0.917,
+     "assessment": "not_distinguished_from_null"
+    },
+    {
+     "feature": "k4",
+     "kind": "value",
+     "n": 400,
+     "mi_bits": 0.01349798975987478,
+     "null_median_bits": 0.004190005008495937,
+     "p_value": 0.0635,
+     "p_holm": 0.5715,
+     "assessment": "not_distinguished_from_null"
+    }
+   ],
+   "source_hash": "123567ac9dda8b511a7ef9fbe026193464980ef0d353f46b6ccc0ce92ef6e172",
+   "config_hash": "a0dafce07b03d8cf47bbe190191a65562759e80069bd3eca561f900ba929ff5c"
+  },
+  {
+   "case": "null",
+   "seed": 6019,
+   "partition": "development",
+   "elapsed_s": 73.70899541699328,
+   "n_tests": 10,
+   "n_rejections": 0,
+   "any_rejection": false,
+   "rejected": [],
+   "value_status": {
+    "c0": "eligible",
+    "c1": "eligible",
+    "c2": "eligible",
+    "c3": "eligible",
+    "c4": "eligible",
+    "k0": "eligible",
+    "k1": "eligible",
+    "k2": "eligible",
+    "k3": "eligible",
+    "k4": "eligible"
+   },
+   "duplicates": [],
+   "tests": [
+    {
+     "feature": "c0",
+     "kind": "value",
+     "n": 400,
+     "mi_bits": 0.051334311346848856,
+     "null_median_bits": 0.0003733790021609012,
+     "p_value": 0.0755,
+     "p_holm": 0.74,
+     "assessment": "not_distinguished_from_null"
+    },
+    {
+     "feature": "c1",
+     "kind": "value",
+     "n": 400,
+     "mi_bits": 0.0,
+     "null_median_bits": 0.0,
+     "p_value": 1.0,
+     "p_holm": 1.0,
+     "assessment": "not_distinguished_from_null"
+    },
+    {
+     "feature": "c2",
+     "kind": "value",
+     "n": 400,
+     "mi_bits": 0.0031897575783058044,
+     "null_median_bits": 0.00011534953508865371,
+     "p_value": 0.4595,
+     "p_holm": 1.0,
+     "assessment": "not_distinguished_from_null"
+    },
+    {
+     "feature": "c3",
+     "kind": "value",
+     "n": 400,
+     "mi_bits": 0.0,
+     "null_median_bits": 0.0,
+     "p_value": 1.0,
+     "p_holm": 1.0,
+     "assessment": "not_distinguished_from_null"
+    },
+    {
+     "feature": "c4",
+     "kind": "value",
+     "n": 400,
+     "mi_bits": 0.0,
+     "null_median_bits": 0.0,
+     "p_value": 1.0,
+     "p_holm": 1.0,
+     "assessment": "not_distinguished_from_null"
+    },
+    {
+     "feature": "k0",
+     "kind": "value",
+     "n": 400,
+     "mi_bits": 0.0014434848397258972,
+     "null_median_bits": 0.004047125990630058,
+     "p_value": 0.844,
+     "p_holm": 1.0,
+     "assessment": "not_distinguished_from_null"
+    },
+    {
+     "feature": "k1",
+     "kind": "value",
+     "n": 400,
+     "mi_bits": 0.0030339163597896167,
+     "null_median_bits": 0.004480252409293134,
+     "p_value": 0.657,
+     "p_holm": 1.0,
+     "assessment": "not_distinguished_from_null"
+    },
+    {
+     "feature": "k2",
+     "kind": "value",
+     "n": 400,
+     "mi_bits": 0.00043289512479525473,
+     "null_median_bits": 0.004480252409293134,
+     "p_value": 0.9855,
+     "p_holm": 1.0,
+     "assessment": "not_distinguished_from_null"
+    },
+    {
+     "feature": "k3",
+     "kind": "value",
+     "n": 400,
+     "mi_bits": 0.012630762424956216,
+     "null_median_bits": 0.004190005008495937,
+     "p_value": 0.074,
+     "p_holm": 0.74,
+     "assessment": "not_distinguished_from_null"
+    },
+    {
+     "feature": "k4",
+     "kind": "value",
+     "n": 400,
+     "mi_bits": 0.00332253236098949,
+     "null_median_bits": 0.004047125990630058,
+     "p_value": 0.6165,
+     "p_holm": 1.0,
+     "assessment": "not_distinguished_from_null"
+    }
+   ],
+   "source_hash": "123567ac9dda8b511a7ef9fbe026193464980ef0d353f46b6ccc0ce92ef6e172",
+   "config_hash": "a0dafce07b03d8cf47bbe190191a65562759e80069bd3eca561f900ba929ff5c"
+  }
+ ],
+ "requested": [
+  "nonlinear:6000",
+  "nonlinear:6001",
+  "nonlinear:6002",
+  "nonlinear:6003",
+  "nonlinear:6004",
+  "nonlinear:6005",
+  "nonlinear:6006",
+  "nonlinear:6007",
+  "nonlinear:6008",
+  "nonlinear:6009",
+  "nonlinear:6010",
+  "nonlinear:6011",
+  "nonlinear:6012",
+  "nonlinear:6013",
+  "nonlinear:6014",
+  "nonlinear:6015",
+  "nonlinear:6016",
+  "nonlinear:6017",
+  "nonlinear:6018",
+  "nonlinear:6019",
+  "null:6000",
+  "null:6001",
+  "null:6002",
+  "null:6003",
+  "null:6004",
+  "null:6005",
+  "null:6006",
+  "null:6007",
+  "null:6008",
+  "null:6009",
+  "null:6010",
+  "null:6011",
+  "null:6012",
+  "null:6013",
+  "null:6014",
+  "null:6015",
+  "null:6016",
+  "null:6017",
+  "null:6018",
+  "null:6019"
+ ],
+ "expected_records": 40,
+ "complete": true
+}
