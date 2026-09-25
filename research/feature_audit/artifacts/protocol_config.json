@@ -1,0 +1,35 @@
+{
+ "frozen_at": "2026-09-25",
+ "config": {
+  "label": "official",
+  "n_rows": 400,
+  "n_permutations": 1999,
+  "n_subsamples": 30,
+  "random_state": 0
+ },
+ "config_hash": "a0dafce07b03d8cf47bbe190191a65562759e80069bd3eca561f900ba929ff5c",
+ "source_hash": "123567ac9dda8b511a7ef9fbe026193464980ef0d353f46b6ccc0ce92ef6e172",
+ "heldout_seeds": [
+  7000,
+  7100
+ ],
+ "development_seeds": [
+  6000,
+  6020
+ ],
+ "null_gate": {
+  "max_rejecting_datasets": 10,
+  "clopper_pearson_lower_max": 0.05,
+  "n": 100
+ },
+ "signal_gate": {
+  "min_x_above_null": 90,
+  "id_always_excluded": true,
+  "duplicate_always_reported": true
+ },
+ "resource_target": {
+  "n_rows": 1000,
+  "max_seconds": 300,
+  "max_incremental_peak_bytes": 1073741824
+ }
+}
