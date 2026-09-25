@@ -20,6 +20,60 @@ The MI estimators come from scikit-learn. What the prototype adds is the
 interpretation around them: null context, multiplicity adjustment, stability,
 and explicit exclusions.
 
+## Try it on your own data (feedback wanted)
+
+This prototype has passed its synthetic checks (see [FINDINGS.md](FINDINGS.md)),
+but nobody has shown yet that it helps in real work. If you have a
+classification training set, trying it and telling us what happened is the
+most useful thing you can do. Your data never leaves your machine.
+
+**You need:** Python 3.9+, and a training split with 100–5,000 rows, 1–50
+predictor columns, a target with 2–20 classes (at least 10 rows each), and
+independent rows (no time series or repeated measurements of the same subject).
+
+```bash
+git clone https://github.com/Par-python/entroscope.git
+cd entroscope
+pip install -e '.[sklearn]'
+python -m research.feature_audit.demo --dataset synthetic --output-dir /tmp/audit-demo
+```
+
+Then, from the repository root:
+
+```python
+import pandas as pd
+from research.feature_audit.prototype import audit
+
+train = pd.read_csv("your_training_split.csv")
+report = audit(
+    train,
+    target="your_target",
+    feature_types={"col_a": "continuous", "col_b": "categorical"},  # every predictor
+    assume_iid=True,
+)
+print(report.to_markdown())
+```
+
+**Three quick tasks.** Try each with your usual tools, then with the audit, and
+note roughly how long each took:
+
+1. Which columns need a manual look before you trust any score for them?
+2. Pick one feature that relates to the target. What is one limit of that
+   explanation?
+3. Is any column an exact duplicate of another?
+
+**Feedback.** Open an issue at
+<https://github.com/Par-python/entroscope/issues/new> titled
+"feature audit feedback", or reply where you found this. Please answer:
+
+- Did it show you something real that you then checked yourself? How did you check?
+- Did it save time, cost time, or neither?
+- What confused or misled you? Quote the wording if you can.
+- Would you use it again?
+
+Please don't share raw data, category values, or confidential column names.
+The report includes column names, so redact them before pasting any excerpt.
+
 ## Usage
 
 Run from the repository root. The prototype uses the namespace path
